@@ -116,6 +116,9 @@ let past = new Date('1970-01-01');
 let present = new Date;
 let difference = present - past;
 console.log(difference)
+// or
+console.log(Date.now())
+
 
 // Exercises: Level 2
 // 1.Write a script that prompt the user to enter base and height of the triangle and calculate an area of a triangle (area = 0.5 x b x h).
@@ -223,19 +226,20 @@ if (yearOld >= 18) {
 // 14. Write a script that prompt the user to enter number of years. Calculate the number of seconds a person can live. Assume some one lives just hundred years
 // Enter number of years you live: 100
 // You lived 3153600000 seconds.
-let enterNumberOfYears = Number(prompt('Enter number of years you live'));
-let secondsInaYear = 31536000;
-let leapYearSeconds = 31622400;
+let enterNumberOfYears = prompt('Enter number of years you live');
+let yearSeconds = (enterNumberOfYears * 365 * 24 * 60 * 60) + (enterNumberOfYears / 4 * (24 * 60 * 60));
+console.log(yearSeconds);
+
 
 // 15.Create a human readable time format using the Date time object
 // YYYY-MM-DD HH:mm
 // DD-MM-YYYY HH:mm
 // DD/MM/YYYY HH:mm
-let humanDate = new Date;
+let humanDate = new Date();
 let humanHours = humanDate.getHours();
 let humanMinutes = humanDate.getMinutes();
-let humanDay = humanDate.getDay();
-let humanMonth = humanDate.getMonth();
+let humanDay = humanDate.getDate();
+let humanMonth = humanDate.getMonth() + 1;
 let humanYear = humanDate.getFullYear();
 
 console.log(`${humanYear}-${humanMonth}-${humanDay}-${humanHours}-${humanMinutes}`);
@@ -248,15 +252,8 @@ console.log(`${humanDay}/${humanMonth}-${humanYear}/${humanHours}/${humanMinutes
 // Create a human readable time format using the Date time object. The hour and the minute should be all the time two digits(7 hours should be 07 and 5 minutes should be 05 )
 // YYY-MM-DD HH:mm eg. 20120-01-02 07:05 
 console.log('Exercise: Level 3 starts from here');
-console.log(`${humanYear}-0${humanMonth}-0${humanDay} ${humanHours}:${humanMinutes}`);
-
-
-
-
-
-
-
-
+humanMonth = humanMonth.toString().length < 2 ? `${humanMonth}` : humanMonth;
+console.log(`${humanYear}-${humanMonth}-${humanDay} ${humanHours}:${humanMinutes}`);
 
 
 

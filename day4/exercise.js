@@ -95,14 +95,14 @@ switch (month) {
 
 // 3.Check if a day is weekend day or a working day. Your script will take day as an input.
 let day2 = prompt('What is the day today?');
-let dayCase = day2.toLocaleLowerCase();
+let dayCase = day2.toLowerCase();
 switch (dayCase) {
     case 'monday':
     case 'tuesday':
     case 'wednesday':
     case 'thursday':
     case 'friday':
-        console.log(`${dayCase} is a working day`)
+        console.log(`${dayCase?.charAt(0).toUpperCase() + dayCase.slice(1)} is a working day`)
         break;
     case 'saturday':
     case 'sunday':
