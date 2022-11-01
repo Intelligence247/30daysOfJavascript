@@ -1,3 +1,4 @@
+console.log(['nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnndslankfa;sldkfffffffffffffffffff'])
 const countriesExercise = [
     'Albania',
     'Bolivia',
@@ -24,5 +25,12 @@ if (confirmEthopia) {
 }
 
 // Divide the countries array into two equal arrays if it is even. If countries array is not even , one more country for the first half.
-let divideCountry = countriesExercise.length / 2;
-console.log(divideCountry);
+let divideCountry = countriesExercise.length % 2;
+let divideCountryHalf = countriesExercise.length / 2;
+let addCountry = countriesExercise.unshift(`Nigeria`)
+if (divideCountry = 0) {
+    console.log(countriesExercise[divideCountryHalf])
+} else {
+
+    console.log(addCountry)
+}

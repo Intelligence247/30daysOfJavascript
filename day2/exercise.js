@@ -80,8 +80,8 @@ console.log(exercise2Q6.includes('jargon'));
 const exercise2Q8 = Math.floor(Math.random() * 101);
 console.log(exercise2Q8);
 // 9. Generate a random number between 50 and 100 inclusively.
-const exercise2Q9 = Math.floor(Math.random(-50) * 101);
-console.log(exercise2Q9);
+let x = Math.random() * (100 - 50) + 50;
+console.log(x)
 // 10. Generate a random number between 0 and 255 inclusively.
 let exercise2Q10 = Math.floor(Math.random() * 255);
 console.log(exercise2Q10);

@@ -26,6 +26,7 @@ console.log(mixedDataTypes.length);
 // 6.Declare an array variable name itCompanies and assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon
 let itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
 
+
 // 7.Print the array using console.log()
 console.log(itCompanies);
 //8. Print the number of companies in the array
@@ -140,7 +141,7 @@ console.log(shoppingCart);
 
 
 // 6.Concatenate the following two variables and store it in a fullStack variable.
-const frontEndExercise = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+const frontEndExercise = ['HTML', 'CSS', 'JS', 'React', 'Redux'];
 const backEndExercise = ['Node', 'Express', 'MongoDB']
 const fullStackExercise = frontEndExercise.concat(backEndExercise);
 console.log(fullStackExercise)
@@ -148,7 +149,7 @@ console.log(fullStackExercise)
 
 // Exercise 3, Starts here 
 // The following is an array of 10 students ages:
-const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+const ages = [19, 20, 22, 19, 24, 25, 26, 24, 25, 24]
 // Sort the array and find the min and max age
 const max = Math.max(...ages);
 console.log(max)
@@ -176,7 +177,43 @@ console.log(meanSum);
 
 // Questions
 // exercise3 Number3 Divide the countries array into two equal arrays if it is even. If countries array is not even , one more country for the first half.
+
 //Exercise3 Question1 Find the median age(one middle item or two middle items divided by two)
+
+ages.sort((a, b) => a - b)
+console.log(ages)
+
+if (ages.length % 2 == 0) {
+    const r = ages.length / 2;
+    const median = (ages[r] + ages[r - 1]) / 2
+    console.log(median, "median")
+} else {
+    const r = ages.length / 2;
+    const median = ages[Math.floor(r)]
+    console.log(median, "median")
+}
+
+
+
+
+
+
+
+let marksPra = [12, 23, 34, 45, 6, 76, 78, 89, 45, 23, 21, 23];
+marksPra.sort((a, b) => a - b)
+console.log(marksPra);
+let midX = marksPra.length;
+console.log(`${(midX / 2) + (midX / 2 + 1)}`)
+if (midX % 2 == 0) {
+    let cc = midX / 2;
+    let cc1 = (midX / 2) - 1;
+    let both = cc + cc1;
+    console.log((marksPra[cc] + marksPra[cc1]) / 2)
+} else {
+    // let med = 
+    console.log(marksPra[Math.floor(midX / 2)])
+}
+
 //Question14exercise1 Filter out companies which have more than one 'o' without the filter method
 // having problem with slice Number 19 Exercise 1
-// exercise1 Question 21 splice 
+// exercise1 Question 21 splice
