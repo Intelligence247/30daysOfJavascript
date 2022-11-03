@@ -34,7 +34,7 @@ do {
 
 let n = 0;
 for (let inn = 9; i <= n; inn++) {
-    console.log(n)
+    console.log(23)
 }
 
 //3. Iterate 0 to n using for loop
@@ -46,13 +46,10 @@ for (let inn = 9; i <= n; inn++) {
 // #####
 // ######
 // #######
-console.log('#')
-console.log('##')
-console.log('###')
-console.log('####')
-console.log('#####')
-console.log('######')
-console.log('#######')
+
+for (let i = 1; i <= 7; i++) {
+    console.log('#'.repeat(i))
+}
 
 // 4.Use loop to print the following pattern:
 for (let i = 0; i <= 10; i++) {
@@ -89,6 +86,34 @@ for (let iodd = 0; iodd <= 100; iodd++) {
         console.log(iodd)
     }
 }
+let ns = 20;
+for (let i = 0; i <= n; i++) {
+    console.log(i)
+}
+
+
+for (let i = 1; i <= 7; i++) {
+    console.log("#".repeat(i))
+}
+// 8.Use for loop to iterate from 0 to 100 and print only odd numbers
+
+function isPrime(n) {
+    let num = Math.abs(n)
+    if (num < 2) return false;
+    if (num == 2) return true;
+    for (let i = 2; i < num; i++) {
+        if (num % i == 0) {
+            return false
+        }
+    }
+    return true
+}
+for (let i = 0; i <= 100; i++) {
+    if (isPrime(i)) {
+        console.log(i)
+    }
+}
+console.log(isPrime(-12))
 
 // 9.Use for loop to iterate from 0 to 100 and print only prime numbers
 for (let iPrime = 0; iPrime <= 100; iPrime++) {
@@ -254,7 +279,49 @@ let arrr = [];
 
 arrr = country2.includes('land')
 console.log(arrr)
+// 8. In above countries array, check if there is a country or countries end with a substring 'ia'. If there are countries end with, print it as array. If there is no country containing the word 'ai', print 'These are countries ends without ia'.
+for (const g of country2) {
+    let garray = [];
+    garray.push(g)
+    if (g.endsWith('ia')) {
+        console.log(garray)
+    }
+}
+//9. Using the above countries array, find the country containing the biggest number of characters.
+let country2Arr = [];
+for (const s of country2) {
+    country2Arr.push(s.length)
+}
 
+let maxs = Math.max(...country2Arr)
+for (const s of country2) {
+    if (s.length == maxs)
+        console.log([s])
+}
+// 10.Using the above countries array, find the country containing only 5 characters.
+
+let fiveCharaters = [];
+for (const f of country2) {
+    fiveCharaters.push(f.length)
+}
+let fiveCharaterNum = Math.max(...fiveCharaters)
+for (const c of country2) {
+    if (c.length == 5) {
+        console.log([c])
+    }
+}
+
+// 11.Find the longest word in the webTechs array
+let longestWebTech = [];
+for (const l of webTechs2) {
+    longestWebTech.push(l.length)
+}
+let longestWebTechMax = Math.max(...longestWebTech)
+for (const l of webTechs2) {
+    if (l.length == longestWebTechMax)
+        console.log(l)
+
+}
 // 12.Use the webTechs array to create the following array of arrays:
 // [["HTML", 4], ["CSS", 3],["JavaScript", 10],["React", 5],["Redux", 5],["Node", 4],["MongoDB", 7]]
 console.log(`[["${webTechs2[0]}", ${webTechs2[0].length}], ["${webTechs2[1]}", ${webTechs2[1].length}], ["${webTechs2[2]}", ${webTechs2[2].length}], ["${webTechs2[3]}", ${webTechs2[3].length}], ["${webTechs2[4]}", ${webTechs2[4].length}], ["${webTechs2[5]}", ${webTechs2[5].length}], ["${webTechs2[5]}", ${webTechs2[5].length}], ["${webTechs2[6]}", ${webTechs2[6].length}]]`)
@@ -343,11 +410,6 @@ for (let i = 0; i < ages.length; i++) {
     sums += ages[i];
 }
 console.log(sums / ages.length)
-
-
-
-// 9.Reverse the countries array and capitalize each country and stored it as an array
-
 
 const countriesAll = [
     'Afghanistan',
@@ -544,17 +606,125 @@ const countriesAll = [
     'Zambia',
     'Zimbabwe'
 ]
+//4. Extract all the countries contain the word 'land' from the countries array and print it as array
+let array = [];
+for (const v of countriesAll) {
+    if (v.includes('land')) {
+        console.log([v])
+    }
+}
+//5. Find the country containing the hightest number of characters in the countries array
+// max
+const cLength = []
+for (const c of countriesAll) {
+    cLength.push(c.length)
+}
+
+let max = Math.max(...cLength)
+for (const c of countriesAll) {
+    if (c.length == max) {
+        console.log(c)
+    }
+}
+// 6.Extract all the countries contain the word 'land' from the countries array and print it as array
+let includesLand = [];
+for (const i of countriesAll) {
+    if (i.includes('land')) {
+        console.log(i)
+    }
+}
+
+// 7.Extract all the countries containing only four characters from the countries array and print it as array
+// let fourCharacters = [];
+for (const f of countriesAll) {
+    // fourCharacters.push(f.length)
+    if (f.length == 4) {
+        console.log(f)
+    }
+}
+
+// 8. Extract all the countries containing two or more words from the countries array and print it as array
+
+for (let q of countriesAll) {
+    let splitq = q.split(' ').length
+    if (splitq > 1) {
+        console.log(q)
+    }
+}
+
+
+// 9.Reverse the countries array and capitalize each country and stored it as an array
+
+
 let newCountriesAll = [];
 for (let i = 0; i < countriesAll.length; i++) {
     newCountriesAll.push(countriesAll[i].toUpperCase());
 }
 console.log(newCountriesAll);
 console.log(newCountriesAll.reverse())
+
 // exercise 2 (7 to 11)
 // question 8 ex1 (Use for loop to iterate from 0 to 100 and print only prime numbers)
 // exercise 1 number3(Iterate 0 to n using for loop)
 
 // Exercise 3 Question 4 to 8
+
+
+
+
+
+
+
+for (const c of countriesAll) {
+    if (c.includes(`land`))
+        console.log(c)
+}
+let spliitArray = [''];
+for (const r of countriesAll) {
+    let spliit = r.split(' ').length;
+
+    if (spliit > 1) {
+        console.log(r)
+
+    }
+}
+
+
+// const cLength = []
+// for (const c of countriesAll) {
+//     cLength.push(c.length)
+// }
+
+// let max = Math.max(...cLength)
+// for (const c of countriesAll) {
+//     if (c.length == max) {
+//         console.log(c)
+//     }
+// }
+
+// for (let i = 0; i < countriesAll.length; i++) {
+//     let cc = arrLand.push(countriesAll[i])
+//     console.log(cc)
+//     if (countriesAll[i].includes('land')) {
+//         console.log(countriesAll[i])
+//     }
+// }
+
+
+
+// let mar = Math.max(...countriesAll.length);
+let arrall = [];
+for (const c of countriesAll) {
+    arrall.push(c.length)
+
+}
+let mars = Math.max(...arrall);
+for (const c of countriesAll) {
+    if (c.length == mars)
+        console.log(c)
+}
+
+
 
 
 
