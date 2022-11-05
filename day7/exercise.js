@@ -177,12 +177,387 @@ console.log(findMax(0, -10, -2))
 console.log(['Exercises: Level 2 starts here'])
 
 // 1.Linear equation is calculated as follows: ax + by + c = 0. Write a function which calculates value of a linear equation, solveLinEquation.
-function solveLinEquation(a, b, c) {
-    let x = 'x';
-    let solve = x + a ** 2
-    return solve;
+// function solveLinEquation(a, b, c) {
+//     let x = 'x';
+//     let solve = x + a ** 2
+//     return solve;
+// }
+// console.log(solveLinEquation(2))
+
+//3. Declare a function name printArray. It takes array as a parameter and it prints out each value of the array.
+
+function printArray(name1, name2) {
+    let bothName = [name1, name2]
+    return bothName;
 }
-console.log(solveLinEquation(2))
+console.log(printArray('Usman Abdullahi Babatunde and', 'Inteligence247'))
+
+
+// 4.Write a function name showDateTime which shows time in this format: 08/01/2020 04:08 using the Date object.
+
+const showDateTime = () => {
+    let now = new Date()
+    let day = now.getDay();
+    let month = now.getMonth();
+    let year = now.getFullYear();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let all = (`${day}/${month}/${year} ${hours}:${minutes}`)
+    return all;
+}
+console.log(showDateTime())
+
+// 5.Declare a function name swapValues. This function swaps value of x to y.
+
+
+function swapValues(x, y) {
+    let swaps1 = y;
+    let swaps2 = x;
+    let swaps = (`x=${swaps1}, y=${swaps2}`)
+    return swaps;
+}
+
+console.log(swapValues(100, 200))
+
+
+
+// 6.Declare a function name reverseArray. It takes array as a parameter and it returns the reverse of the array (don't use method).
+
+const reverseArray = (param) => {
+    let reverse = param.reverse();
+    return reverse;
+}
+console.log(reverseArray([1, 2, 3, 4, 5]))
+//[5, 4, 3, 2, 1]
+console.log(reverseArray(['A', 'B', 'C']))
+//['C', 'B', 'A']
+
+
+// 7.Declare a function name capitalizeArray. It takes array as a parameter and it returns the - capitalizedarray.
+
+const capitalizeArray = (param) => {
+    let capitalized = param.map(name => name.toUpperCase());
+    return capitalized;
+}
+console.log(capitalizeArray(['a', 'b', 'c']))
+// or
+const capitalizeArray2 = (...param) => {
+    // console.log(param)
+    console.log(param.map(name => name.toUpperCase()));
+}
+
+capitalizeArray2('Abdullahi', 'Usman', 'Intelligence');
+
+// 8.Declare a function name addItem. It takes an item parameter and it returns an array after adding the item
+function addItem(param = ['pen', 'book,', 'mouse']) {
+    return param;
+
+}
+
+console.log(addItem(['Phone', 'Laptop', 'pen', 'book', 'mouse']))
+
+// 9.Declare a function name removeItem. It takes an index parameter and it returns an array after removing an item
+
+const removeItem = (param = ['Phone', 'Laptop', 'pen', 'book', 'mouse']) => {
+    return param;
+}
+console.log(removeItem(['Laptop,', 'mouse']));
+
+
+//10. Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range.
+let sum = 0;
+function sumOfNumbers(param = 21) {
+    for (let i = 0; i <= param; i++) {
+        let = (sum += i)
+    }
+    return sum;
+}
+console.log(sumOfNumbers(100))
+
+// 11.Declare a function name sumOfOdds. It takes a number parameter and it adds all the odd numbers in that - range.
+
+const sumOfOdds = (paramOdd) => {
+    let sumOdd = 0;
+    for (let i = 0; i <= paramOdd; i++) {
+        if (i % 2 == 1) {
+            sumOdd += i
+        }
+    }
+    return sumOdd;
+}
+console.log(sumOfOdds(100))
+
+// 12.Declare a function name sumOfEven. It takes a number parameter and it adds all the even numbers in that - range.
+
+let evenSum = 0;
+function sumOfEven(paramEven) {
+    for (let i = 0; i <= paramEven; i++) {
+        if (i % 2 == 0) {
+            evenSum += i
+        }
+    }
+    return evenSum;
+}
+
+console.log(sumOfEven(100))
+
+// 13.Declare a function name evensAndOdds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+let adde = 0;
+let addo = 0;
+
+function evensAndOdds(param = 100) {
+    for (let i = 0; i <= param; i++) {
+
+        if (i % 2 == 0) {
+            adde += i
+        }
+        else if (i % 2 == 1) {
+            addo += i
+        }
+    }
+    return [`${adde}, ${addo}`];
+}
+console.log(evensAndOdds())
+
+// 14.Write a function which takes any number of arguments and return the sum of the arguments
+
+let sum14 = 0;
+function arguments(param) {
+    for (let i = 0; i < param.length; i++) {
+        sum14 += param[i]
+    }
+    return sum14
+}
+console.log(arguments([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]));
+// console.log(arguments([1, 2, 3, 4]));
+
+// 15.Writ a function which generates a randomUserIp.
+function randomUserIp(param) {
+    let x = (Math.random() + param).toString(30).substring(2)
+    return x;
+}
+
+console.log(randomUserIp(10))
+
+// 16.Write a function which generates a randomMacAddress
+
+const randomMacAddress = (param) => {
+    let x1 = (Math.random() + param).toString(35.5).substring(10)
+    let x2 = (Math.random() + param).toString(36).substring(10)
+    let x3 = (Math.random() + param).toString(36).substring(10)
+    let x4 = (Math.random() + param).toString(36).substring(10)
+    let x5 = (Math.random() + param).toString(35).substring(10)
+    let x6 = (Math.random() + param).toString(36).substring(10)
+    let x = (`${x2}:${x1}:${x5}:${x6}:${x4}:${x3}`)
+    return x;
+}
+console.log(randomMacAddress(3))
+
+const alpahbet = 'abcdef123456789'
+let generate = alpahbet[Math.floor(Math.random() * alpahbet.length)]
+console.log(generate)
+
+// 17.Declare a function name randomHexaNumberGenerator. When this function is called it generates a random hexadecimal number. The function return the hexadecimal number.
+function randomHexaNumberGenerator() {
+    const alphabet = 'abcdef1234567890';
+    const randoms = alphabet[Math.floor(Math.random() * alphabet.length)]
+    const randoms1 = alpahbet[Math.floor(Math.random() * alpahbet.length)]
+    const randoms2 = alphabet[Math.floor(Math.random() * alpahbet.length)]
+    const randoms3 = alphabet[Math.floor(Math.random() * alpahbet.length)]
+    const randoms4 = alphabet[Math.floor(Math.random() * alpahbet.length)]
+    const randoms5 = alphabet[Math.floor(Math.random() * alpahbet.length)]
+
+    let random = (`#${randoms2}${randoms3}${randoms1}${randoms4}${randoms5}${randoms}`)
+    return random;
+}
+console.log(randomHexaNumberGenerator())
+
+// 18.Declare a function name userIdGenerator. When this function is called it generates seven character id. The function return the id.
+function userIdGenerator() {
+    const pp = 'abcdefghijklmnopqrstyuvwxzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
+    let x = pp[Math.floor(Math.random() * pp.length)]
+    let x1 = pp[Math.floor(Math.random() * pp.length)]
+    let x3 = pp[Math.floor(Math.random() * pp.length)]
+    let x2 = pp[Math.floor(Math.random() * pp.length)]
+    let x4 = pp[Math.floor(Math.random() * pp.length)]
+    let x5 = pp[Math.floor(Math.random() * pp.length)]
+    let x6 = pp[Math.floor(Math.random() * pp.length)]
+    let xReturn = (`${x1}${x2}${x}${x3}${x5}${x4}${x6}`)
+    return xReturn
+}
+console.log(userIdGenerator())
+
+console.log(['Exercise THREE Starts here'])
+//2. Write a function name rgbColorGenerator and it generates rgb colors.
+const rgbColorGenerator = () => {
+    let rgb = (Math.floor(Math.random() * (255 - 0) + 0));
+    let rgb2 = (Math.floor(Math.random() * (255 - 0) + 0));
+    let rgb3 = (Math.floor(Math.random() * (255 - 0) + 0));
+    let all = (`rgb(${rgb3}, ${rgb}, ${rgb2})`)
+    return all
+}
+console.log(rgbColorGenerator())
+
+// 3. Write a function arrayOfHexaColors which return any number of hexadecimal colors in an array.
+function randomHexaNumberGenerator() {
+    const alphabet = 'abcdef1234567890';
+    const randoms = alphabet[Math.floor(Math.random() * alphabet.length)]
+    const randoms1 = alpahbet[Math.floor(Math.random() * alpahbet.length)]
+    const randoms2 = alphabet[Math.floor(Math.random() * alpahbet.length)]
+    const randoms3 = alphabet[Math.floor(Math.random() * alpahbet.length)]
+    const randoms4 = alphabet[Math.floor(Math.random() * alpahbet.length)]
+    const randoms5 = alphabet[Math.floor(Math.random() * alpahbet.length)]
+
+    let random = ([`#${randoms2}${randoms3}${randoms1}${randoms4}${randoms5}${randoms}`])
+    return random;
+}
+console.log(randomHexaNumberGenerator())
+
+// 4. Write a function arrayOfRgbColors which return any number of RGB colors in an array.
+let rgbColorGenerators = () => {
+    let rgb = (Math.floor(Math.random() * (255 - 0) + 0));
+    let rgb2 = (Math.floor(Math.random() * (255 - 0) + 0));
+    let rgb3 = (Math.floor(Math.random() * (255 - 0) + 0));
+    let all = ([`rgb(${rgb3}, ${rgb}, ${rgb2})`])
+    return all
+}
+console.log(rgbColorGenerators())
+
+
+
+
+// 7.Write a function generateColors which can generate any number of hexa or rgb colors.
+
+function generateColors(param1) {
+    let rgb = (Math.floor(Math.random() * (255 - 0) + 0));
+    let rgb2 = (Math.floor(Math.random() * (255 - 0) + 0));
+    let rgb3 = (Math.floor(Math.random() * (255 - 0) + 0));
+    let all = param1 + ([`rgb(${rgb3}, ${rgb}, ${rgb2})`])
+    return all
+
+}
+console.log(generateColors(''))
+// console.log(generateColors(3))
+
+// console.log((Math.random() + 3).toString(36).substring(10))
+
+// 8.Call your function shuffleArray, it takes an array as a parameter and it returns a shuffled array
+function shuffleArray() {
+    let rr = '1234567890'
+    let shuffle1 = rr[Math.floor(Math.random() * rr.length)]
+    let shuffle2 = rr[Math.floor(Math.random()) * rr.length]
+    let shufflea = [`${shuffle1}`]
+    let shuffleb = [`${shuffle2}`]
+    let shuffle = [`${shufflea}${shuffleb}`]
+    return shuffle;
+}
+console.log(shuffleArray())
+let arrr = 0;
+for (let i = 0; i <= 10; i++) {
+    console.log(i)
+}
+//10. Call your function isEmpty, it takes a parameter and it checks if it is empty or not
+
+function isEmpty(n) {
+    let r;
+    if (r == n) {
+        console.log('The function has an Parameter')
+    } else {
+        console.log(`${n}`)
+    }
+    return n;
+}
+
+console.log(isEmpty())
+
+
+// 11. Call your function sum, it takes any number of arguments and it returns the sum.
+const rr = (...args) => {
+    let x = 0;
+    for (let i = 0; i < args.length; i++) {
+        x += args[i]
+    }
+    return x;
+}
+console.log(rr(12, 23, 34))
+
+
+
+
+
+
+
+
+
+
+
+
+// Need to practice Unlimited numnber of parameters again
+
+
+
+function argSum() {
+    let sum = 0;
+    for (let i = 0; i < arguments.length; i++) {
+        sum += arguments[i]
+    }
+    return sum;
+}
+
+console.log(argSum(12, 23, 45, 67))
+
+function arg2() {
+    let arr = [];
+    for (let i = 0; i < arguments.length; i++) {
+        arr.push(arguments[i])
+    } return arr;
+}
+console.log(arg2(12, 13, 24))
+
+
+
+const argss = (...args) => {
+    console.log(args)
+}
+argss(12, 13)
+
+
+
+const arrArgs = (...param) => {
+    let sum = 0;
+    for (let i = 0; i < param.length; i++) {
+        sum += param[i];
+    }
+    return sum;
+}
+console.log(arrArgs(90, 45, 45, 89))
+
+// exercise 2 number 1 and 2
+// exercise 2 number 7
+// exercise 3 number 1
+// exercise 3 number 5
+// exercise 3 number 6
+// exercise 3 number 7
+
+// https://www.coderrocketfuel.com/article/generate-a-random-letter-from-the-alphabet-using-javascript
+
+let sumOfArrayItems = (...param) => {
+    let rr = 0;
+    let sum = 0
+    for (let i = 0; i < param.length; i++) {
+        rr = (sum += param[i]) / param.length
+    }
+    return rr;
+}
+console.log(sumOfArrayItems(90, 21, 34))
+function factorial() {
+    let sum = 0;
+    for (const i of arguments) {
+        sum += i
+    }
+    return sum;
+}
+console.log(factorial(9))
 
 
 
@@ -208,35 +583,7 @@ console.log(solveLinEquation(2))
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// q13 exercise 2
 
 // const validateEmail = (email) => {
 //     return String(email)
