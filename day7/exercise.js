@@ -243,7 +243,7 @@ console.log(capitalizeArray(['a', 'b', 'c']))
 // or
 const capitalizeArray2 = (...param) => {
     // console.log(param)
-    console.log(param.map(name => name.toUpperCase()));
+    console.log(param);
 }
 
 capitalizeArray2('Abdullahi', 'Usman', 'Intelligence');
@@ -353,7 +353,7 @@ const randomMacAddress = (param) => {
 }
 console.log(randomMacAddress(3))
 
-const alpahbet = 'abcdef123456789'
+const alpahbet = 'abcdef1234567890'
 let generate = alpahbet[Math.floor(Math.random() * alpahbet.length)]
 console.log(generate)
 
@@ -532,12 +532,14 @@ const arrArgs = (...param) => {
 }
 console.log(arrArgs(90, 45, 45, 89))
 
-// exercise 2 number 1 and 2
 // exercise 2 number 7
 // exercise 3 number 1
 // exercise 3 number 5
 // exercise 3 number 6
 // exercise 3 number 7
+// all random numbers
+// exercise 3 number 8
+//  exercise 3 number 13,14,16,17,18,19,20
 
 // https://www.coderrocketfuel.com/article/generate-a-random-letter-from-the-alphabet-using-javascript
 

@@ -86,13 +86,33 @@ function tests() {
     let s = 0;
     let n = 0;
     for (let i = 0; i < arguments.length; i++) {
-        x += arguments[i]
+        console.log(x += arguments[i])
+        if (i == Number) {
+            console.log(i)
+        }
     }
     return x
 
 }
-console.log(tests(1, 2, 3, 4))
+console.log(tests(1, 2, 3, 4));
 
+
+
+
+
+function fact(n) {
+    let x = 1;
+    if (n == 1 && n == 0) {
+        return x;
+    } else {
+        for (let i = n; i >= 1; i--) {
+            x = x * i
+        }
+
+    }
+    return x;
+}
+console.log(fact(4))
 
 
 
@@ -117,3 +137,11 @@ const facto = (nth) => {
     return consts;
 }
 console.log(facto(9))
+
+
+
+
+
+
+
+
