@@ -1,20 +1,13 @@
 // Linear equation is calculated as follows: ax + by + c = 0. Write a function which calculates value of a linear equation, solveLinEquation.
 
 // 2.Quadratic equation is calculated as follows: ax2 + bx + c = 0. Write a function which calculates value or values of a quadratic equation, solveQuadEquation.
-let b = 2;
-let y = 9;
-let c = 11;
-let a = 13;
-let x = (b * y + c) / -a;
-// ax + by + c=0
-// ax + c = -by;
-// (ax + c) / -b = y;
-function linear(a, b, y = 10, x = 5) {
-    y = (a * x + c) / -b;
-    x = (b * y + c) / -a
-    return `{x = ${x}, y = ${y}}`
+
+function linear(a, b, c, ya, yb, yc, y = 1, x = 1) {
+    let x2 = (-(b * y) - c) / a;
+    let y2 = (-(ya * x) - yc) / yb;
+    return `{x = ${x2}, y = ${y2}}`
 }
-console.log(linear(3, 5, 6))
+console.log(linear(10, 8, 60, 5, 7, 3))
 
 function lin(y, c, b, a) {
     let x = (b * y + c) / -a;
