@@ -230,3 +230,121 @@ console.log(countriesEndWithIa)
 
 const countriesWithFiveLettersWord = countriesF.filter((element) => element.length === 5)
 console.log(countriesWithFiveLettersWord)
+
+// reduce
+
+// reduce: Reduce takes a callback function. The call back function takes accumulator, current, and optional initial value as a parameter and returns a single value. It is a good practice to define an initial value for the accumulator value. If we do not specify this parameter, by default accumulator will get array first value. If our array is an empty array, then Javascript will throw an error.
+
+const numbersReduce = [200, 2, 3, 4, 5]
+
+const sumReduce = numbersReduce.reduce((cur, acc) => acc + cur, 0)
+console.log(sumReduce)
+
+// every
+// every: Check if all the elements are similar in one aspect. It returns boolean
+const namesEvery = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+const checkEvery = namesEvery.every((name) => typeof name == 'string')
+console.log(checkEvery);
+
+
+const numberEvery = [1, 2, 3, 4, 7]
+const checkEveryNum = numberEvery.every((num) => typeof num == 'number')
+console.log(checkEveryNum)
+const boolean = [true];
+const checkEveryBoolean = boolean.every((bool) => typeof bool == 'boolean')
+console.log(checkEveryBoolean)
+
+
+// find
+// find: Return the first element which satisfies the condition
+let numFind = [12, 34, 56, 78]
+const checkNumFind = numFind.find((name) => name <= 56)
+console.log(checkNumFind)
+
+
+let nameFind = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+let checkNameFind = nameFind.find((name) => name.includes('a'))
+console.log(checkNameFind)
+let checkNameFindForLength = nameFind.find((name) => name.length == 8);
+console.log(checkNameFindForLength);
+
+
+// findIndex
+// findIndex: Return the position of the first element which satisfies the condition
+
+const numberFindIndex = [12, 34, 39, 51]
+const numFindIndex = numberFindIndex.findIndex((index) => index > 39)
+console.log(numFindIndex)
+
+let nameFindIndex = ['Asabeneh', 'Elias', 'Brook', 'Mathias']
+const nameFindIndexCheck = nameFindIndex.findIndex((xx) => xx.length < 7)
+console.log(nameFindIndexCheck)
+
+
+// some
+// some: Check if some of the elements are similar in one aspect. It returns boolean
+const namesSome = ['Asabeneh', 'Mathias', 'Elias', 'Brook'];
+const bools = [true, true, true, true];
+const areAllStr = namesSome.some((name) => name == "string")
+console.log(areAllStr)
+const areAllBoolean = bools.some((bool) => bool == true)
+console.log(areAllBoolean)
+
+const numberSome = [12, 34, 39, 51]
+const checkSomenum = numberSome.some(num => num == 'number')
+console.log(checkSomenum)
+
+// sort
+// sort: The sort methods arranges the array elements either ascending or descending order. By default, the sort() method sorts values as strings.This works well for string array items but not for numbers. If number values are sorted as strings and it give us wrong result. Sort method modify the original array. It is recommended to copy the original data before you start using sort method.
+// sorting a string is very simplle and straight forward
+const namesSort = ['Asabeneh', 'Mathias', 'Elias', 'Brook'];
+console.log(namesSort.sort());
+
+// As you can see in the example below, 100 came first after sorted in ascending order. Sort converts items to string , since '100' and other numbers compared, 1 which the beginning of the string '100' became the smallest. To avoid this, we use a compare call back function inside the sort method, which return a negative, zero or positive.
+// const numbers = [9.81, 3.14, 100, 37]
+// Using sort method to sort number items provide a wrong result. see below
+// console.log(numbers.sort()) //[100, 3.14, 37, 9.81]
+const numberSort = [00, 100, 12, 34, 35, 34, 52, 39, 51]
+const numSortAscending = numberSort.sort((a, b) => {
+    return a - b
+})
+console.log(numSortAscending)
+const numberSort2 = [9.81, 3.14, 100, 37]
+const numsortDescending = numberSort2.sort((a, b) => {
+    return b - a
+})
+console.log(numsortDescending)
+
+// Sorting Object Arrays
+// Whenever we sort objects in an array, we use the object key to compare. Let us see the example below.
+// objArr.sort(function (a, b) {
+//     if (a.key < b.key) return -1
+//     if (a.key > b.key) return 1
+//     return 0
+// })
+let objArr = [
+    { name: 'usman', class: 'ss3', subject: 'Mathematics', mark: 16 },
+    { name: 'idris', class: '100Level', subject: 'Biology', mark: 89 },
+    { name: 'soliu', class: 'jss3', subject: 'English', mark: 9000 },
+    { name: 'Muhammad', class: '400level', subject: 'Chemistry', mark: 1000 }
+]
+
+objArr.sort(function (a, b) {
+    if (a.mark < b.mark) return -1
+    if (a.mark > b.mark) return 1;
+    return 0
+})
+console.log(objArr)
+
+const users = [
+    { name: 'Asabeneh', age: 150 },
+    { name: 'Brook', age: 50 },
+    { name: 'Eyob', age: 100 },
+    { name: 'Elias', age: 22 },
+]
+users.sort((a, b) => {
+    if (a.age < b.age) return -1
+    if (a.age > b.age) return 1
+    return 0
+})
+console.log(users)
