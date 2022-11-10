@@ -1,395 +1,84 @@
-// Explain the difference between forEach, map, filter, and reduce.
-// forEach function iterate an array and works with arrays only which returns a non array value
-// while map also iterate through an array and returns an array value. the difference is map returns an array while for each does not
-// The filter: filters out a full fill value in a new array
-// the Reduce function has an accumulator and the current prameter which only returns a single value, and also the initial value which must be added if not it will take the first value array as the initial which might give a wrong calc,
-// and if the array is empty the reduce function will throw an error
+const aE = [4, 5, 8, 9]
+const bE = [3, 4, 5, 7]
+const countriesE = ['Finland', 'Sweden', 'Norway']
+const countriesESet = new Set(countriesE)
+// 1. create an empty set
+const empty = new Set()
+console.log(empty)
 
-const countriesExercise = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
-const namesExercise = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
-const numbersExercise = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-const products = [
-    { product: 'banana', price: 3 },
-    { product: 'mango', price: 6 },
-    { product: 'potato', price: ' ' },
-    { product: 'avocado', price: 8 },
-    { product: 'coffee', price: 10 },
-    { product: 'tea', price: '' },
-]
+// 2. Create a set containing 0 to 10 using loop
+let s = []
+for (let i = 0; i, i <= 10; i++) {
+    s.push(i)
+}
+let Set1To10 = new Set(s)
+console.log(Set1To10)
 
-// 2.Define a callback function before you use it in forEach, map, filter or reduce.
-// a call back function is a function which can be pass to a parameter in another function
-
-// 3.Use forEach to console.log each country in the countries array.
-
-countriesExercise.forEach((country) => console.log(country))
-
-// 4.Use forEach to console.log each number in the numbers array.
-namesExercise.forEach(name => console.log(name))
-// 5.Use forEach to console.log each number in the numbers array.
-numbersExercise.forEach((num) => console.log(num))
-// 6.Use map to create a new array by changing each country to uppercase in the countries array.
-const countiresUpper = countriesExercise.map((upper) => upper.toUpperCase())
-console.log(countiresUpper)
-
-// 7.Use map to create an array of countries length from countries array.
-const cLength = countriesExercise.map((clength) => clength.length)
-console.log(cLength)
-
-// 8.Use map to create a new array by changing each number to square in the numbers array
-const numSq = numbersExercise.map((numsq) => numsq ** 2)
-console.log(numSq)
-
-// 9.Use map to change to each name to uppercase in the names array
-const upArr = namesExercise.map((name) => name.toUpperCase())
-console.log(upArr)
-
-// 10.Use map to map the products array to its corresponding prices.
-const pMap = products.map((price) => price)
-console.log(pMap)
-
-// 11.Use filter to filter out countries containing land.
-const filLand = countriesExercise.filter((land) => land.includes('land'))
-console.log(filLand)
-
-// 12.Use filter to filter out countries having six character.
-const countryWithSixCharacters = countriesExercise.filter((six) => six.length == 6)
-console.log(countryWithSixCharacters)
-
-// 13.Use filter to filter out countries containing six letters and more in the country array.
-const countryWithSixOrMore = countriesExercise.filter((sixMore) => sixMore.length >= 6)
-console.log(countryWithSixOrMore)
-
-// 14.Use filter to filter out country start with 'E';
-const countryStartE = countriesExercise.filter((E) => E.startsWith('E'))
-console.log(countryStartE)
-
-// 15.Use filter to filter out only prices with values.
-const productPrice = products.filter((ex) => ex.price)
-console.log(productPrice)
+// 3. Remove an element from a set
+countriesESet.delete('Finland')
+console.log(countriesESet)
 
 
-// 16.Declare a function called getStringLists which takes an array as a parameter and then returns an array only with string items.
-const q16 = countriesExercise.map((arr) => console.log(arr.toString()))
-// console.log(q16)
+// 4. Clear a set
+countriesESet.clear()
+console.log(countriesESet)
 
-// 17.Use reduce to sum all the numbers in the numbers array.
-const reduceSum = numbersExercise.reduce((acc, cur) => acc + cur, 0)
-console.log(reduceSum)
+// 5. Create a set of 5 string elements from array
 
-// 18.Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries
-const concatenateReduce = countriesExercise.reduce((countr, concatt) => countr + ' ' + concatt, 'Estonia')
-console.log(`${concatenateReduce} are all north European Countries`)
+const arrOfLang = ['Html', 'CSS', 'JavaScript', 'Python', 'React.js']
 
-//19. Explain the difference between some and every
-// Every iS checks if all the values are the same in one aspect and it returns a boolean
-// while some checks if values are the same in some aspect and it returns a boolean 
+const SetArrLang = new Set(arrOfLang)
+console.log(SetArrLang)
 
-// 20.Use some to check if some names' length greater than seven in names array
-let someCheck = namesExercise.some((name) => name.length > 7)
-console.log(someCheck)
-
-// 21.Use every to check if all the countries contain the word land
-let everyCheck = namesExercise.every((name) => name.includes('land'))
-console.log(everyCheck)
-
-// 22.Explain the difference between find and findIndex.
-// find is used to find or check whether a values has something or not and it returns the value. and it returns the first element that satifies the condition
-// while findIndex is used to check the index or the position of a particular value. it reuturns the index of the first element which satisfies the condition
-
-// 23.Use find to find the first country containing only six letters in the countries array
-let findC = countriesExercise.find(coun => coun.length == 6)
-console.log(findC)
-
-// 24.Use findIndex to find the position of the first country containing only six letters in the countries array
-
-findIndexC = countriesExercise.findIndex((cc) => cc.length == 6);
-console.log(findIndexC)
-
-// 25.Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1.
-findIndexNorway = countriesExercise.findIndex((nn) => nn.includes("Norway"))
-console.log(findIndexNorway)
-
-// 26.Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
-findIndexRussia = countriesExercise.findIndex((rr) => rr.includes('Russia'))
-console.log(findIndexRussia)
-console.log(products)
-const copyProducts = Object.assign({}, products)
-console.log(copyProducts)
-
-const keys = Object.keys(copyProducts)
-console.log(keys)
-const valus = Object.values(copyProducts)
-console.log(valus)
-
-
-const entries = Object.entries(copyProducts)
-console.log(entries)
-
-products.getprice = function () {
-    let xrr = this.price
-    return xrr;
+for (const c of SetArrLang) {
+    console.log(c)
 }
 
-console.log([`Exercise, 2, starts, here`])
-// 1.Find the total price of products by chaining two or more array iterators(eg. arr.map(callback).filter(callback).reduce(callback))
 
-let nn_3 = 0;
-const xx1 = products.map((nn1) => {
-    const xx2 = products.filter((nn2) => {
-        const xx3 = products.reduce((nn3, nn4) => {
-            return `${nn_3 += nn1.price}, ${nn2}, ${nn3 + nn4.price, 0}`
-        })
-        return xx3
-    })
-    return xx2
-})
-console.log(xx1)
-let nn_2 = 0;
-const pro_products = products.map((nn) => nn_2 += nn.price).filter((xx) => xx + xx).reduce((n, r) => n + r, 0)
-console.log(pro_products)
-// console.log(pro_products)
+// 6. Create a map of countries and number of characters of a country
 
-// 2. Find the sum of price of products using only reduce reduce(callback))
-const reduce_Product = products.reduce(($, _) => $ + _.price, 0)
-console.log(reduce_Product)
-
-const countriesAll = [
-    'Afghanistan',
-    'Albania',
-    'Algeria',
-    'Andorra',
-    'Angola',
-    'Antigua and Barbuda',
-    'Argentina',
-    'Armenia',
-    'Australia',
-    'Austria',
-    'Azerbaijan',
-    'Bahamas',
-    'Bahrain',
-    'Bangladesh',
-    'Barbados',
-    'Belarus',
-    'Belgium',
-    'Belize',
-    'Benin',
-    'Bhutan',
-    'Bolivia',
-    'Bosnia and Herzegovina',
-    'Botswana',
-    'Brazil',
-    'Brunei',
-    'Bulgaria',
-    'Burkina Faso',
-    'Burundi',
-    'Cambodia',
-    'Cameroon',
-    'Canada',
-    'Cape Verde',
-    'Central African Republic',
-    'Chad',
-    'Chile',
-    'China',
-    'Colombi',
-    'Comoros',
-    'Congo (Brazzaville)',
-    'Congo',
-    'Costa Rica',
-    "Cote d'Ivoire",
-    'Croatia',
-    'Cuba',
-    'Cyprus',
-    'Czech Republic',
-    'Denmark',
-    'Djibouti',
-    'Dominica',
-    'Dominican Republic',
-    'East Timor (Timor Timur)',
-    'Ecuador',
-    'Egypt',
-    'El Salvador',
-    'Equatorial Guinea',
-    'Eritrea',
-    'Estonia',
-    'Ethiopia',
-    'Fiji',
-    'Finland',
-    'France',
-    'Gabon',
-    'Gambia, The',
-    'Georgia',
-    'Germany',
-    'Ghana',
-    'Greece',
-    'Grenada',
-    'Guatemala',
-    'Guinea',
-    'Guinea-Bissau',
-    'Guyana',
-    'Haiti',
-    'Honduras',
-    'Hungary',
-    'Iceland',
-    'India',
-    'Indonesia',
-    'Iran',
-    'Iraq',
-    'Ireland',
-    'Israel',
-    'Italy',
-    'Jamaica',
-    'Japan',
-    'Jordan',
-    'Kazakhstan',
-    'Kenya',
-    'Kiribati',
-    'Korea, North',
-    'Korea, South',
-    'Kuwait',
-    'Kyrgyzstan',
-    'Laos',
-    'Latvia',
-    'Lebanon',
-    'Lesotho',
-    'Liberia',
-    'Libya',
-    'Liechtenstein',
-    'Lithuania',
-    'Luxembourg',
-    'Macedonia',
-    'Madagascar',
-    'Malawi',
-    'Malaysia',
-    'Maldives',
-    'Mali',
-    'Malta',
-    'Marshall Islands',
-    'Mauritania',
-    'Mauritius',
-    'Mexico',
-    'Micronesia',
-    'Moldova',
-    'Monaco',
-    'Mongolia',
-    'Morocco',
-    'Mozambique',
-    'Myanmar',
-    'Namibia',
-    'Nauru',
-    'Nepal',
-    'Netherlands',
-    'New Zealand',
-    'Nicaragua',
-    'Niger',
-    'Nigeria',
-    'Norway',
-    'Oman',
-    'Pakistan',
-    'Palau',
-    'Panama',
-    'Papua New Guinea',
-    'Paraguay',
-    'Peru',
-    'Philippines',
-    'Poland',
-    'Portugal',
-    'Qatar',
-    'Romania',
-    'Russia',
-    'Rwanda',
-    'Saint Kitts and Nevis',
-    'Saint Lucia',
-    'Saint Vincent',
-    'Samoa',
-    'San Marino',
-    'Sao Tome and Principe',
-    'Saudi Arabia',
-    'Senegal',
-    'Serbia and Montenegro',
-    'Seychelles',
-    'Sierra Leone',
-    'Singapore',
-    'Slovakia',
-    'Slovenia',
-    'Solomon Islands',
-    'Somalia',
-    'South Africa',
-    'Spain',
-    'Sri Lanka',
-    'Sudan',
-    'Suriname',
-    'Swaziland',
-    'Sweden',
-    'Switzerland',
-    'Syria',
-    'Taiwan',
-    'Tajikistan',
-    'Tanzania',
-    'Thailand',
-    'Togo',
-    'Tonga',
-    'Trinidad and Tobago',
-    'Tunisia',
-    'Turkey',
-    'Turkmenistan',
-    'Tuvalu',
-    'Uganda',
-    'Ukraine',
-    'United Arab Emirates',
-    'United Kingdom',
-    'United States',
-    'Uruguay',
-    'Uzbekistan',
-    'Vanuatu',
-    'Vatican City',
-    'Venezuela',
-    'Vietnam',
-    'Yemen',
-    'Zambia',
-    'Zimbabwe'
+const countriesMapE = [
+    ['Finland', 'Helsinki'],
+    ['Sweden', 'Stockholm'],
+    ['Norway', 'Oslo'],
+    ['Nigeria', 'Abuja']
 ]
+const mapOfC = new Map(countriesMapE)
+console.log(mapOfC)
+let y = []
+for (const [u, m] of mapOfC) {
+    y.push(u, m)
+}
+console.log(y.length)
 
-// 3.Declare a function called categorizeCountries which returns an array of countries which have some common pattern(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
-
-const categorizeCountries = countriesAll.filter((g, e) => g.includes('land'))
-console.log(categorizeCountries)
-
-const categorizeCountriesIa = countriesAll.filter((inn) => inn.includes('ia'))
-console.log(categorizeCountriesIa)
-
-const categorizeCountriesIsland = countriesAll.filter((ii) => ii.includes('island'))
-console.log(categorizeCountriesIsland)
-
-
-const categorizeCountriesStan = countriesAll.filter(sta => sta.includes('stan'))
-console.log(categorizeCountriesStan)
+const character = mapOfC.get('Finland')
+console.log('The length of Helsinki is finland is =' + ' ' + character.length)
 
 
-// 4. Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
-const letterAndNum = countriesAll.filter((ss) => ss.startsWith('A'))
-console.log([`A`, letterAndNum.length])
 
-// 5. Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
+// Exercises:Level 2
+console.log(['Exercises:Level 2'])
 
 
-let getFirstTenCountries = countriesAll.slice(0, 10).map((item) => {
-    return item;
-});
-console.log(getFirstTenCountries)
+// 1. Find a union b
 
-const getFirstTenCountries3 = countriesAll.slice(0, 10).filter((v) => v)
-console.log(getFirstTenCountries3)
+let num1 = [12, 2, 1, 3, 4, 5, 65, 89, 34, 12, 7, 9]
+let num2 = [14, 5, 6, 2, 1, 4, 5, 7, 78, 8, 34]
+const num1Set = new Set(num1)
+const num2Set = new Set(num2)
 
-// 6.Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
-let lastin = countriesAll.length;
-const lastTenCountryris = countriesAll.slice(lastin - 10, lastin).map((lTen) => lTen)
-console.log(lastTenCountryris)
+const both = ([...num1Set, ...num2Set])
+const bothSet = new Set(both)
+console.log(bothSet)
 
+// 2.Find a intersection b
+const filterForInter = num1.filter((n) => num2Set.has(n))
+const filterForInterSet = new Set(filterForInter)
+console.log(filterForInterSet)
 
-console.log(`Exercise level three starts here`)
-
-
+// 3. Find a with b
+const filterDifferenceE = num1.filter((a) => !num2Set.has())
+console.log(filterDifferenceE)
 
 
 
@@ -2407,211 +2096,22 @@ const countriesAllAndData = [
     }
 ]
 
-
-// 1. Use the countries information, in the data folder. Sort countries by name, by capital, by population
-
-
-
-
-
-countriesAllAndData.sort((a, b) => {
-    if (a.name < b.name) return -1
-    if (a.name > b.name) return 1
-    return 0
-})
-console.log(countriesAllAndData)
-
-countriesAllAndData.sort(function (a, b) {
-    if (a.capital < b.capital) return -1
-    if (a.capital > b.capital) return 1
-    return 0
-})
-
-console.log(countriesAllAndData)
-
-
-const sortPop = countriesAllAndData.sort(function (a, b) {
-    if (a.population < b.population) return -1;
-    if (a.population > b.population) return 1;
-    return 0;
-})
-console.log(sortPop)
-
-
-
-
-// 2.*** Use countries_data.js file create a function which create the ten most populated countries
-
-const sortPopDescend = countriesAllAndData.sort((b, a) => {
-    if (a.population < b.population) return -1
-    if (a.population > b.population) return 1
-    return 0
-})
-
-console.log(sortPopDescend)
-
-const sliceTenOfCountry = sortPopDescend.slice(0, 10).map((n) => n)
-console.log(sliceTenOfCountry)
-
-// *** Try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measures find the min, max, count, percentile, and frequency distribution of the sample. You can create an object called statistics and create all the functions which do statistical calculations as method for the statistics object. Check the output below.
-
-const agesStatics = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
-
-
-// Statistic Count =
-
-let ii = agesStatics.length
-console.log(`The count is ${ii}`)
-// console.log(meedian)
-// console.log(ii)
-
-let sumAge = 0;
-let agesStaticsSum = agesStatics.map((sum) => sumAge += sum)
-let toNum = [];
-
-// let forEachAgeStatics = agesStatics.map((n) => toNum += Math.max(n))
-// console.log(toNum)
-const cortAge = agesStatics.sort((a, b) => b - a)
-let max = cortAge[0]
-let min = cortAge[cortAge.length - 1]
-let range = max - min;
-let mean = sumAge / ii
-
-
-
-console.log('The sum =' + ' ' + sumAge)
-console.log('This max is' + ' ' + max)
-console.log('The min is' + ' ' + min)
-console.log('The range is' + ' ' + range)
-console.log('The mean is' + ' ' + mean)
-
-let lengthOfCor = cortAge.length
-let r2 = Math.floor(lengthOfCor / 2)
-
-
-if (lengthOfCor % 2 == 0) {
-    console.log(cortAge[lengthOfCor / 2])
-} else {
-    console.log(`The median is ${cortAge[r2]} `)
+let setCountryData = new Set(countriesAllAndData)
+console.log(setCountryData)
+let data = []
+let data2 = {}
+for (const c of setCountryData) {
+    const filterCountryData = countriesAllAndData.filter((n) => c == n)
+    data.push({ lang: c, data2: filterCountryData.length })
 }
+console.log(data)
 
 
 
-// var empty = []
-// i = 0
-// max = 0
-// while (i<list.length){
 
-//    if (list[i]==list[i+1]){
-//        empty = list[i] 
-//    i += 1
-//     }else{
-//       i +=1
-//       }
 
-//  }
-//  document.write(empty) 
 
-// list = [1,2,3,4,5,6,7,7]
-// counts = {}
-// list.forEach(function(e) {
-//   if(counts[e] === undefined) {
-//     counts[e] = 0
-//   }
-//   counts[e] += 1
-// })
 
-counts = {}
-cortAge.forEach(function (e) {
-    if (counts[e] === undefined) {
-        counts[e] = 0
-    }
-    counts[e] += 1
-}
-)
 
-console.log(counts)
 
-const variance = cortAge.map((n) => n - mean)
-const varianceSq = variance.map((n) => n ** 2)
-let sumSq = 0;
-const sumVarianceSq = varianceSq.forEach((s) => sumSq += s)
-console.log(sumSq)
-
-let finalAnsForVariance = sumSq / ii
-console.log('The Varaince is' + ' ' + finalAnsForVariance)
-
-let standardDeviation = Math.sqrt(finalAnsForVariance);
-console.log('The Standart Deviation is' + ' ' + standardDeviation)
-// S^2 = \frac{\sum (x_i - \bar{x})^2}{n - 1}
-
-
-
-const dis = cortAge.reduce((acc, item) => {
-    acc[item] = (acc[item] || 0) + 1
-    return acc
-}, {})
-console.log(dis)
-
-const copys = Object.assign({}, countriesAllAndData)
-console.log(copys)
-let keysCountries = Object.keys(copys)
-console.log(keysCountries)
-const valueCountries = Object.values(copys)
-console.log(valueCountries)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 7. Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc)
-
-// *** Exercise three number 2, Find the 10 most spoken languages:
-
-
-//  Exercise three number 4, how to find the mode and also the frequency distribution
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Exercise 3, question 1 and 2
