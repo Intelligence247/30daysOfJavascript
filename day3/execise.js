@@ -117,6 +117,7 @@ let present = new Date;
 let difference = present - past;
 console.log(difference)
 // or
+
 console.log(Date.now())
 
 
