@@ -92,3 +92,131 @@ const [namesn, [...skillsn], [, , jsScore, reactScore]] = student
 console.log(namesn, skillsn, jsScore, reactScore)
 
 // 3. Write a function called convertArrayToObject which can convert the array to a structure object.
+
+
+
+
+
+
+const students = [
+    ['David', ['HTM', 'CSS', 'JS', 'React'], [98, 85, 90, 95]],
+    ['John', ['HTM', 'CSS', 'JS', 'React'], [85, 80, 85, 80]]
+]
+
+const [[nameso, [...skillso], [...scoreso]], [nameso2, [...skillso2], [...scoreso2]]] = students
+console.log([[nameso, [skillso], [scoreso]], [nameso2, [skillso2], [scoreso2]]]);
+
+const ok = () => {
+    const [[nameso, [...skillso], [...scoreso]], [nameso2, [...skillso2], [...scoreso2]]] = students
+
+    return `{
+        name: ${nameso}
+        skills: ${skillso}
+        scores: ${scoreso}
+    },
+    {
+    name: ${nameso2}
+    skills: ${skillso2}
+    scores: ${scoreso2}
+    }`
+}
+console.log(ok(students))
+
+const fullStacksE = [
+    ['HTML', 'CSS', 'JS', 'React'],
+    ['Node', 'Express', 'MongoDB']
+]
+
+const xx = []
+for (const [first, second, third] of fullStacksE) {
+    xx.push([{ first }, { second }, { third }])
+}
+console.log(xx)
+
+
+
+// correct Answer = below
+const convertArrayToObject = (param) => {
+    const x1 = param[0][0]
+    const x2 = param[0][1]
+    const x3 = param[0][2]
+    const x4 = param[1][0]
+    const x5 = param[1][1]
+    const x6 = param[1][2]
+    return (
+        [
+            {
+                name: x1,
+                skills: x2,
+                scores: x3,
+            },
+            {
+                name: x4,
+                skills: x5,
+                scores: x6
+            }
+        ]
+    )
+}
+
+console.log(convertArrayToObject(students))
+
+
+// 4. Copy the student object to newStudent without mutating the original object. In the new object add the following ?
+const newStudent = { ...student }
+console.log(newStudent)
+
+
+// * Add Bootstrap with level 8 to the front end skill sets
+
+const studentBoo = {
+    name: 'David',
+    age: 25,
+    skills: {
+        frontEnd: [
+            { skill: 'HTML', level: 10 },
+            { skill: 'CSS', level: 8 },
+            { skill: 'JS', level: 8 },
+            { skill: 'React', level: 9 }
+        ],
+        backEnd: [
+            { skill: 'Node', level: 7 },
+            { skill: 'GraphQL', level: 8 },
+        ],
+        dataBase: [
+            { skill: 'MongoDB', level: 7.5 },
+        ],
+        dataScience: ['Python', 'R', 'D3.js']
+    }
+}
+
+
+const addBoo = (skills, levels) => {
+    return studentBoo.skills.frontEnd.concat({
+        skill: skills,
+        level: levels
+    })
+}
+console.log(addBoo('BootStrap', 8))
+
+
+const addExpress = (ski, lev) => {
+    return studentBoo.skills.backEnd.concat({
+        skill: ski,
+        level: lev,
+    })
+}
+console.log(addExpress('Express', 9))
+
+const addSql = (ski, lev) => {
+    return studentBoo.skills.dataBase.concat({
+        skill: ski,
+        level: lev,
+    })
+}
+console.log(addSql('SQL', 8))
+
+const addSqlWithoutLev = (ski) => {
+    return studentBoo.skills.dataScience.concat(ski)
+}
+console.log(addSqlWithoutLev('SQL'))

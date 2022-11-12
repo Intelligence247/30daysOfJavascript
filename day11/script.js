@@ -77,7 +77,7 @@ const fullStacks = [
 ]
 
 for (const [first, second, third] of fullStacks) {
-    console.log(first, second, third)
+    console.log({first, second, third})
 }
 
 //   Destructuring objects
