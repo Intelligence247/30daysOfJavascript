@@ -1,58 +1,94 @@
-// Destructuring and Spread
-// Destructuring is a way to unpack arrays, and objects and assigning to distinct variable.
+// Exercises: Level 1
+const constants = [2.72, 3.14, 9.81, 37, 100]
+const countriesExercise = ['Finland', 'Estonia', 'Sweden', 'Denmark', 'Norway']
+const rectangleExercise = {
+    widthExercise: 20,
+    heightExercise: 10,
+    areaExercise: 200,
+    perimeterExercise: 60
+}
+const usersExercise = [
+    {
+        name: 'Brook',
+        scores: 75,
+        skills: ['HTM', 'CSS', 'JS'],
+        age: 16
+    },
+    {
+        name: 'Alex',
+        scores: 80,
+        skills: ['HTM', 'CSS', 'JS'],
+        age: 18
+    },
+    {
+        name: 'David',
+        scores: 75,
+        skills: ['HTM', 'CSS'],
+        age: 22
+    },
+    {
+        name: 'John',
+        scores: 85,
+        skills: ['HTML'],
+        age: 25
+    },
+    {
+        name: 'Sara',
+        scores: 95,
+        skills: ['HTM', 'CSS', 'JS'],
+        age: 26
+    },
+    {
+        name: 'Martha',
+        scores: 80,
+        skills: ['HTM', 'CSS', 'JS'],
+        age: 18
+    },
+    {
+        name: 'Thomas',
+        scores: 90,
+        skills: ['HTM', 'CSS', 'JS'],
+        age: 20
+    }
+]
+// 1. Destructure and assign the elements of constants array to e, pi, gravity, humanBodyTemp, waterBoilingTemp.
 
-// Destructuring Arrays
+const [eExercise, piExercise, gravityExercise, humanBodyTempExercise, waterBoilingTempExercise] = constants
+console.log(eExercise, piExercise, gravityExercise, humanBodyTempExercise, waterBoilingTempExercise)
+// 2. Destructure and assign the elements of countries array to fin, est, sw, den, nor
+const [fin, est, sw, den, nor] = countriesExercise
+console.log(fin, est, sw, den, nor)
+// 3. Destructure the rectangle object by its properties or keys.
+const { widthExercise, heightExercise, areaExercise, perimeterExercise } = rectangleExercise
+console.log(widthExercise, heightExercise, areaExercise, perimeterExercise)
 
-const number = [1, 45, 'Abdullahi']
-let [numOne, numTwo, myName] = number
-console.log(numOne, numTwo, myName)
+const spreadRectangleExercise = { ...rectangleExercise }
+console.log(spreadRectangleExercise)
 
+for (const us of usersExercise) {
+    console.log(us)
+}
+// Exercises: Level 2
+// Iterate through the users array and get all the keys of the object using destructuring
 
-const names = ['Asabeneh', 'Brook', 'David', 'John']
-let [firstPerson, secondPerson, thirdPerson, fourthPerson] = names
-
-console.log(firstPerson, secondPerson, thirdPerson, fourthPerson)
-
-const scientificConstants = [2.72, Math.PI, 9.81, 37, 100]
-let [e, pi, gravity, bodyTemp, boilingTemp] = scientificConstants;
-console.log(e, pi, gravity, bodyTemp, boilingTemp)
-
-const fullStack = [
-    ['HTML', 'CSS', 'JS', 'React'],
-    ['Node', 'Express', 'MongoDB'],
-];
-
-let [frontEnd, backEnd] = fullStack;
-console.log(frontEnd)
-console.log(backEnd)
-console.log(frontEnd, backEnd);
-
-
-// If we like to skip on of the values in the array we use additional comma. The comma helps to omit the value at that specific index
-const ages = [23, 45, 67]
-let [firstAge, , thirdAge] = ages;
-console.log(firstAge, thirdAge)
-
-const nickNames = ['Babatunde', 'Adisa', 'Aremu', 'Intelligence', 'Alao', 'Ajao', 'Alake']
-
-const [first, , , second] = nickNames
-console.log(first, second)
+const { name, scores, skills, age } = usersExercise
+console.log(name, scores, skills, age)
+for (const { name, scores, skills, age } of usersExercise) {
+    console.log(name, scores, skills, age)
+}
+// 2. Find the persons who have less than two skills
+const lessThanTwoskills = (obj) => {
+    const findless = usersExercise.find((n) => n.skills.length < 2)
+    if (findless) {
+        return findless
+    }
+}
+console.log(lessThanTwoskills())
 
 
-// We can use default value in case the value of array for that index is undefined:
-const hisName = [undefined, 'Brook', 'David']
-const [
-    person1 = 'Asabeneh',
-    person2,
-    person3,
-    person4 = 'John'
-] = hisName
-console.log(firstPerson, secondPerson, thirdPerson, fourthPerson)
+// 2. A junior developer structure student name, skills and score in array of arrays which may not easy to read. Destructure the following array name to name, skills array to skills, scores array to scores, JavaScript score to jsScore and React score to reactScore variable in one line.
+const student = ['David', ['HTM', 'CSS', 'JS', 'React'], [98, 85, 90, 95]]
+const [namesn, [...skillsn], [, , jsScore, reactScore]] = student
+console.log(namesn, skillsn, jsScore, reactScore)
 
-// We can not assign variable to all the elements in the array. We can destructure few of the first and we can get the remaining as array using spread operator(...).
-
-const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-const [num1, num2, num3, num4, ...rest] = nums
-console.log(num1, num2, num3, num4)
-console.log(rest)
-
+// 3. Write a function called convertArrayToObject which can convert the array to a structure object.

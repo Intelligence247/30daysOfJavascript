@@ -354,19 +354,22 @@ const rateProduct = (rate, user, productId) => {
         return p
     })
 }
-console.log(rateProduct(4, "y77yff", "aegfal"))
+console.log(rateProduct(14, "y77yff", "hedfcg"))
+
+
+
 
 let empty = [];
-const likeProduct = (likes) => {
-    const likesExist = users2.find((l) => l.likes == likes)
+const likeProduct = (likes, productId) => {
+    return products.map((l) => {
+        if (l.likes == productId) {
+            l.likes.push({ likes: likes })
+        }
+        return l
+    })
 
-    if (likesExist) {
-
-    } else {
-        return 'fg12cy'
-    }
 }
-console.log(likeProduct([]))
+console.log(likeProduct('g12cy', 'hdfcg'))
 
 
 
