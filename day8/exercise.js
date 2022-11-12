@@ -305,12 +305,24 @@ const signUp = ({ email, password, username }) => {
         return "User exist"
     } else {
         const generateid = () => Math.random().toString(36).substr(2, 6)
+        let date = new Date();
+        const ampm = (am, pm) => {
+            let hour = date.getHours();
+            if (hour <= 12) {
+                return am
+            } else if (hour >= 13) {
+                return pm
+            }
+        }
+        let createdate = `${date.getMonth() + 1}/${date.getDate()}/${date.getDay()} ${date.getHours()}:${date.getMinutes()} ${ampm('AM', 'PM')}`;
+
         console.log(generateid())
         return users2.concat({
             _id: generateid(),
             username: username,
-            email: email, password: password,
-            createdAt: "",
+            email: email,
+            password: password,
+            createdAt: createdate,
             isLoggedIn: false
         })
     }
@@ -344,6 +356,79 @@ const rateProduct = (rate, user, productId) => {
 }
 console.log(rateProduct(4, "y77yff", "aegfal"))
 
-const likeProduct = (like) => {
+let empty = [];
+const likeProduct = (likes) => {
+    const likesExist = users2.find((l) => l.likes == likes)
 
+    if (likesExist) {
+
+    } else {
+        return 'fg12cy'
+    }
 }
+console.log(likeProduct([]))
+
+
+
+
+
+
+
+
+
+// console.log(date.toLocaleDateString('en-US', { minutes: 'numeric', hour12: true }))
+// var time = new Date();
+// console.log(
+//     time.toLocaleString('en-US', { our: 'numeric', hour12: true })
+// );
+
+const hsl = Math.random().toString(16).substr(2, 6)
+console.log(hsl)
+
+
+
+
+const signUp2 = (username, email, password) => {
+    const userExist = users2.find((u) => u.username == username)
+    if (userExist) {
+        return 'User Already Exist'
+    } else {
+
+        let date = new Date();
+        const ampm = (am, pm) => {
+            let hour = date.getHours();
+            if (hour <= 12) {
+                return am
+            } else if (hour >= 13) {
+                return pm
+            }
+        }
+        let createdate = `${date.getMonth() + 1}/${date.getDate()}/${date.getDay()} ${date.getHours()}:${date.getMinutes()} ${ampm('AM', 'PM')}`;
+
+        const idg = Math.random().toString(36).substr(2, 6)
+        return users2.concat({
+            _id: idg,
+            username: username,
+            email: email,
+            password: password,
+            createdAt: createdate,
+            isLoggedIn: false,
+        })
+    }
+}
+
+console.log(signUp2('Intelligence', 'Uthmanabdullahi2020@gmail.com', '84264854'))
+
+const signIn2 = (email, password) => {
+    const userExist = users2.find((x) => x.email == email)
+    if (!userExist) {
+        return 'Kindly sign up'
+    } else {
+        if (userExist.password == password) {
+            return 'Welcome you have successfully signed-in'
+        } else {
+            return 'Wrong password'
+        }
+    }
+}
+console.log(signIn2('martha@martha.com', '123222'))
