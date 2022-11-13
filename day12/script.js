@@ -67,3 +67,172 @@ console.log(searchResult)
 console.log(search2)
 
 // Searching cannot be alter whether g is present or not
+
+// Replacing a substring
+// replace(): Executes a search for a match in a string, and replaces the matched substring with a replacement substring.
+
+const txt = `Python is the most beautiful language that a human begin has ever created. \
+I recommend python for a first programming language`
+
+const matchReplace = txt.replace(/python|Python/, 'JavaScript')
+console.log(matchReplace)
+
+const txt2 = 'Python is the most beautiful language that a human begin has ever created.\
+I recommend python for a first programming language'
+
+const matchReplace2 = txt2.replace(/python/gi, 'JavaScript')
+console.log(matchReplace2)
+
+const matchReplace3 = txt.replace(/Python|python/, 'JavaScript')
+console.log(matchReplace3)
+
+matches = txt.replace(/%/g, ' ')
+console.log(matches)
+
+const txtWithPercent = '%I a%m te%%a%%che%r% a%n%d %% I l%o%ve te%ach%ing.\
+T%he%re i%s n%o%th%ing as m%ore r%ewarding a%s e%duc%at%i%ng a%n%d e%m%p%ow%er%ing \
+p%e%o%ple.\
+I fo%und te%a%ching m%ore i%n%t%er%%es%ting t%h%an any other %jobs.\
+D%o%es thi%s m%ot%iv%a%te %y%o%u to b%e a t%e%a%cher.'
+
+const replacePercent = txtWithPercent.replace(/%/g, '')
+console.log(replacePercent)
+
+// Let's use example to clarify the above meta characters
+// Square Bracket
+// Let's use square bracket to include lowercase and uppercase
+
+const lowerAndUpper = '[Aa]pple' // This square bracket means either A or a
+const txtApple = 'Apple and banana are fruits. An old cliche says an apple a day keeps the  doctor way has been replaced by a banana a day keeps the doctor far far away. '
+
+const matches2 = txtApple.match(lowerAndUpper)
+console.log(matches2)
+
+
+const lowerAndUpper2 = /[Aa]pple/g
+const matchesLower2 = txtApple.match(lowerAndUpper2)
+console.log(matchesLower2)
+
+// If we want to look for the banana, we write the pattern as follows:
+const txtApple2 = 'Apple and banana are fruits. An old cliche says an apple a day a doctor way has been replaced by a banana a day keeps the doctor far far away. Banana is easy to eat too.'
+
+const patternForBanana = /[Aa]pple|[Bb]anana/g
+const bananaResult = txtApple2.match(patternForBanana)
+console.log(bananaResult)
+
+// Escape character(\) in RegExp
+
+const patternEscape = /\d/g  // d is a special character which means digits
+const txtEscape = 'This regular expression example was made in January 12,  2020.'
+const matchesEscape = txtEscape.match(patternEscape)
+
+console.log(matchesEscape)  // ["1", "2", "2", "0", "2", "0"], this is not what we want
+const historyPattern = /\d/g; //This means to escape all the alphabet excluding the numbers
+const history = 'My name is Usman Abdullahi Babatunde, you can call me "Intelligence". I was born in the year 1990 and I am currently 32 years old';
+
+const historyResult = history.match(historyPattern)
+console.log(historyResult)
+
+// Note (d) is a special character which means digit, for this reason it goes for numbers and not alphabets always
+
+// One or More times(+)
+const patternEscape2 = /\d+/g
+const matchesEscape2 = txtEscape.match(patternEscape2)
+console.log(matchesEscape2) // ["12", "2020"], this is not what we want
+
+// Period(.)
+const periodPattern = /[a]./g // square bracket only means a, while . means any character except new line
+const textPeriod = 'Apple and banana are fruits'
+const matchperiod = textPeriod.match(periodPattern)
+console.log(matchperiod)
+
+// To make this a meaning full word we are going to add + so that it joins them together and it means occurence of any character one or more times
+const periodPattern2 = /[a].+/g
+const periodPatternA = /[Aa].+/g
+const matchperiodA = textPeriod.match(periodPatternA)
+const matchperiod2 = textPeriod.match(periodPattern2)
+console.log(matchperiod2, matchperiodA)
+
+
+// Zero or more times(*)
+// This means the pattern may occur many times and may not occur at all
+
+const baAp = 'Apple and banana are fruits'
+const patternBaAp = /[a].*/g // * it means a may not occur or occur many times
+const matchBaAp = baAp.match(patternBaAp)
+console.log(matchBaAp)
+
+// Zero or one times(?)
+// Zero or one times means it may not occur or it may occur once
+
+const txtQue = 'I am not sure if there is a convention how to write the word e-mail.\
+Some people write it email others may write it as Email or E-mail.'
+const patternQue = /[Ee]-?mail/g
+const matchQue = txtQue.match(patternQue)
+console.log(matchQue)
+
+
+// Quantifier in RegExp
+// We can specify the length of the substring we look for in a text, using a curly bracket. Let us see, how to use RegExp quantifiers. Imagine, we are interested in substring that their length are 4 characters
+
+const txtQuantifier = 'This regular expression example was made in December 6,  2019.'
+const patternQuantity = /\b\w{4}\b/g
+const matchQuantity = txtQuantifier.match(patternQuantity)
+console.log(matchQuantity)
+
+const txtw = 'This regular expression example was made in December 6,  2019.'
+const patternw = /\b\w{4}\b/g  //  exactly four character words
+const matchesw = txtw.match(patternw)
+console.log(matchesw)  //['This', 'made', '2019']
+// /\b[a-zA-Z]{4}\b/g
+const patternj = /\b[a-zA-Z]{4}\b/g // four characters of words without numbers
+const matchOfpatterj = txtw.match(patternj)
+console.log(matchOfpatterj)
+
+const numPattern = /\d{4}/g
+const numPattern2 = /\d{1,4}/g
+const matchNum = txtw.match(numPattern);
+const matchNUm2 = txtw.match(numPattern2)
+console.log(matchNum)
+console.log(matchNUm2)
+
+
+// Cart ^
+// Starts with
+const patternStartWith = /^this/gi // ^ means start with
+const matchStartsWith = txtw.match(patternStartWith)
+console.log(matchStartsWith)
+
+// Negation
+const patternNegation = /[^A-Za-z,. ]+/g // ^ in set character means negation, not A to Z, not a to z, no space, no comma no period
+const matchNegation = txtw.match(patternNegation)
+console.log(matchNegation)
+
+// Exact match
+let patternExactMatch = /^[A-Z][a-z]{3,12}$/;
+let name = 'Abdullahiusma';
+let resultExactMatch = patternExactMatch.test(name)
+console.log(resultExactMatch)
+
+// This will only be true if the length of the name is >=4 && name's length is <=13, it will be false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Link to Regular expression cheat Sheet
+// https://github.com/Asabeneh/30-Days-Of-JavaScript/blob/master/images/regex.png
