@@ -360,16 +360,17 @@ console.log(rateProduct(14, "y77yff", "hedfcg"))
 
 
 let empty = [];
-const likeProduct = (likes, productId) => {
+const likeProduct = (userId, productId) => {
     return products.map((l) => {
-        if (l.likes == productId) {
-            l.likes.push({ likes: likes })
-        }
+        if (l._id == productId) {
+            if (l.likes.includes(userId)) {
+                return { ...l, likes: l.likes.filter((m) => m !== userId) }
+            }        }
         return l
     })
 
 }
-console.log(likeProduct('g12cy', 'hdfcg'))
+console.log(likeProduct('fg12cy', 'hedfcg'))
 
 
 
@@ -435,3 +436,4 @@ const signIn2 = (email, password) => {
     }
 }
 console.log(signIn2('martha@martha.com', '123222'))
+

@@ -2531,7 +2531,6 @@ cortAge.forEach(function (e) {
 )
 
 console.log(counts)
-
 const variance = cortAge.map((n) => n - mean)
 const varianceSq = variance.map((n) => n ** 2)
 let sumSq = 0;
@@ -2570,15 +2569,29 @@ console.log(valueCountries)
 
 
 
-
-
-
-
-
-
-
-
 // 7. Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc)
+const obj = {}
+countriesAll.map(c => {
+    if (obj[c[0]]) {
+        obj[c[0]] = obj[c[0]] + 1
+    } else {
+        obj[c[0]] = 1
+    }
+})
+let maxx = 0
+for (const c in obj) {
+    if (obj[c] > maxx) {
+        maxx = obj[c]
+    }
+}
+for (const c in obj) {
+    if (obj[c] == maxx) {
+        console.log(c)
+    }
+}
+
+
+
 
 // *** Exercise three number 2, Find the 10 most spoken languages:
 
@@ -2612,6 +2625,35 @@ console.log(valueCountries)
 
 
 
+// const score = scores.find((user) => user.score > 80)
+// console.log(score)
+// const getLanguages = countriesAllAndData.map((n) => n.languages)
+// console.log(getLanguages)
+// const getLanguagesCopy = Object.assign(getLanguages)
+// const getValues = Object.values(getLanguagesCopy)
+// const getValueJoin = getValues.join(' ')
+// console.log(getValues)
 
 
+const lang = []
+countriesAllAndData.forEach((c) => {
+    for (const l of c.languages) {
+        const langExist = lang.find(lan => lan.country === l)
+        const langExistIndex = lang.findIndex(lan => lan.country === l)
+        if (langExist) {
+            lang.splice(langExistIndex, 1, { ...langExist, count: langExist.count + 1 })
+        } else {
+            lang.push({ country: l, count: 1 })
+        }
+    }
+})
+// console.log(lang) 
+lang.sort((b, a) => {
+    if (a.count < b.count) return -1
+    if (a.count > b.count) return 1
+    return 0
+})
+console.log(lang)
 
+const zeroToTen = lang.slice(0, 10)
+console.log(zeroToTen)
