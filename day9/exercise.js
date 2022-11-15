@@ -2653,7 +2653,7 @@ lang.sort((b, a) => {
     if (a.count > b.count) return 1
     return 0
 })
-console.log(lang)
+// console.log(lang)
 
 const zeroToTen = lang.slice(0, 10)
 console.log(zeroToTen)

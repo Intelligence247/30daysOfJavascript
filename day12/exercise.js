@@ -114,6 +114,13 @@ console.log(cleanText(sentence))
 
 const wordSplit = cleanText(sentence).split(' ')
 console.log(wordSplit)
+
+
+// for (const c of wordSplit) {
+//     c.find(n => n == c)
+//     console.log(c)
+// }
+
 let wordsArray = ["why", "would", "you", "pay", "for", "a", "phone", "?", "-"];
 var regex = /^[a-zA-Z0-9]*$/;
 let grouped = wordSplit.reduce(function (acc, curr) {

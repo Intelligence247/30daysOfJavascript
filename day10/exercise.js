@@ -2106,12 +2106,41 @@ for (const c of setCountryData) {
 }
 console.log(data)
 
+let lang = []
+countriesAllAndData.map((n) => {
+    for (const c of n.languages) {
+        // console.log(c)
+        const langExist = lang.find((d) => d.country === c)
+        const langIndex = lang.findIndex((d) => d.country === c)
+        if (langExist) {
+            lang.splice(langIndex, 1, { ...langExist, count: langExist.count + 1 })
+        } else {
+            lang.push({ country: c, count: 1 })
+        }
+    }
+})
 
 
 
+lang.sort((a, b) => {
+    if (a.count > b.count) return -1
+    if (a.count < b.count) return 1
+    return 0
+})
+console.log(lang)
 
-
-
-
-
+console.log(lang.splice(0, 10))
 // Exercise 3, question 1 and 2
+
+
+let counting = []
+let sumx = 0
+countriesAllAndData.map((n) => {
+    for (const b of n.languages) {
+        const filterSame = languages.filter((lan) => lan === b)
+        sumx += filterSame.length
+        counting.push({ lang: b, counts: filterSame.length })
+    }
+})
+console.log(sumx)
+console.log(counting)
