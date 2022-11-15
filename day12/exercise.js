@@ -101,8 +101,7 @@ const tenMostFrequentWords = (param, param2) => {
 }
 console.log(tenMostFrequentWords(paragraph, 10))
 
-// Exercises: Level 3
-// Writ a function which cleans text. Clean the following text. After cleaning, count three most frequent words in the string.
+
 
 sentence = `%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?`
 function cleanText(param) {
@@ -122,6 +121,7 @@ console.log(wordSplit)
 // }
 
 let wordsArray = ["why", "would", "you", "pay", "for", "a", "phone", "?", "-"];
+
 var regex = /^[a-zA-Z0-9]*$/;
 let grouped = wordSplit.reduce(function (acc, curr) {
 
@@ -142,3 +142,6 @@ let grouped = wordSplit.reduce(function (acc, curr) {
 })
 
 console.log(grouped)
+
+// Exercises: Level 3
+// Writ a function which cleans text. Clean the following text. After cleaning, count three most frequent words in the string.

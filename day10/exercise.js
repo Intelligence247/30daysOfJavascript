@@ -2144,3 +2144,5 @@ countriesAllAndData.map((n) => {
 })
 console.log(sumx)
 console.log(counting)
+
+console.table(countriesAllAndData)
