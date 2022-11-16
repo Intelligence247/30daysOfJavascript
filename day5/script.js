@@ -161,7 +161,7 @@ console.log(numbersSlice.slice(1, 4))
 
 const numbers1Splice = [1, 2, 3, 4, 5]
 numbers1Splice.splice(0, 4)
-console.log(numbers1Splice)                // -> remove all items
+console.log(numbers1Splice)    // -> remove all items
 
 const numbers2Splice = [1, 2, 3, 4, 5]
 numbers2Splice.splice(0, 1)
@@ -236,5 +236,8 @@ console.log(fullStack[0].length);
 console.log(fullStack[1].length);
 
 
-
-
+const norms = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+norms.splice(4, 2, 55, 66)
+console.log(norms)
+// And i say: splice removes the number you set it too in the console while slice prints the numbers you set them too;
+// And also splice can replace the romoved value, but note the first two values set in splice are to splice while the third till infinity are for replacement

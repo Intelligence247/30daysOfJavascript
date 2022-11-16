@@ -767,16 +767,50 @@ let arrand = [x, x, x, x, x, x, x]
 console.log(arrand)
 
 
+// 17. Declare a function name randomHexaNumberGenerator. When this function is called it generates a random hexadecimal number. The function return the hexadecimal number.
 
+const randomHexaNumberGenerator2 = () => {
+    const numl = '1234567890abcdef'
+    id = ''
+    for (let i = 0; i <= 5; i++) {
+        const ran = Math.floor(Math.random() * numl.length)
+        id += numl.charAt(ran)
 
+    }
+    return '#' + id
+}
+console.log(randomHexaNumberGenerator2())
 
+const nn = (param) => {
+    let cha = 'abcdef1234567890'
+    let id = ''
+    let id2 = ''
+    for (let i = 0; i <= param; i += 1) {
+        let ran = Math.floor(Math.random() * cha.length)
+        id += cha.charAt(ran)
+    }
+    return '#' + id
+}
+console.log(nn(12))
 
+const repit = () => {
+    let id = ''
+    let arr = [];
+    let characters = '1234567890abdcef'
+    let leng = prompt('Enter the length of the random number you want')
+    let num = prompt('Enter the number of random numbe you want')
+    for (let i = 0; i <= num; i++) {
+        for (let i = 0; i <= leng; i++) {
+            let rand = Math.floor(Math.random() * characters.length)
+            id += characters.charAt(rand)
 
+        }
+        arr.push(ran)
 
-
-
-
-
+    }
+    return arr
+}
+console.log(repit())
 
 
 
