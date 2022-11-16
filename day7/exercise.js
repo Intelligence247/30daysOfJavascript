@@ -810,7 +810,7 @@ const repit = () => {
     }
     return arr
 }
-console.log(repit())
+// console.log(repit())
 
 
 
