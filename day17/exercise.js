@@ -76,3 +76,50 @@ console.log(account.totalExpenses())
 
 const stringifyPersonAcc = JSON.stringify(account, undefined, 4)
 console.log(stringifyPersonAcc)
+
+// Create an object called personAccount. It has firstname, lastname, incomes, expenses properties and it has totalIncome, totalExpense, accountInfo,addIncome, addExpense and accountBalance methods. Incomes is a set of incomes and its description and expenses is also a set of expenses and its description.
+const personAccount = {
+    firstName: 'Usman',
+    lastName: 'Abdullahi',
+    incomes: [23, 67, 89],
+    expenses: [12, 78, 3],
+    addExpense: function () {
+        let add = [23, 56]
+        let ans = add.concat(this.expenses)
+        return ans
+    },
+    addIncome: function () {
+        let addI = [12, 56, 90]
+        return this.incomes.concat(addI)
+    },
+    totalIncome: function () {
+        let sum = 0
+        for (let i = 0; i < this.addIncome().length; i++) {
+            sum += this.addIncome()[i]
+        }
+        return sum
+    },
+    totalExpenses: function () {
+        let sum = 0
+        for (let i = 0; i < this.addExpense().length; i++) {
+            sum += this.addExpense()[i]
+        }
+        return sum
+    },
+    accounBalance: function () {
+        let balance = this.totalIncome() - this.totalExpenses()
+        return balance
+    },
+    accountInfo: function () {
+        let info = `${this.firstName + ' ' + this.lastName} is the owner of this account with expenses (${this.addExpense()}) and income of (${this.addIncome()}) and a total Expense and Income of (#${this.totalExpenses()}),(#${this.totalIncome()}) respectifully. 
+        and also with accountBalance of of (#${this.accounBalance()})`
+        return info
+    },
+}
+console.log(personAccount.totalExpenses())
+console.log(personAccount.totalIncome())
+console.log(personAccount.accounBalance())
+console.log(personAccount.accountInfo())
+const personAccountStr = JSON.stringify(personAccount)
+localStorage.setItem('PeronsAccount', personAccountStr)
+console.log(localStorage)
