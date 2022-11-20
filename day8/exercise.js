@@ -365,7 +365,8 @@ const likeProduct = (userId, productId) => {
         if (l._id == productId) {
             if (l.likes.includes(userId)) {
                 return { ...l, likes: l.likes.filter((m) => m !== userId) }
-            }        }
+            }
+        }
         return l
     })
 

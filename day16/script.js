@@ -180,3 +180,110 @@ const reviver = JSON.parse(ss, (key, value) => {
     return newV
 })
 console.log(reviver)
+
+
+// The JSON.parse() is very handy to use. You do not have to pass optional parameter, you can just use it with the required parameter and you will achieve quite a lot.
+
+// Converting Object to JSON
+// When we want to change the object to JSON we use JSON.stringify(). THe stringify() Method takes one required parameter and two Optional parameters. The replacer is used as filter and the space is an indentations. if we do not want to filter out any of the keys from the object we can just pass undefined. 
+
+// JSON.stringify(obj, replacer, space)
+// JSON or Text, the data
+// reviver is an optional callback function
+
+
+// Let us convert the following object to a string. First let use keep all the keys and also let us have 4 space indentation.
+
+const usersToJson = {
+    Alex: {
+        email: 'alex@alex.com',
+        skills: ['HTML', 'CSS', 'JavaScript'],
+        age: 20,
+        isLoggedIn: false,
+        points: 30
+    },
+    Asab: {
+        email: 'asab@asab.com',
+        skills: [
+            'HTML',
+            'CSS',
+            'JavaScript',
+            'Redux',
+            'MongoDB',
+            'Express',
+            'React',
+            'Node'
+        ],
+        age: 25,
+        isLoggedIn: false,
+        points: 50
+    },
+    Brook: {
+        email: 'daniel@daniel.com',
+        skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+        age: 30,
+        isLoggedIn: true,
+        points: 50
+    },
+    Daniel: {
+        email: 'daniel@alex.com',
+        skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+        age: 20,
+        isLoggedIn: false,
+        points: 40
+    },
+    John: {
+        email: 'john@john.com',
+        skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+        age: 20,
+        isLoggedIn: true,
+        points: 50
+    },
+    Thomas: {
+        email: 'thomas@thomas.com',
+        skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+        age: 20,
+        isLoggedIn: false,
+        points: 40
+    },
+    Paul: {
+        email: 'paul@paul.com',
+        skills: [
+            'HTML',
+            'CSS',
+            'JavaScript',
+            'MongoDB',
+            'Express',
+            'React',
+            'Node'
+        ],
+        age: 20,
+        isLoggedIn: false,
+        points: 40
+    }
+}
+
+const txt = JSON.stringify(usersToJson, undefined, 4)
+console.log(txt) // text means JSON- because json is a string form of an object.
+
+// Using a filter Array with JSON.stringify
+// using the replacer as filter. means using filter array with JSON.stringify()
+// We can filter out a specific values from an object using the filter method, we are just to pass the values into the replacer in an Array and it filters them out alone
+const user = {
+    firstName: 'Asabeneh',
+    lastName: 'Yetayeh',
+    country: 'Finland',
+    city: 'Helsinki',
+    email: 'alex@alex.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Python'],
+    age: 250,
+    isLoggedIn: false,
+    points: 30
+}
+
+const UsingReplacer = JSON.stringify(usersToJson, ['Alex', 'Asab', 'email', 'skills', 'age', 'Brook', 'points'], 4)
+console.log(UsingReplacer)
+const txts = JSON.stringify(user, ['firstName', 'lastName', 'country', 'city', 'age'], 4)
+console.log(txts)
+console.log('🌕')
+
