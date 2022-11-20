@@ -74,3 +74,114 @@ doPromise
         console.log(result)
     })
     .catch(error => console.log(error))
+
+
+const practice = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let names = ['Abdullahi', 'Babatunde', 'Intelligence']
+        if (names.length === 3) {
+            resolve(names)
+        } else {
+            reject('Something went wrong')
+        }
+    }, 2500);
+})
+
+practice
+    .then((result) => console.log(result)
+    )
+    .catch((x) => console.log(x))
+
+
+// The above promise has been settled with resolve. Let us another example when the promise is settled with reject.
+
+const settleWithReject = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let numbers = [12, 13, 45, 67]
+        if (numbers.includes(11)) {
+            resolve('It includes Odd Numbers')
+        } else {
+            reject('It does not include Odd Numbers')
+        }
+    }, 3000);
+})
+settleWithReject
+    .then((resolve) => console.log(resolve))
+    .catch((reject) => console.log(reject))
+
+
+// Fetch API
+// The Fetch API provides an interface for fetching resources (including across the network). It will seem familiar to anyone who has used XMLHttpRequest, but the new API provides a more powerful and flexible feature set. In this challenge we will use fetch to request url and APIS. In addition to that let us see demonstrate use case of promises in accessing network resources using the fetch API.
+const url = 'https://restcountries.com/v2/all' // countries api
+fetch(url)
+    .then(response => response.json()) // accessing the API data as JSON
+    .then(data => {
+        // getting the data
+        console.log(data)
+    })
+    .catch(error => console.error(error)) // handling error if something wrong happens
+
+// const url2 = 'https://restcountries.com/v2/all'
+// fetch(url2)
+//     .then(response => response.json())
+//     .then((resolve) => console.log(resolve))
+//     .catch((reject) => console.log(reject))
+
+
+// Async and Await
+// Async and Await is an elegant way to handle promises.It is easy to understand and it clean to write. 
+const square = async function (n) {
+    return n * n
+}
+console.log(square(9))
+
+const rectangle = async (l, b) => {
+    return l * b
+}
+console.log(rectangle(24, 14))
+
+// The word async infront of a function means that function will return a promise. The above square function instead of a value it returns a promise
+
+// How do we access the value from the promise? To access the value from the promise, we will use the keyword await 
+
+// const awaitTrial = async function (n) {
+//     return n * n
+// }
+
+// const awaitValue = await awaitTrial(23)
+// console.log(awaitValue)
+// const squarea = async function (n) {
+//     return n * n
+// }
+// const values = await squarea(n)
+// console.log(values)
+
+fetch(url)
+    .then(resolve => resolve.json())
+    .then((resolve) => console.log(resolve))
+    .catch((reject) => console.log(reject))
+
+// async and await
+
+const fetchData = async () => {
+    try {
+        const response = await fetch(url)
+        const countries = await response.json()
+        console.log(countries)
+    } catch (error) {
+        console.log(error)
+    }
+}
+fetchData()
+
+const fetchData2 = (async () => {
+    try {
+        const xx = await fetch(url)
+        const countries = await xx.json()
+        console.log(countries)
+    } catch (error) {
+        console.log(error)
+    }
+})
+fetchData2()
+
