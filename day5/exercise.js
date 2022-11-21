@@ -114,9 +114,14 @@ console.log('exercise  2 starts here')
 // 2.First remove all the punctuations and change the string to array and count the number of words in the array
 
 let text = 'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.'
-let words = text.split(' ');
-console.log(words)
-console.log(words.length)
+// let joins = text.join(' ')
+
+let words = text.split(',');
+let jj = words.join('')
+const ss = jj.split('.')
+const j = ss.join('')
+const spl = j.split(' ')
+console.log(spl)
 
 // 3.In the following shopping cart add, remove, edit items
 
@@ -217,3 +222,6 @@ if (midX % 2 == 0) {
 //Question14exercise1 Filter out companies which have more than one 'o' without the filter method
 // having problem with slice Number 19 Exercise 1
 // exercise1 Question 21 splice
+
+
+

@@ -14,10 +14,7 @@ fetch(countriesAPI)
                 population: n.population,
                 area: n.area,
             }
-            console.log(nam)
         })
-
-
     })
     .catch(err => console.log(err))
 
@@ -33,7 +30,7 @@ const fetchSome = async function () {
                 population: n.population,
                 area: n.area,
             }
-            console.log(nam)
+            // console.log(nam)
         })
     } catch (error) {
         console.log(error)
@@ -69,7 +66,7 @@ fetch(catsAPI)
             arr.push(resolve[c].name)
             // in this example it is possible to use for of loop and also filter. the for in loop must be called with the name of the object with the key iterator
         }
-        console.log(arr)
+        // console.log(arr)
     })
 
     .catch((error) => console.log(error))
@@ -77,4 +74,47 @@ fetch(catsAPI)
 // Exercise THREE Begins here
 
 // 1. Read the cats api and find the average weight of cat in metric unit.
+
+const weights = async function () {
+    try {
+        const fetchs = await fetch(catsAPI)
+        const toJson = await fetchs.json()
+        let sum = 0
+        toJson.map((n) => {
+            sum += n.weight.metric
+
+        })
+        console.log(sum)
+    } catch (error) {
+        console.log(error)
+    }
+}
+weights()
+
+
+// Read the countries api and find out the 10 largest countries
+
+const largestCountry = async () => {
+    let ten = []
+    try {
+        const fetchs = await fetch(countriesAPI)
+        const jsons = await fetchs.json()
+        jsons.sort((a, b) => {
+            if (a.population > b.population) return -1
+            if (a.population < b.population) return 1
+            return 0
+        })
+        jsons.map((element) => {
+            const ten = {
+                country: element.name,
+                population: element.population,
+            }
+            console.log(ten)
+        });
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+largestCountry()
 
