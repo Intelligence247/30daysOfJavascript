@@ -104,17 +104,41 @@ const largestCountry = async () => {
             if (a.population < b.population) return 1
             return 0
         })
-        jsons.map((element) => {
+
+        let sp = jsons.splice(0, 10)
+        // console.log(sp)
+        sp.map((element) => {
             const ten = {
                 country: element.name,
                 population: element.population,
+                lang: element.languages[0].name,
             }
             console.log(ten)
         });
-
     } catch (error) {
         console.log(error)
     }
 }
 largestCountry()
 
+
+//3. Read the countries api and count total number of languages in the world used as officials.
+
+const officials = async () => {
+    let arc = []
+    try {
+        const fetchs = await fetch(countriesAPI)
+        const jsons = await fetchs.json()
+        jsons.map((element) => {
+            let ten = element.languages[0].name;
+            arc.push(ten)
+
+        });
+        // console.log(arc.length)
+        let newSet = new Set(arc)
+        console.log(newSet)
+    } catch (error) {
+        console.log(error)
+    }
+}
+officials()
