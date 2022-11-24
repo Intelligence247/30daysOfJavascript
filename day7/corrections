@@ -1,0 +1,102 @@
+const hexcolorGenerator = () => {
+    let hex = '#'
+    const randoms = 'abdcef1234567890'
+    for (let i = 0; i < 6; i++) {
+        let rand = Math.random() * randoms.length
+        hex += randoms.charAt(rand)
+    }
+    return hex
+}
+
+console.log(hexcolorGenerator())
+
+// OR
+
+function hexcolorGenerator2() {
+    return '#' + Math.random().toString(16).substr(2, 6)
+
+}
+console.log(hexcolorGenerator2())
+
+
+let uniqueArr = []
+for (let i = 0; i <= 5; i++) {
+    let rand = Math.floor(Math.random() * (100 - 50 + 1) + 50)
+    if (uniqueArr.indexOf(rand) == -1) {
+        uniqueArr.push(rand)
+    }
+
+
+}
+console.log(uniqueArr)
+
+console.log(Math.random().toString(36).substr(2, 11))
+
+
+function userIdGeneratedByUser() {
+    const ids = [];
+    const idLength = prompt("What is the length of your id");
+    const usersLength = prompt("How many users");
+    for (let i = 0; ids.length <= usersLength - 1; i++) {
+        const userIdGenerator = () =>
+            Math.random().toString(36).substr(2, idLength);
+        if (ids.indexOf(userIdGenerator()) === -1) {
+            ids.push(userIdGenerator());
+        }
+    }
+
+    return ids.join(" ");
+}
+// console.log(userIdGeneratedByUser())
+
+
+
+
+
+
+
+
+
+
+const generateIdsWithLength = () => {
+    let arr = []
+    let leng = prompt('Enter the length you want')
+    let num = prompt('Enter the number of ids you want')
+    for (let i = 0; i < num; i++) {
+        let id = Math.random().toString(36).substr(2, leng)
+        if (arr.indexOf(id) == -1) {
+            arr.push(id)
+        }
+    }
+    return arr.join(' ')
+}
+// console.log(generateIdsWithLength())
+
+let randArray = Array.from({ length: 5 }, () => Math.floor(Math.random() * 256))
+console.log(randArray.join(' '))
+
+const rGBColorGenerator = () => {
+    let arr = Array.from({ length: 3 }, () => Math.floor(Math.random() * 256))
+    return `rgb(${arr.join(', ')})`
+}
+
+console.log(rGBColorGenerator())
+
+const modifyArray = ((param) => {
+    if (param.length < 5) {
+        return `'Not Found'`
+    } else {
+        // for (const c of param) {
+        //     if (param.indexOf(c) == 4) {
+        //         return param[4].toUpperCase()
+        //     }
+        // }
+        param[4] = param[4].toUpperCase()
+        return param
+
+    }
+})
+
+console.log(modifyArray(['Avocado', 'Tomato', 'Potato', 'Mango', 'Lemon', 'Carrot']));
+console.log(modifyArray(['Google', 'Facebook', 'Apple', 'Amazon', 'Microsoft', 'IBM']));
+console.log(modifyArray(['Google', 'Facebook', 'Apple', 'Amazon']));

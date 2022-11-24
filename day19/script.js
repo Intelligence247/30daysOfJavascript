@@ -49,10 +49,52 @@ console.log(con())
 function praticeOuter() {
     let count = 0
     function praticeInner() {
+        count++
+        return count
+    }
+    function praticeInner2() {
         count--
         return count
     }
-    return praticeInner()
+    return {
+        praticeInner: praticeInner(),
+        praticeInner2: praticeInner2()
+    }
 }
-console.log(praticeOuter())
-console.log(praticeOuter())
+const oneByOne = praticeOuter()
+console.log(oneByOne.praticeInner)
+console.log(oneByOne.praticeInner2)
+console.log(oneByOne.praticeInner)
+console.log(oneByOne.praticeInner2)
+
+
+
+function outers() {
+    let sum = 0
+    function inner1() {
+        sum += 900
+        return sum
+    }
+    function inner2() {
+        sum += 3
+        return sum
+    }
+    function inner3() {
+        sum--
+        return sum
+    }
+    return {
+        inner1: inner1(),
+        inner2: inner2(),
+        inner3: inner3()
+    }
+}
+
+const toPrint = outers()
+console.log(toPrint.inner1)
+console.log(toPrint.inner2)
+console.log(toPrint.inner3)
+
+console.log(toPrint.inner1)
+console.log(toPrint.inner2)
+console.log(toPrint.inner3)
