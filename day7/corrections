@@ -100,3 +100,45 @@ const modifyArray = ((param) => {
 console.log(modifyArray(['Avocado', 'Tomato', 'Potato', 'Mango', 'Lemon', 'Carrot']));
 console.log(modifyArray(['Google', 'Facebook', 'Apple', 'Amazon', 'Microsoft', 'IBM']));
 console.log(modifyArray(['Google', 'Facebook', 'Apple', 'Amazon']));
+
+const isValid = (param) => {
+    if (param.includes('&') || param.includes('#') || param.includes('{') || param.includes('}') || param.includes('@') || param.includes('+') || param.includes('-') || param.includes('*') || param.includes('(') || param.includes(')') || param.includes('^') || param.includes('!') || param.includes('=') || param.includes('~') || param.startsWith(Number)) {
+        return 'Error'
+    } else {
+        return 'It is valid'
+    }
+}
+console.log(isValid('Abfois'))
+
+
+
+
+let xx = '!~@#%^&*();:<>-+=}]{[|?/'
+let arr = []
+let arr2=[]
+for (let i = 0; i < xx.length; i++) {
+    arr.push(xx[i])
+}
+console.log(arr)
+let xxx = '1234567890'
+for (let i = 0; i < xxx.length; i++) {
+    arr2.push(xxx[i])
+}
+
+const isValid2 = (param1) => {
+    for (const c of arr) {
+        if (param1.includes(c)) {
+            return 'A variable can only contain characters like (_$),  Numbers and Alphabets'
+        }
+            for(const r of arr2){
+if(param1.startsWith(r)){
+    return 'Number cannot start with a variable'
+}else{
+    return 'Valid'
+}
+            
+        }
+    }
+}
+console.log(isValid2('A!b@2du'))
+
