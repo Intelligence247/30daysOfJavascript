@@ -188,8 +188,8 @@ console.log(countries.getCountriesInfo())
 const personAccount = {
     firstName: 'Usman',
     lastName: 'Abdullahi',
-    fullName: function () {
-        return `${this.firstName} ${this.lastName}`
+    fullName() {
+        return `${personAccount.firstName} ${this.lastName}`
     },
     incomes: [390, 45, 670, 900, 20000],
     totalIncomes: function () {
