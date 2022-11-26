@@ -356,3 +356,164 @@ function processInput(input) {
 
 // the caller selects only the data they need
 const { left, top } = processInput(input); */
+
+
+// Strings
+
+/*6.1 Use single quotes '' for strings. eslint: quotes
+
+// bad
+const name = "Capt. Janeway";
+
+// bad - template literals should contain interpolation or newlines
+const name = `Capt. Janeway`;
+
+// good
+const name = 'Capt. Janeway';
+
+ */
+
+/*6.2 Strings that cause the line to go over 100 characters should not be written across multiple lines using string concatenation.
+
+Why? Broken strings are painful to work with and make code less searchable
+
+// bad
+const errorMessage = 'This is a super long error that was thrown because \
+of Batman. When you stop to think about how Batman had anything to do \
+with this, you would get nowhere \
+fast.';
+
+// bad
+const errorMessage = 'This is a super long error that was thrown because ' +
+  'of Batman. When you stop to think about how Batman had anything to do ' +
+  'with this, you would get nowhere fast.';
+
+// good
+const errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';*/
+
+
+/*6.3 When programmatically building up strings, use template strings instead of concatenation. eslint: prefer-template template-curly-spacing
+
+Why? Template strings give you a readable, concise syntax with proper newlines and string interpolation features.
+
+// bad
+function sayHi(name) {
+  return 'How are you, ' + name + '?';
+}
+
+// bad
+function sayHi(name) {
+  return ['How are you, ', name, '?'].join();
+}
+
+// bad
+function sayHi(name) {
+  return `How are you, ${ name }?`;
+}
+
+// good
+function sayHi(name) {
+  return `How are you, ${name}?`;
+} */
+
+
+/*}
+
+6.4 Never use eval() on a string, it opens too many vulnerabilities. eslint: no-eval
+
+6.5 Do not unnecessarily escape characters in strings. eslint: no-useless-escape
+
+Why? Backslashes harm readability, thus they should only be present when necessary.
+
+// bad
+const foo = '\'this\' \i\s \"quoted\"';
+
+// good
+const foo = '\'this\' is "quoted"';
+const foo = `my name is '${name}'`;*/
+
+(function () {
+  console.log('Welcome to my website')
+}())
+
+const x = [1, 2, 3, 4, 5];
+console.log.apply(console, x);
+console.log(...x)
+const printFullName = (firstName, lastName) => firstName + ' ' + lastName
+console.log(printFullName('Abdullahi', 'Usman'))
+
+
+// a function which generate random hexa colors
+const hexaColor = () => {
+  const str = '0123456789abcdef'
+  let hexa = '#'
+  let index
+  for (let i = 0; i < 6; i++) {
+    index = Math.floor(Math.random() * str.length)
+    hexa += str[index]
+  }
+  return hexa
+
+}
+console.log(hexaColor())
+let pu = []
+for (let i = 0; i < 6; i++) {
+  pu.push(hexaColor())
+}
+console.log(pu.join(' '))
+
+
+const userIds = () => {
+  let characters = '1234567890abdcefghijklmnopqrstuvwxyz'
+
+  // for (let i = 0; i < 20; i++) {
+  //   let rand = Math.floor(Math.random() * characters.length)
+  //   str += characters[rand]
+  // }
+  let str = ''
+  for (let i = 0; i < 6; i++) {
+
+    let rand = Math.floor(Math.random() * characters.length)
+    str += characters[rand]
+  }
+  let arr = []
+  for (let i = 0; i < 6; i++) {
+    let str = Math.random().toString(36).substr(2, 12)
+    // if (arr.indexOf(str) == -1) {
+    arr.push(str)
+    // }
+
+  }
+
+
+  return arr.join(',')
+}
+console.log(userIds())
+
+const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+
+// British English uses day-month-year order and 24-hour time without AM/PM
+console.log(event.toLocaleString('en-GB', { timeZone: 'UTC' }));
+// expected output: 20/12/2012, 03:00:00
+
+// Korean uses year-month-day order and 12-hour time with AM/PM
+console.log(event.toLocaleString('ko-KR', { timeZone: 'UTC' }));
+// expected output: 2012. 12. 20. 오전 3:00:00
+
+
+const person = {
+  firstName: 'Asabeneh',
+  lastName: 'Yetayeh',
+  age: 250,
+  country: 'Finland',
+  city: 'Helsinki',
+  skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Node', 'MongoDB', 'Python', 'D3.js'],
+  isMarried: true
+}
+for (const key in person) {
+  console.log(key)
+}
+
+// Classes
+// We declare class with CamelCase which starts with capital letter.
+// Classes should be in CamelCase and should also starts with capital letter

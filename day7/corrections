@@ -101,14 +101,7 @@ console.log(modifyArray(['Avocado', 'Tomato', 'Potato', 'Mango', 'Lemon', 'Carro
 console.log(modifyArray(['Google', 'Facebook', 'Apple', 'Amazon', 'Microsoft', 'IBM']));
 console.log(modifyArray(['Google', 'Facebook', 'Apple', 'Amazon']));
 
-const isValid = (param) => {
-    if (param.includes('&') || param.includes('#') || param.includes('{') || param.includes('}') || param.includes('@') || param.includes('+') || param.includes('-') || param.includes('*') || param.includes('(') || param.includes(')') || param.includes('^') || param.includes('!') || param.includes('=') || param.includes('~') || param.startsWith(Number)) {
-        return 'Error'
-    } else {
-        return 'It is valid'
-    }
-}
-console.log(isValid('Abfois'))
+
 
 
 
