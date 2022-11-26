@@ -110,3 +110,74 @@ console.log(addingText)
 // addingText.forEach((xx) => console.log(xx))
 
 
+// Adding Text Content using innerHTML
+// Most people get confused between textContent and innerHTML. textContent is meant to add text to an HTML element, however innerHTML can add a text or HTML element or elements as a child.
+
+// Text Content
+// We assign textContent HTML object property to a text
+
+// const titles = document.querySelectorAll('h1')
+// titles[3].textContent = 'Fourth Title'
+// Inner HTML
+// We use innerHTML property when we like to replace or a completely new children content to a parent element. It value we assign is going to be a string of HTML elements.
+
+const practice = document.querySelectorAll('b')
+practice[2].setAttribute('class', 'practice')
+practice[2].setAttribute('id', 'hash')
+practice[2].classList.add('practice', 'practice2')
+practice[2].textContent = ('Welcome to intelligence\'s Practice')
+practice.forEach((x) => console.log(x))
+console.log(practice)
+
+const HTMLStyles2 = `<i>(i) stands for Italic in HTML</i>
+<u>(u) stands for underline in HTML</u>
+<b>(b) stands for bold text/ Font-weight in HTML</b>
+<del>(del) stands for line-through in HTML
+<strong>(strong)Does the same work as bold(b)</strong>`
+
+const del2 = document.querySelectorAll('del')
+del.innerHTML = HTMLStyles
+console.log(del2)
+console.log(HTMLStyles2)
+
+
+// The innerHTML property can allow us also to remove all the children of a parent element. Instead of using removeChild() I would recommend the following method.
+
+const ff = document.querySelectorAll('del')
+ff.innerHTML = ''
+console.log(ff)
+
+// Adding style
+
+const h1Styling = document.querySelectorAll('h1')
+h1Styling.forEach((title, i) => {
+    title.style.fontSize = '3rem' //all titles will have 24px font size
+    title.style.textAlign = 'left'
+    title.style.marginLeft = '5rem'
+    title.style.border = '1rem solid green'
+    title.style.width = '38rem'
+    title.style.paddingLeft = '3rem'
+    if (i % 2 == 0) {
+        title.style.color = '#fff'
+        title.style.fontSize = '40px'
+    } else {
+        title.style.color = 'red'
+        title.style.fontSize = '30px'
+    }
+})
+
+const addStyle = document.querySelectorAll('ul')
+addStyle.forEach((li, i) => {
+    if (i % 2 == 1) {
+        li.style.color = 'white'
+    } else {
+        li.style.color = 'green'
+    }
+})
+
+const body = document.querySelectorAll('body')
+body.forEach((xx) => {
+    xx.style.backgroundColor = 'black'
+    xx.style.overflowX = 'hidden'
+    xx.style.paddingLeft = '5rem'
+})
