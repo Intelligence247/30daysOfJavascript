@@ -88,3 +88,96 @@ getAsNodeList.forEach((xx, i) => {
 
 
 // Set text content, id and class to each paragraph
+let rr = getAsNodeList.textContent = 'Welcome to my page'
+console.log(rr)
+getAsNodeList.id = 'idName'
+getAsNodeList.classList = 'ClassName'
+
+console.log(getAsNodeList)
+
+
+console.log('%cExercise%c %cTHREE%c %cBegins%c %cHere%c',
+    'color:red;font-size:2rem;',
+    '',
+    'color:blue;font-size:2rem;',
+    '',
+    'color:green;font-size:2.5rem;',
+    '',
+    'color:yellow;font-size:2.9rem;',
+    '',)
+
+// Develop the following application, use the following HTML elements to get started with. You will get the same code on starter folder. Apply all the styles and functionality using JavaScript only.
+
+// The year color is changing every 1 second
+// The date and time background color is changing every on seconds
+// Completed challenge has background green
+// Ongoing challenge has background yellow
+// Coming challenges have background red
+
+let r2 = []
+let rrr = setInterval((cc) => {
+    let rand = '#' + Math.random().toString(16).substr(2, 6)
+    cc += rand
+    return cc
+}, 10000);
+
+console.log(rrr)
+let xxx = new Date()
+console.log(xxx)
+
+let getByClass = document.querySelectorAll('.wrapper')
+getByClass.forEach((xx, i) => {
+    xx.style.width = '35rem'
+    xx.style.margin = 'auto'
+    xx.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"'
+    xx.style.marginBottom = '5rem'
+
+})
+
+let getH1 = document.querySelectorAll('h1')
+getH1.forEach((xx, i) => {
+    xx.style.fontSize = '20px'
+    xx.style.width = 'max-content'
+    xx.style.margin = 'auto'
+})
+let getH2 = document.querySelectorAll('h2')
+getH2.forEach((xx, i) => {
+    xx.style.fontSize = '12px'
+    xx.style.width = 'max-content'
+    xx.style.margin = 'auto'
+    xx.style.color = '#222222'
+    xx.style.textDecoration = 'underline'
+})
+let getSpan = document.querySelectorAll('span')
+getSpan.forEach((xx, i) => {
+    xx.style.fontSize = '3.5rem'
+    xx.style.color = 'blue'
+
+})
+
+let getUl = document.querySelectorAll('ul')
+getUl.forEach((xx, i) => {
+    xx.style.fontSize = '12px'
+    xx.style.listStyle = 'none'
+    xx.style.paddingLeft = '3rem'
+
+})
+
+let getLi = document.querySelectorAll('li')
+getLi.forEach((xx, i) => {
+    xx.style.height = '3rem'
+    xx.style.display = 'flex'
+    xx.style.alignItems = 'center'
+    xx.style.paddingLeft = '1rem'
+    xx.style.borderBottom = '3px solid white'
+    if (i == 0) {
+        xx.style.backgroundColor = 'green'
+    }
+    if (i == 1) {
+        xx.style.backgroundColor = 'yellow'
+    }
+    if (i > 1) {
+        xx.style.backgroundColor = 'red'
+    }
+})
+
