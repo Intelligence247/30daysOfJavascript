@@ -113,10 +113,10 @@ console.log('%cExercise%c %cTHREE%c %cBegins%c %cHere%c',
 // Completed challenge has background green
 // Ongoing challenge has background yellow
 // Coming challenges have background red
-
+let rand = '#' + Math.random().toString(16).substr(2, 6)
 let r2 = []
 let rrr = setInterval((cc) => {
-    let rand = '#' + Math.random().toString(16).substr(2, 6)
+
     cc += rand
     return cc
 }, 10000);
@@ -151,7 +151,8 @@ getH2.forEach((xx, i) => {
 let getSpan = document.querySelectorAll('span')
 getSpan.forEach((xx, i) => {
     xx.style.fontSize = '3.5rem'
-    xx.style.color = 'blue'
+    xx.style.color = rand
+
 
 })
 
@@ -180,4 +181,17 @@ getLi.forEach((xx, i) => {
         xx.style.backgroundColor = 'red'
     }
 })
+let rand2 = '#' + Math.random().toString(16).substr(2, 6)
+const addingTextToH3 = document.querySelector('h3')
+addingTextToH3.innerHTML = 'January 22,2020, 19:53:11'
 
+let h3 = document.querySelectorAll('h3')
+h3.forEach((x, i) => {
+    x.style.backgroundColor = rand2;
+    x.style.width = 'max-content'
+    x.style.margin = 'auto'
+    x.style.fontSize = '12px'
+    x.style.padding = '0.2rem 1rem'
+    x.style.marginTop = '1rem'
+
+})
