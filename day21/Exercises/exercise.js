@@ -184,9 +184,16 @@ getLi.forEach((xx, i) => {
         xx.style.backgroundColor = 'red'
     }
 })
-const generateColor = () => '#' + Math.random().toString(16).substr(2, 6)
+
+
 const addingTextToH3 = document.querySelector('h3')
-addingTextToH3.innerHTML = 'January 22,2020, 19:53:11'
+const interr = () => {
+    const xx = new Date()
+    addingTextToH3.innerHTML = `${xx.toLocaleDateString('month', { month: 'long' })} ${xx.getDate()},${xx.getFullYear()}, ${xx.getHours()}:${xx.getMinutes()}:${xx.getSeconds()}`
+
+}
+setInterval(interr, 1000)
+
 
 let h3 = document.querySelector('h3')
 h3.style.width = 'max-content'
@@ -199,3 +206,10 @@ const bb = () => {
 }
 
 setInterval(bb, 1000)
+
+
+
+
+
+
+
