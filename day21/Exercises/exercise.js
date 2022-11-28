@@ -151,7 +151,10 @@ getH2.forEach((xx, i) => {
 let getSpan = document.querySelectorAll('span')
 getSpan.forEach((xx, i) => {
     xx.style.fontSize = '3.5rem'
-    xx.style.color = rand
+    const color = (() => {
+        xx.style.color = '#' + Math.random().toString(16).substr(2, 6)
+    })
+    setInterval(color, 1000)
 
 
 })
@@ -181,17 +184,18 @@ getLi.forEach((xx, i) => {
         xx.style.backgroundColor = 'red'
     }
 })
-let rand2 = '#' + Math.random().toString(16).substr(2, 6)
+const generateColor = () => '#' + Math.random().toString(16).substr(2, 6)
 const addingTextToH3 = document.querySelector('h3')
 addingTextToH3.innerHTML = 'January 22,2020, 19:53:11'
 
-let h3 = document.querySelectorAll('h3')
-h3.forEach((x, i) => {
-    x.style.backgroundColor = rand2;
-    x.style.width = 'max-content'
-    x.style.margin = 'auto'
-    x.style.fontSize = '12px'
-    x.style.padding = '0.2rem 1rem'
-    x.style.marginTop = '1rem'
+let h3 = document.querySelector('h3')
+h3.style.width = 'max-content'
+h3.style.margin = 'auto'
+h3.style.fontSize = '12px'
+h3.style.padding = '0.2rem 1rem'
+h3.style.marginTop = '1rem'
+const bb = () => {
+    h3.style.backgroundColor = '#' + Math.random().toString(16).substr(2, 6);
+}
 
-})
+setInterval(bb, 1000)
