@@ -283,13 +283,52 @@ for (let i = 0; i <= 101; i++) {
 
 // Exercises: Level 2
 // Use the countries array to display all the countries.See the design
+let world
+world = document.createElement('h1')
+world.textContent = 'WORLD COUNTRIES LIST'
+document.body.appendChild(world)
+world.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji'
+world.style.width = 'max-content'
+world.style.margin = 'auto'
+world.style.fontSize = '1.2rem'
+world.style.letterSpacing = '0.6rem'
+world.style.marginTop = '5rem'
+let total
+total = document.createElement('h2')
+total.textContent = 'Total Number of countries: 193'
+document.body.appendChild(total)
+total.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji'
+total.style.width = 'max-content'
+total.style.margin = 'auto'
+total.style.fontSize = '0.7rem'
+
+let day2
+day2 = document.createElement('h2')
+day2.textContent = '30DaysOfJavaScript:DOM Day 2'
+document.body.appendChild(day2)
+day2.style.width = 'max-content'
+day2.style.margin = 'auto'
+day2.style.fontSize = '0.5rem'
+day2.style.fontWeight = '600'
+
+
+let h3 = document.createElement('h3')
+h3.textContent = 'Author: Asabeneh Yetayeh'
+document.body.appendChild(h3)
+h3.style.width = 'max-content'
+h3.style.margin = 'auto'
+h3.style.fontSize = '0.5rem'
+h3.style.fontWeight = '600'
+h3.style.marginBottom = '2rem'
 
 let sectEl = document.createElement('section')
 document.body.appendChild(sectEl)
 sectEl.style.display = 'flex'
-sectEl.style.width = '30rem'
+sectEl.style.width = '32rem'
 sectEl.style.flexWrap = 'wrap'
 sectEl.style.margin = 'auto'
+sectEl.style.gap = '0.4rem'
+sectEl.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji'
 
 
 let xx;
@@ -298,18 +337,20 @@ for (let i = 0; i < countries.length; i++) {
     xx.textContent = countries[i]
     sectEl.appendChild(xx)
     xx.style.width = '5rem'
-    xx.style.height = '3rem'
+    xx.style.height = '6rem'
     xx.style.fontSize = '8px'
     xx.style.display = 'flex'
     xx.style.justifyContent = 'center'
     xx.style.alignItems = 'center'
-    xx.style.marginTop = '1rem'
     xx.style.fontWeight = 550
+    xx.style.border = '0.1px solid #c1c1c1'
 }
 
 
 
 
+// Exercise Three Starts Here
+// Check the requirement of this project from both images(jpg and gif). All the data and CSS has been implemented using JavaScript only. The data is found on starter folder project_3. The drop down button has been created using details HTML element.
 
 
 
