@@ -11,7 +11,6 @@ h1.style.margin = 'auto'
 h1.style.marginBottom = '0.1rem'
 h1.style.fontSize = '24px'
 
-
 let h2
 h2 = document.createElement('h2')
 h2.textContent = '30DaysOfJavaScript:DOM Day 2'
@@ -34,22 +33,94 @@ for (let i = 0; i < 1; i++) {
 }
 
 
+
+
+let mainEl = document.createElement('main')
+mainEl.style.display = "flex"
+mainEl.style.flexDirection = 'row'
+mainEl.style.flexWrap = 'wrap'
+mainEl.style.width = '27rem'
+mainEl.style.margin = 'auto'
+mainEl.style.fontSize = '1.5rem'
+mainEl.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji'
+mainEl.style.marginTop = '2rem'
+mainEl.style.marginBlock = '2rem'
+document.body.appendChild(mainEl)
+const prime = (n) => {
+    const x = Math.abs(n)
+    if (x < 2) return false
+    if (x == 2) return true
+    for (let i = 2; i < x; i++) {
+        if (x % i == 0) {
+            return false
+        }
+    }
+    return true
+}
+// console.log(prime(71))
+
+
 let generateNum
-for (let i = 0; i < 100; i++) {
-    generateNum = document.createElement('span')
+for (let i = 0; i <= 101; i++) {
+    generateNum = document.createElement('div')
     generateNum.textContent = i
-    document.body.appendChild(generateNum)
-
-
-
+    mainEl.appendChild(generateNum)
+    generateNum.style.width = '4.5rem'
+    generateNum.style.height = '3rem'
+    generateNum.style.backgroundColor = 'blue'
+    generateNum.style.display = 'flex'
+    generateNum.style.justifyContent = 'center'
+    generateNum.style.alignItems = 'center'
+    generateNum.style.border = '1px solid white'
+    generateNum.style.color = "white"
+    if (i % 2 == 0) {
+        generateNum.style.backgroundColor = 'green'
+    } else if (prime(i)) {
+        generateNum.style.backgroundColor = 'red'
+    } else if (i % 2 == 1) {
+        generateNum.style.backgroundColor = 'yellow'
+    }
 }
 
-const div = document.querySelectorAll('div')
-div.forEach((xx, i) => {
-    xx.style.display = 'inline-block'
-    xx.style.display = 'flex'
-    xx.style.gap = '3rem'
-    xx.style.position = 'relative'
-    xx.style.fontSize = '2rem'
-    xx.style.color = 'red'
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const isPrime = (xx) => {
+//     let x = Math.abs(xx)
+//     if (x == 0 || x == 1) return false
+//     if (x == 2) return true
+//     for (let i = 2; i < x; i++) {
+//         if (x % i == 0) {
+//             return false
+//         }
+//     }
+//     return true
+// }
+// console.log(isPrime(2))
+// for (let i = 0; i >= -100; i--) {
+//     if (isPrime(i))
+//         console.log(i)
+// }
+// .flat() Method can be used to print element of array of array into a single array

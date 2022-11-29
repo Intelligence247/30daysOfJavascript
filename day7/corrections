@@ -51,13 +51,6 @@ function userIdGeneratedByUser() {
 
 
 
-
-
-
-
-
-
-
 const generateIdsWithLength = () => {
     let arr = []
     let leng = prompt('Enter the length you want')
@@ -108,7 +101,7 @@ console.log(modifyArray(['Google', 'Facebook', 'Apple', 'Amazon']));
 
 let xx = '!~@#%^&*();:<>-+=}]{[|?/'
 let arr = []
-let arr2=[]
+let arr2 = []
 for (let i = 0; i < xx.length; i++) {
     arr.push(xx[i])
 }
@@ -123,15 +116,42 @@ const isValid2 = (param1) => {
         if (param1.includes(c)) {
             return 'A variable can only contain characters like (_$),  Numbers and Alphabets'
         }
-            for(const r of arr2){
-if(param1.startsWith(r)){
-    return 'Number cannot start with a variable'
-}else{
-    return 'Valid'
-}
-            
+        for (const r of arr2) {
+            if (param1.startsWith(r)) {
+                return 'Number cannot start with a variable'
+            } else {
+                return 'Valid'
+            }
+
         }
     }
 }
 console.log(isValid2('A!b@2du'))
 
+
+
+
+
+let xxr = '!~@#%^&*();:<>-+=}]{[|?/'
+let xxxr = '1234567890'
+
+let sp1 = xxr.split('')
+let sp2 = xxxr.split('')
+
+const isValid = (param) => {
+    for (const c of sp1) {
+        if (param.includes(c)) {
+            return 'Varibles does not accept characters except $_ and alphabet'
+        } else if (param != null) {
+            for (const r of sp2) {
+                if (param.startsWith(r)) {
+                    return 'Variables cannot start with a number'
+                }
+
+            }
+
+        }
+
+    }
+}
+console.log(isValid('0abdullahi'))
