@@ -1,0 +1,399 @@
+// Exercise Three Starts Here
+// Check the requirement of this project from both images(jpg and gif). All the data and CSS has been implemented using JavaScript only. The data is found on starter folder project_3. The drop down button has been created using details HTML element.
+const date = new Date
+let mainP3 = document.createElement('main')
+mainP3.textContent
+document.body.appendChild(mainP3)
+mainP3.style.width = 'max-content'
+mainP3.style.height = 'max-content'
+// mainP3.style.backgroundColor = 'blue'
+mainP3.style.margin = 'auto'
+
+let header
+header = document.createElement('header')
+header.style.width = 'max-content'
+header.style.height = 'max-content'
+header.style.margin = 'auto'
+header.style.display = 'flex'
+header.style.justifyContent = 'center'
+header.style.alignItems = 'baseline'
+header.style.gap = '1rem'
+mainP3.appendChild(header)
+
+
+let h1;
+h1 = document.createElement('h1')
+h1.textContent = 'Asabeneh Yetayeh challenges in'
+header.appendChild(h1)
+
+
+
+let random = '#' + Math.random().toString(16).substr(2, 6)
+let span;
+span = document.createElement('span')
+span.textContent = date.getFullYear()
+span.style.fontSize = '3rem'
+span.style.display = 'inline-block'
+const rand = () => {
+    span.style.color = '#' + Math.random().toString(16).substr(2, 6)
+}
+setInterval(rand, 1000)
+header.appendChild(span)
+
+let h2 = document.createElement('h2')
+h2.textContent = '30DaysOfJavaScript Challenge'
+h2.style.textDecoration = 'underline'
+h2.style.width = 'max-content'
+h2.style.margin = 'auto'
+mainP3.appendChild(h2)
+
+
+
+let h3 = document.createElement('h3')
+function funcDate() {
+    let date = new Date
+    h3.textContent = `${date.toLocaleDateString('month', { month: 'long' })} ${date.getDate()}, ${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+}
+setInterval(funcDate, 1000)
+h3.style.width = 'max-content'
+h3.style.margin = 'auto'
+const backG = () => {
+    h3.style.backgroundColor = '#' + Math.random().toString(16).substr(2, 6)
+}
+setInterval(backG, 1000)
+h3.style.padding = '0.3rem'
+h3.style.marginTop = '1rem'
+mainP3.appendChild(h3)
+
+
+
+let section
+section = document.createElement('section')
+let divs
+for (let i = 0; i < 8; i++) {
+    divs = document.createElement('div')
+    divs.className = 'sect'
+    divs.style.display = 'flex'
+    divs.style.justifyContent = 'space-between'
+    divs.style.alignItems = 'baseline'
+    divs.style.backgroundColor = 'red'
+    divs.style.padding = '0rem 1.5rem'
+
+
+    if (i == 0) {
+        divs.style.backgroundColor = 'green'
+        divs.style.marginTop = '2rem'
+        divs.style.fontSize = '1rem'
+        divs.style.borderBlock = '1.5px solid white'
+        let h1
+        h1 = document.createElement('h1')
+        h1.textContent = '30 Days Of Python'
+        h1.style.textDecoration = 'underline'
+        h1.style.fontSize = '1rem'
+        divs.appendChild(h1)
+
+        let details
+        details = document.createElement('details')
+        divs.appendChild(details)
+        let summary
+        summary = document.createElement('summary')
+        summary.textContent = 'Python'
+        summary.style.cursor = 'pointer'
+        details.appendChild(summary)
+
+        let ps
+
+        for (let i = 0; i < 7; i++) {
+            ps = document.createElement('p')
+            ps.style.cursor = 'pointer'
+            details.appendChild(ps)
+            if (i == 0) {
+                ps.textContent = 'Python'
+            } else if (i == 1) {
+                ps.textContent = 'Flask'
+            } else if (i == 2) {
+                ps.textContent = 'Numpy'
+            } else if (i == 3) {
+                ps.textContent = 'Pandas'
+            } else if (i == 4) {
+                ps.textContent = 'Statistic'
+            } else if (i == 5) {
+                ps.textContent = 'API'
+            } else {
+                ps.textContent = 'MongoDB'
+            }
+        }
+
+        let p
+        p = document.createElement('p')
+        p.textContent = 'Done'
+        divs.appendChild(p)
+    } else if (i == 1) {
+        divs.style.backgroundColor = 'yellow'
+        divs.style.fontSize = '1rem'
+        divs.style.borderBlock = '1.5px solid white'
+        let h1
+        h1 = document.createElement('h1')
+        h1.textContent = '30 Days Of JavaScript'
+        h1.style.textDecoration = 'underline'
+        h1.style.fontSize = '1rem'
+        divs.appendChild(h1)
+
+        let details
+        details = document.createElement('details')
+        divs.appendChild(details)
+        let summary
+        summary = document.createElement('summary')
+        summary.style.cursor = 'pointer'
+        summary.textContent = 'JavaScript'
+        details.appendChild(summary)
+
+        let ps
+
+        for (let i = 0; i < 5; i++) {
+            ps = document.createElement('p')
+            ps.style.cursor = 'pointer'
+            details.appendChild(ps)
+            if (i === 0) {
+                ps.textContent = 'JavaScript'
+            } else if (i === 1) {
+                ps.textContent = 'ES6'
+            } else if (i === 2) {
+                ps.textContent = 'Promise'
+            } else if (i === 3) {
+                ps.textContent = 'async and await'
+            } else {
+                ps.textContent = 'DOM'
+            }
+        }
+
+        let p
+        p = document.createElement('p')
+        p.textContent = 'Ongoing'
+        divs.appendChild(p)
+    } else if (i == 2) {
+        divs.style.fontSize = '1rem'
+        divs.style.borderBlock = '1.5px solid white'
+        let h1
+        h1 = document.createElement('h1')
+        h1.textContent = '30 Days Of HTML & CSS'
+        h1.style.textDecoration = 'underline'
+        h1.style.fontSize = '1rem'
+        divs.appendChild(h1)
+
+        let details
+        details = document.createElement('details')
+        divs.appendChild(details)
+        let summary
+        summary = document.createElement('summary')
+        summary.style.cursor = 'pointer'
+        summary.textContent = 'HTML & CSS'
+        details.appendChild(summary)
+
+        let ps
+
+        for (let i = 0; i < 4; i++) {
+            ps = document.createElement('p')
+            ps.style.cursor = 'pointer'
+            details.appendChild(ps)
+            if (i === 0) {
+                ps.textContent = 'CSS'
+            } else if (i === 1) {
+                ps.textContent = 'Flex'
+            } else if (i === 2) {
+                ps.textContent = 'Grid'
+            } else {
+                ps.textContent = 'CSS Animation'
+            }
+        }
+
+        let p
+        p = document.createElement('p')
+        p.textContent = 'Coming'
+        divs.appendChild(p)
+    } else if (i == 3) {
+        divs.style.fontSize = '1rem'
+        divs.style.borderBlock = '1.5px solid white'
+        let h1
+        h1 = document.createElement('h1')
+        h1.textContent = '30 Days Of React'
+        h1.style.textDecoration = 'underline'
+        h1.style.fontSize = '1rem'
+        divs.appendChild(h1)
+
+        let details
+        details = document.createElement('details')
+        divs.appendChild(details)
+        let summary
+        summary = document.createElement('summary')
+        summary.style.cursor = 'pointer'
+        summary.textContent = 'React'
+        details.appendChild(summary)
+
+        let ps
+        for (let i = 0; i < 7; i++) {
+            ps = document.createElement('p')
+            ps.textContent = 'MongoDb'
+            ps.style.cursor = 'pointer'
+            details.appendChild(ps)
+            if (i == 0) {
+                ps.textContent = 'React'
+            }
+        }
+
+        let p
+        p = document.createElement('p')
+        p.textContent = 'Coming'
+        divs.appendChild(p)
+    } else if (i == 4) {
+        divs.style.fontSize = '1rem'
+        divs.style.borderBlock = '1.5px solid white'
+        let h1
+        h1 = document.createElement('h1')
+        h1.textContent = '30 Days Of ReactNative'
+        h1.style.textDecoration = 'underline'
+        h1.style.fontSize = '1rem'
+        divs.appendChild(h1)
+
+        let details
+        details = document.createElement('details')
+        divs.appendChild(details)
+        let summary
+        summary = document.createElement('summary')
+        summary.style.cursor = 'pointer'
+        summary.textContent = 'ReactNative'
+        details.appendChild(summary)
+
+        let ps
+
+        for (let i = 0; i < 7; i++) {
+            ps = document.createElement('p')
+            ps.textContent = 'MongoDb'
+            ps.style.cursor = 'pointer'
+            details.appendChild(ps)
+            if (i == 0) {
+                ps.textContent = 'React'
+            }
+        }
+
+        let p
+        p = document.createElement('p')
+        p.textContent = 'Coming'
+        divs.appendChild(p)
+    } else if (i == 5) {
+        divs.style.fontSize = '1rem'
+        divs.style.borderBlock = '1.5px solid white'
+        let h1
+        h1 = document.createElement('h1')
+        h1.textContent = '30 Days Of FullStack'
+        h1.style.textDecoration = 'underline'
+        h1.style.fontSize = '1rem'
+        divs.appendChild(h1)
+
+        let details
+        details = document.createElement('details')
+        divs.appendChild(details)
+        let summary
+        summary = document.createElement('summary')
+        summary.style.cursor = 'pointer'
+        summary.textContent = 'Fullstack'
+        details.appendChild(summary)
+
+        let ps
+
+        for (let i = 0; i < 7; i++) {
+            ps = document.createElement('p')
+            ps.textContent = 'MongoDb'
+            ps.style.cursor = 'pointer'
+            details.appendChild(ps)
+            if (i == 0) {
+                ps.textContent = 'React'
+            }
+        }
+        let p
+        p = document.createElement('p')
+        p.textContent = 'Coming'
+        divs.appendChild(p)
+    } else if (i == 6) {
+        divs.style.fontSize = '1rem'
+        divs.style.borderBlock = '1.5px solid white'
+        let h1
+        h1 = document.createElement('h1')
+        h1.textContent = '30 Days Of Data Analysis'
+        h1.style.textDecoration = 'underline'
+        h1.style.fontSize = '1rem'
+        divs.appendChild(h1)
+
+        let details
+        details = document.createElement('details')
+        divs.appendChild(details)
+        let summary
+        summary = document.createElement('summary')
+        summary.style.cursor = 'pointer'
+        summary.textContent = 'Data Analysis'
+        details.appendChild(summary)
+
+        let ps
+        for (let i = 0; i < 7; i++) {
+            ps = document.createElement('p')
+            ps.style.cursor = 'pointer'
+            ps.textContent = 'MongoDb'
+            details.appendChild(ps)
+            if (i == 0) {
+                ps.textContent = 'React'
+            }
+        }
+
+        let p
+        p = document.createElement('p')
+        p.textContent = 'Coming'
+        divs.appendChild(p)
+    } else if (i == 7) {
+        divs.style.fontSize = '1rem'
+        divs.style.borderBlock = '1.5px solid white'
+        let h1
+        h1 = document.createElement('h1')
+        h1.textContent = '30 Days Of Machine Learning'
+        h1.style.textDecoration = 'underline'
+        h1.style.fontSize = '1rem'
+        divs.appendChild(h1)
+
+        let details
+        details = document.createElement('details')
+        divs.appendChild(details)
+        let summary
+        summary = document.createElement('summary')
+        summary.style.cursor = 'pointer'
+        summary.textContent = 'Machine Learning'
+        details.appendChild(summary)
+
+        let ps
+        for (let i = 0; i < 7; i++) {
+            ps = document.createElement('p')
+            ps.style.cursor = 'pointer'
+            details.appendChild(ps)
+            if (i == 0) {
+                ps.textContent = 'Python'
+            } else if (i == 1) {
+                ps.textContent = 'Numpy'
+            } else if (i == 2) {
+                ps.textContent = 'Pandas'
+            } else if (i == 3) {
+                ps.textContent = 'Scikit-learn'
+            } else if (i == 4) {
+                ps.textContent = 'Scipy'
+            } else if (i == 5) {
+                ps.textContent = 'Linear Algebra'
+            } else {
+                ps.textContent = 'Visualization'
+            }
+        }
+
+        let p
+        p = document.createElement('p')
+        p.textContent = 'Coming'
+        divs.appendChild(p)
+    }
+    section.appendChild(divs)
+}
+mainP3.appendChild(section)
