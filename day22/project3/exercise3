@@ -78,7 +78,7 @@ for (let i = 0; i < 8; i++) {
     divs.style.alignItems = 'baseline'
     divs.style.backgroundColor = 'red'
     divs.style.padding = '0rem 1.5rem'
-
+mainP3.appendChild(section)
 
     if (i == 0) {
         divs.style.backgroundColor = 'green'
@@ -396,4 +396,347 @@ for (let i = 0; i < 8; i++) {
     }
     section.appendChild(divs)
 }
-mainP3.appendChild(section)
+
+
+
+
+// Another project Starts here
+// console.log(['Another project Starts here'])
+
+let main2
+main2=document.createElement('main')
+main2.style.width='max-content'
+main2.style.height='max-content'
+main2.style.margin='auto'
+main2.style.marginTop='5rem'
+main2.style.marginBottom='10rem'
+document.body.appendChild(main2)
+
+let hOne
+hOne=document.createElement('h1')
+hOne.textContent='Asabeneh Yetayeh'
+hOne.style.textAlign='center'
+main2.appendChild(hOne)
+
+let imgContainer
+imgContainer=document.createElement('div')
+imgContainer.className='imgs'
+imgContainer.style.width='max-content'
+imgContainer.style.margin='auto'
+imgContainer.style.display='flex'
+imgContainer.style.gap='0.5rem'
+main2.appendChild(imgContainer)  
+
+
+let img
+img=document.createElement('img')
+img.setAttribute('src', './media/linkd.png')
+imgContainer.appendChild(img)
+
+let img2
+img2=document.createElement('img')
+img2.setAttribute('src', './media/twitter.png')
+imgContainer.appendChild(img2)
+
+let img3
+img3=document.createElement('img')
+img3.setAttribute('src', './media/github.png')
+imgContainer.appendChild(img3)
+
+let about
+about=document.createElement('p')
+about.textContent='I am an educator, motivator and content creator. I am a life-long learner. If you like to know more about me checkout my LinkedIn or Github profile. Thank you so much for joining in my quest of changing everyone to developer'
+about.style.width='37.8rem'
+about.style.textAlign='center'
+main2.appendChild(about)
+
+
+
+
+let tsq
+tsq=document.createElement('section')
+tsq.style.display='flex'
+tsq.style.width='max-content'
+tsq.style.gap='3rem'
+main2.appendChild(tsq)
+
+let t
+t=document.createElement('aside')
+t.style.display='flex'
+t.style.flexDirection='column'
+t.style.gap='0'
+t.style.margin='0'
+t.style.padding='0'
+
+tsq.appendChild(t)
+ 
+
+ for(let i=0;i<6;i++){
+     let tp=document.createElement('div')
+     tp.style.display='flex'
+    tp.style.alignItems='center'
+    tp.style.gap='0.5rem'
+    tp.style.height='1.5rem'
+  t.appendChild(tp)
+  if(i===0){
+    tp.textContent='Titles'
+    tp.style.fontWeight='900'
+  }else if(i===1){
+    let img
+    img=document.createElement('img')
+    img.setAttribute('src', './media/github.png')
+    img.style.width='1rem'
+    img.style.height='1rem'
+
+    tp.appendChild(img)
+
+    let p
+    p=document.createElement('p')
+    p.textContent='Educator'
+    tp.appendChild(p)
+
+  }else if(i===2){
+      
+    let img
+    img=document.createElement('img')
+    img.setAttribute('src', './media/github.png')
+    img.style.width='1rem'
+    img.style.height='1rem'
+    tp.appendChild(img)
+
+    let p
+    p=document.createElement('p')
+    p.textContent='Programmer'
+    tp.appendChild(p)
+
+  }else if(i===3){
+      
+    let img
+    img=document.createElement('img')
+    img.setAttribute('src', './media/github.png')
+    img.style.width='1rem'
+    img.style.height='1rem'
+    tp.appendChild(img)
+
+    let p
+    p=document.createElement('p')
+    p.textContent='Developer'
+    tp.appendChild(p)
+
+  }else if(i===4){
+      
+    let img
+    img=document.createElement('img')
+    img.setAttribute('src', './media/github.png')
+    img.style.width='1rem'
+    img.style.height='1rem'
+    tp.appendChild(img)
+
+    let p
+    p=document.createElement('p')
+    p.textContent='Motivator'
+    tp.appendChild(p)
+
+  }else{
+      
+    let img
+    img=document.createElement('img')
+    img.setAttribute('src', './media/github.png')
+    img.style.width='1rem'
+    img.style.height='1rem'
+    tp.appendChild(img)
+
+    let p
+    p=document.createElement('p')
+    p.textContent='Content Creator'
+    tp.appendChild(p)
+
+  }
+ }
+
+
+
+// Skills Starts here
+let s
+s=document.createElement('aside')
+s.style.display='flex'
+s.style.flexDirection='column'
+s.style.gap='0'
+tsq.appendChild(s)
+
+
+for(let i=0;i<7;i++){
+     let sp=document.createElement('div')
+     sp.style.display='flex'
+    sp.style.alignItems='center'
+    sp.style.gap='0.5rem'
+    sp.style.height='1.5rem'
+  s.appendChild(sp)
+  if(i===0){
+    sp.textContent='Skills'
+    sp.style.fontWeight='900'
+  }else if(i===1){
+    let img
+    img=document.createElement('img')
+    img.setAttribute('src', './media/github.png')
+    img.style.width='1rem'
+    img.style.height='1rem'
+
+    sp.appendChild(img)
+
+    let p
+    p=document.createElement('p')
+    p.textContent='Web Development'
+    sp.appendChild(p)
+
+  }else if(i===2){
+      
+    let img
+    img=document.createElement('img')
+    img.setAttribute('src', './media/github.png')
+    img.style.width='1rem'
+    img.style.height='1rem'
+    sp.appendChild(img)
+
+    let p
+    p=document.createElement('p')
+    p.textContent='Data Analysis'
+    sp.appendChild(p)
+
+  }else if(i===3){
+      
+    let img
+    img=document.createElement('img')
+    img.setAttribute('src', './media/github.png')
+    img.style.width='1rem'
+    img.style.height='1rem'
+    sp.appendChild(img)
+
+    let p
+    p=document.createElement('p')
+    p.textContent='Data Visualization'
+    sp.appendChild(p)
+
+  }else if(i===4){
+      
+    let img
+    img=document.createElement('img')
+    img.setAttribute('src', './media/github.png')
+    img.style.width='1rem'
+    img.style.height='1rem'
+    sp.appendChild(img)
+
+    let p
+    p=document.createElement('p')
+    p.textContent='Programming'
+    sp.appendChild(p)
+
+  }else if(i===5){
+      
+    let img
+    img=document.createElement('img')
+    img.setAttribute('src', './media/github.png')
+    img.style.width='1rem'
+    img.style.height='1rem'
+    sp.appendChild(img)
+
+    let p
+    p=document.createElement('p')
+    p.textContent='Databases'
+    sp.appendChild(p)
+
+  }else{
+    let img
+    img=document.createElement('img')
+    img.setAttribute('src', './media/github.png')
+    img.style.width='1rem'
+    img.style.height='1rem'
+    sp.appendChild(img)
+
+    let p
+    p=document.createElement('p')
+    p.textContent='Developing API'
+    sp.appendChild(p)
+  }
+ }
+
+//  Qualifications starts Here
+
+
+let q
+q=document.createElement('aside')
+q.style.display='flex'
+q.style.flexDirection='column'
+q.style.gap='0'
+tsq.appendChild(q)
+
+ for(let i=0;i<5;i++){
+     let qp=document.createElement('div')
+     qp.style.display='flex'
+    qp.style.alignItems='center'
+    qp.style.gap='0.5rem'
+    qp.style.height='1.5rem'
+  q.appendChild(qp)
+  if(i===0){
+    qp.textContent='Titles'
+    qp.style.fontWeight='900'
+  }else if(i===1){
+    let img
+    img=document.createElement('img')
+    img.setAttribute('src', './media/github.png')
+    img.style.width='1rem'
+    img.style.height='1rem'
+
+    qp.appendChild(img)
+
+    let p
+    p=document.createElement('p')
+    p.textContent='Msc. Computer Science Ongoing'
+    qp.appendChild(p)
+
+  }else if(i===2){
+      
+    let img
+    img=document.createElement('img')
+    img.setAttribute('src', './media/github.png')
+    img.style.width='1rem'
+    img.style.height='1rem'
+    qp.appendChild(img)
+
+    let p
+    p=document.createElement('p')
+    p.textContent='Bsc.Information and commnication Eng.'
+    qp.appendChild(p)
+
+  }else if(i===3){
+      
+    let img
+    img=document.createElement('img')
+    img.setAttribute('src', './media/github.png')
+    img.style.width='1rem'
+    img.style.height='1rem'
+    qp.appendChild(img)
+
+    let p
+    p=document.createElement('p')
+    p.textContent='Msc.Food Technology'
+    qp.appendChild(p)
+
+  }else{
+      
+    let img
+    img=document.createElement('img')
+    img.setAttribute('src', './media/github.png')
+    img.style.width='1rem'
+    img.style.height='1rem'
+    qp.appendChild(img)
+
+    let p
+    p=document.createElement('p')
+    p.textContent='Bsc.Food Technology'
+    qp.appendChild(p)
+
+  }
+ }
+
+ 
