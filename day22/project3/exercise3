@@ -739,4 +739,39 @@ tsq.appendChild(q)
   }
  }
 
+
  
+
+
+ let keyWords=['# HTML','# HTML5','# CSS','# CSS3','# JS','# JavaScript','# ES6','# Promise','# async await','# Database','# React','# React Hooks','# Context API','# React Router','# Redux','# Node','# MongoDB','# SQL','# API','# DOM','# data science', '# MERN','# Python','# Flask','# Statistic','# Linear Algebra','# Numpy','# Pandas','# Scipy','# Scikit-learn','# VisualiZation','# D3.js']
+ 
+
+let footer
+footer=document.createElement('footer')
+footer.style.display='flex'
+footer.style.flexWrap='wrap'
+footer.style.width='46.8rem'
+footer.style.gap='1rem'
+footer.style.fontStyle='italic'
+// footer.style.margin='auto'
+footer.style.padding='0'
+main2.appendChild(footer)
+
+ for(let i=0;i<keyWords.length;i++){
+ let kk=document.createElement('p')
+kk.textContent=keyWords[i]
+kk.style.width='max-content'
+kk.style.height='max-content'
+kk.style.fontSize='12px'
+const bgC=()=>{
+  kk.style.backgroundColor='#'+Math.random().toString(16).substr(2,6)  
+}
+bgC()
+// setInterval(bgC,1000)
+// kk.style.transition='all 0.5s linear'
+// kk.style.backgroundColor='blue'
+kk.style.padding='0.5rem 2rem 0.5rem 0.5rem'
+kk.style.borderRadius='50px'
+footer.appendChild(kk)
+
+ }
