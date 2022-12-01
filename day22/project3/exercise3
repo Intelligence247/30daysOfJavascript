@@ -1,5 +1,6 @@
 // Exercise Three Starts Here
 // Check the requirement of this project from both images(jpg and gif). All the data and CSS has been implemented using JavaScript only. The data is found on starter folder project_3. The drop down button has been created using details HTML element.
+let keyWords=['# HTML','# HTML5','# CSS','# CSS3','# JS','# JavaScript','# ES6','# Promise','# async await','# Database','# React','# React Hooks','# Context API','# React Router','# Redux','# Node','# MongoDB','# SQL','# API','# DOM','# data science', '# MERN','# Python','# Flask','# Statistic','# Linear Algebra','# Numpy','# Pandas','# Scipy','# Scikit-learn','# VisualiZation','# D3.js']
 const date = new Date
 let mainP3 = document.createElement('main')
 mainP3.textContent
@@ -37,6 +38,7 @@ span.style.display = 'inline-block'
 const rand = () => {
     span.style.color = '#' + Math.random().toString(16).substr(2, 6)
 }
+rand()
 setInterval(rand, 1000)
 header.appendChild(span)
 
@@ -54,12 +56,14 @@ function funcDate() {
     let date = new Date
     h3.textContent = `${date.toLocaleDateString('month', { month: 'long' })} ${date.getDate()}, ${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
 }
+funcDate()
 setInterval(funcDate, 1000)
 h3.style.width = 'max-content'
 h3.style.margin = 'auto'
 const backG = () => {
     h3.style.backgroundColor = '#' + Math.random().toString(16).substr(2, 6)
 }
+backG()
 setInterval(backG, 1000)
 h3.style.padding = '0.3rem'
 h3.style.marginTop = '1rem'
@@ -742,27 +746,32 @@ tsq.appendChild(q)
 
  
 
-
- let keyWords=['# HTML','# HTML5','# CSS','# CSS3','# JS','# JavaScript','# ES6','# Promise','# async await','# Database','# React','# React Hooks','# Context API','# React Router','# Redux','# Node','# MongoDB','# SQL','# API','# DOM','# data science', '# MERN','# Python','# Flask','# Statistic','# Linear Algebra','# Numpy','# Pandas','# Scipy','# Scikit-learn','# VisualiZation','# D3.js']
+let kii
+kii=document.createElement('p')
+main2.appendChild(kii)
+kii.textContent='Keywords'
+kii.style.fontSize='2rem'
+kii.style.fontWeight='800'
+kii.style.marginBottom='-0.2rem' 
  
 
 let footer
 footer=document.createElement('footer')
 footer.style.display='flex'
 footer.style.flexWrap='wrap'
-footer.style.width='46.8rem'
+footer.style.width='44rem'
 footer.style.gap='1rem'
 footer.style.fontStyle='italic'
 // footer.style.margin='auto'
 footer.style.padding='0'
 main2.appendChild(footer)
-
  for(let i=0;i<keyWords.length;i++){
  let kk=document.createElement('p')
 kk.textContent=keyWords[i]
 kk.style.width='max-content'
 kk.style.height='max-content'
-kk.style.fontSize='12px'
+kk.style.fontSize='15px'
+kk.style.marginBottom='-1rem'
 const bgC=()=>{
   kk.style.backgroundColor='#'+Math.random().toString(16).substr(2,6)  
 }
@@ -770,7 +779,7 @@ bgC()
 // setInterval(bgC,1000)
 // kk.style.transition='all 0.5s linear'
 // kk.style.backgroundColor='blue'
-kk.style.padding='0.5rem 2rem 0.5rem 0.5rem'
+kk.style.padding='0.5rem 1.5rem 0.5rem 0.5rem'
 kk.style.borderRadius='50px'
 footer.appendChild(kk)
 
