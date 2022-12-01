@@ -776,6 +776,7 @@ const bgC=()=>{
   kk.style.backgroundColor='#'+Math.random().toString(16).substr(2,6)  
 }
 bgC()
+
 // setInterval(bgC,1000)
 // kk.style.transition='all 0.5s linear'
 // kk.style.backgroundColor='blue'
@@ -784,3 +785,4 @@ kk.style.borderRadius='50px'
 footer.appendChild(kk)
 
  }
+ console.log(keyWords.length)
