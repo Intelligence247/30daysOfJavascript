@@ -155,3 +155,24 @@ const isValid = (param) => {
     }
 }
 console.log(isValid('0abdullahi'))
+
+
+// Exercise 3 Number 7!!
+const rgbAndHexGenerator = (a, b) => {
+    let arr = []
+    if (a == 'rgb') {
+        for (let i = 0; i < b; i++) {
+            let rgb = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
+            arr.push(rgb)
+        }
+    } else if (a == 'hexa') {
+        for (let i = 0; i <= b; i++) {
+            let hex = '#' + Math.random().toString(16).substr(2, 6)
+            arr.push(hex)
+        }
+    } else {
+        return `${a} is not a color type`
+    }
+    return arr
+}
+console.log(rgbAndHexGenerator('hexa', 5))

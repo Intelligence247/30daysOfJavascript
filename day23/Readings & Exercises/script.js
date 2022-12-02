@@ -110,6 +110,8 @@ main.style.display = 'flex'
 main.style.flexDirection = 'column'
 main.style.gap = '1rem'
 main.style.paddingLeft = '3rem'
+main.style.margin = 'auto'
+main.style.marginTop = '7rem'
 document.body.appendChild(main)
 
 let h1
@@ -180,7 +182,57 @@ but.addEventListener('click', () => {
     // alert('Your BMI is = ' + ' ' + bmi.toFixed(3))
     // console.log(bmi)
     p.textContent = 'Your BMI is =' + ' ' + bmi.toFixed(3)
+    console.log(bmi)
 
 })
 
 
+// input event and change
+// In the above example, we managed to get input values from two input fields by clicking button. How about if we want to get value without click the button. We can use the change or input event type to get data right away from the input field when the field is on focus. Let us see how we will handle that.
+
+const input = document.querySelector('#say')
+input.style.display = 'block'
+input.style.width = '20rem'
+input.style.height = '2rem'
+input.style.color = 'blue'
+
+const div = document.querySelector('#div')
+
+div.style.minHeight = '2rem'
+div.style.minWidth = '20rem'
+div.style.width = 'max-content'
+div.style.height = 'max-content'
+div.style.color = 'blue'
+div.style.marginTop = '2rem'
+div.style.marginBottom = '2rem'
+div.style.border = '3px solid red'
+div.style.backgroundColor = 'pink'
+input.addEventListener('input', e => {
+    div.textContent = e.target.value
+})
+
+// blur event
+// In contrast to input or change, the blur event occur when the input field is not on focus.
+
+let blur
+blur = document.querySelector('#blur')
+let blurdiv
+blurdiv = document.querySelector('#blurdiv')
+blur.addEventListener('blur', e => {
+    blurdiv.textContent = 'Field is required'
+    blurdiv.style.color = 'red'
+    blurdiv.backgroundColor = 'yellow'
+    div.style.height = '2rem'
+    div.style.width = '10rem'
+
+})
+
+// keypress, keydow and keyup
+// We can access all the key numbers of the keyboard using different event listener types. Let us use keypress and get the keyCode of each keyboard keys.
+
+let h2
+h2 = document.querySelector('h2')
+h2.style.width = '4rem'
+document.body.addEventListener('keypress', e => {
+    h2.textContent = 'The keycode is=' + ' ' + e.keyCode
+})
