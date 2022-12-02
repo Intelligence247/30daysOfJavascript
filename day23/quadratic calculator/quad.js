@@ -71,7 +71,7 @@ but.addEventListener('click', () => {
     alm1 = (-b.value + (Math.sqrt((b.value * b.value) - (4 * a.value * c.value)))) / (2 * a.value);
     alm2 = (-b.value - (Math.sqrt((b.value * b.value) - (4 * a.value * c.value)))) / (2 * a.value);
     alert(`x1 = ${alm1}, x2 = ${alm2}`)
-    console.log(`x1 = ${alm1}, x2 = ${alm2}`)
+    // console.log(`x1 = ${alm1}, x2 = ${alm2}`)
 })
 
 

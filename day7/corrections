@@ -176,3 +176,18 @@ const rgbAndHexGenerator = (a, b) => {
     return arr
 }
 console.log(rgbAndHexGenerator('hexa', 5))
+console.log(rgbAndHexGenerator('rgb', 5))
+
+const hexaToRgb = (hex) => {
+    hex = hex.toString(16)
+    return hex.length == 1 ? '0' + hex : hex
+}
+console.log(hexaToRgb(2))
+
+
+const rgbToHexa = (r, g, b) => {
+    return `#${hexaToRgb(r)}${hexaToRgb(g)}${hexaToRgb(b)}`
+}
+console.log(rgbToHexa(255, 65, 129))
+
+
