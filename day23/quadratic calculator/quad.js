@@ -65,12 +65,28 @@ but.style.fontSize = '2rem'
 but.style.color = 'white'
 but.style.fontWeight = '900'
 main.appendChild(but)
+
+let ans
+ans = document.querySelector('#ans')
+ans.style.backgroundColor = 'indigo'
+ans.style.width = '80%'
+ans.style.borderRadius = '50px'
+ans.style.margin = 'auto'
+ans.style.borderColor = 'white'
+ans.style.height = '3rem'
+ans.style.fontSize = '1.6rem'
+ans.style.color = 'white'
+ans.style.fontWeight = '900'
+ans.style.display = 'flex'
+ans.style.justifyContent = 'center'
+ans.style.alignItems = 'center'
+main.appendChild(ans)
 let alm1
 let alm2
 but.addEventListener('click', () => {
     alm1 = (-b.value + (Math.sqrt((b.value * b.value) - (4 * a.value * c.value)))) / (2 * a.value);
     alm2 = (-b.value - (Math.sqrt((b.value * b.value) - (4 * a.value * c.value)))) / (2 * a.value);
-    alert(`x1 = ${alm1}, x2 = ${alm2}`)
+    ans.textContent = `X1 = ${alm1.toFixed(4)}, X2 = ${alm2.toFixed(4)}`
     // console.log(`x1 = ${alm1}, x2 = ${alm2}`)
 })
 

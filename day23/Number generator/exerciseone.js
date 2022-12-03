@@ -62,7 +62,7 @@ button.addEventListener('click', () => {
     main.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji'
     main.style.marginTop = '2rem'
     main.style.marginBottom = '2rem'
-    if (typeof input.value != String) {
+    if (typeof input.value != Number) {
         let p
         p = document.querySelector('p')
         button.addEventListener('click', () => {
