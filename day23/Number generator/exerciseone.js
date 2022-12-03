@@ -29,6 +29,11 @@ input = document.querySelector('input')
 input.style.width = '20rem'
 input.style.height = '1.565rem'
 input.style.border = '1.5px solid green'
+input.style.display = 'inline-block'
+input.style.position = 'absolute'
+input.style.marginTop = '1rem'
+input.style.left = '-20rem'
+
 
 let button
 button = document.querySelector('button')
@@ -39,7 +44,11 @@ button.style.color = 'white'
 
 let num = '1234567890'
 let sp = num.split('')
-
+let pi = document.querySelector('#pi')
+// pi.style.display = 'flex'
+// pi.style.flexDirection = 'column'
+pi.style.position = 'relative'
+pi.style.top = '-2rem'
 let div
 button.addEventListener('click', () => {
 
@@ -53,6 +62,20 @@ button.addEventListener('click', () => {
     main.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji'
     main.style.marginTop = '2rem'
     main.style.marginBottom = '2rem'
+    if (typeof input.value != String) {
+        let p
+        p = document.querySelector('p')
+        button.addEventListener('click', () => {
+            p.textContent = 'Input Value must be a number'
+            p.style.color = 'red'
+            p.style.margin = '0rem'
+            p.style.position = 'absolute'
+            p.style.top = '-1rem'
+            p.style.width = 'max-content'
+            p.style.height = 'max-content'
+
+        })
+    }
     for (let i = 0; i <= input.value; i++) {
         div = document.createElement('div')
         main.appendChild(div)
@@ -71,13 +94,6 @@ button.addEventListener('click', () => {
             div.style.backgroundColor = 'red'
         } else if (i % 2 == 1) {
             div.style.backgroundColor = 'yellow'
-        } else if (typeof input.value != sp) {
-            let p
-            p = document.querySelector('p')
-            button.addEventListener('click', () => {
-                p.textContent = 'Input Value must be a number'
-                p.style.color = 'red'
-            })
         }
 
     }
