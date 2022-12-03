@@ -30,9 +30,8 @@ input.style.width = '20rem'
 input.style.height = '1.565rem'
 input.style.border = '1.5px solid green'
 input.style.display = 'inline-block'
-input.style.position = 'absolute'
+input.style.position = 'relative'
 input.style.marginTop = '1rem'
-input.style.left = '-20rem'
 
 
 let button

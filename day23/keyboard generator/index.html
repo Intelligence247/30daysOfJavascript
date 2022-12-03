@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Generator</title>
+</head>
+
+<body>
+    <main>
+        <h1>You pressed<span></span></h1>
+        <p></p>
+    </main>
+
+    <script>
+        let body
+        body = document.querySelector('body')
+        body.style.overflow = 'hidden'
+        let main
+        main = document.querySelector('main')
+        main.style.height = '100vh'
+        main.style.display = 'flex'
+        main.style.justifyContent = 'center'
+        main.style.alignItems = 'center'
+        main.style.boxShadow = '#c1c1c1 2px 0px 8px'
+        main.style.flexDirection = 'column'
+        main.style.gap = '1rem'
+
+        let h1
+        h1 = document.querySelector('h1')
+        h1.style.minWidth = '35rem'
+        h1.style.height = '4rem'
+        h1.style.display = 'flex'
+        h1.style.fontSize = '3rem'
+        h1.style.justifyContent = 'center'
+        h1.style.alignItems = 'center'
+        h1.style.boxShadow = '#c1c1c1 2px 0px 8px'
+        h1.style.margin = '0'
+        h1.style.textShadow = '#c1c1c1 2px 2px 1px'
+
+
+
+        let p = document.querySelector('p')
+        p.style.width = '7.2rem'
+        p.style.fontSize = '5rem'
+        p.style.height = '8rem'
+        p.style.display = 'flex'
+        p.style.justifyContent = 'center'
+        p.style.alignItems = 'center'
+        p.style.margin = '0'
+        p.style.color = 'green'
+        p.style.boxShadow = '#c1c1c1 2px 0px 8px'
+        p.style.textShadow = '#c1c1c1  2px 2px 1px'
+
+        let span = document.querySelector('span')
+        span.style.color = 'green'
+        span.style.marginLeft = '0.5rem'
+        document.body.addEventListener('keydown', (e) => {
+            span.textContent = e.key
+            p.textContent = e.keyCode
+
+        })
+
+        // 
+    </script>
+
+</body>
+
+</html>
