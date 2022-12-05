@@ -10,8 +10,11 @@ main.style.marginTop = '5rem'
 main.style.flexDirection = 'column'
 main.style.gap = '1rem'
 main.style.paddingLeft = '3rem'
+main.style.boxShadow = 'rgb(0,205,0) 0px 0px 20px 3px'
 document.body.appendChild(main)
-
+let body
+body = document.querySelector('body')
+body.style.backgroundColor = 'green'
 let h1
 h1 = document.querySelector('h1')
 h1.style.padding = '1rem'
