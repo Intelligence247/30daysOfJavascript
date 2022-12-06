@@ -42,7 +42,7 @@ getAsNodeList[3].id = ('fourth-paragraph')
 
 // Exercise: Level2
 
-// 1. Change stye of each paragraph using JavaScript(eg. color, background, border, font-size, font-family)
+// 1. Change stlye of each paragraph using JavaScript(eg. color, background, border, font-size, font-family)
 
 getAsNodeList.forEach((xx, i) => {
     if (i % 2 == 0) {
