@@ -27,7 +27,7 @@
             background-color: rgba(255, 255, 255, 0.2);
             width: 50rem;
             height: max-content;
-            padding: 3rem 2rem;
+            padding: 2.5rem 2rem;
             margin: auto;
             margin-top: 1rem;
             display: flex;
@@ -64,7 +64,31 @@
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.2);
             color: white;
+            margin: auto;
 
+        }
+
+        #warn {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.2);
+            font-size: 1.1rem;
+        }
+
+        select {
+            height: 1.3rem;
+            position: relative;
+        }
+
+        select:focus {
+            scale: 1.00001;
+            height: 3rem;
+        }
+
+
+        header {
+            display: inline-block;
+            display: flex;
+            gap: 1rem;
         }
     </style>
 </head>
@@ -73,7 +97,7 @@
     <h1>Calculate a weight of an object on a planet</h1>
     <header>
         <input type="text" id='mass'>
-        <select id="planet">
+        <select multiple id="planet">
             <option value="select">--select planet--</option>
             <option value="mercury">Mercury</option>
             <option value="mars">Mars</option>
@@ -89,7 +113,7 @@
         <button>Calculate weight</button>
     </header>
     <main>
-
+        <p id="warn"></p>
         <img src="" alt="">
         <aside>
             <h2></h2>
