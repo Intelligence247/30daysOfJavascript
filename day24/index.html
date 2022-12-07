@@ -16,20 +16,35 @@
             width: max-content;
             margin: auto;
         }
+
+        header {
+            width: max-content;
+            margin: auto;
+            margin-top: 3rem;
+        }
     </style>
 </head>
 
 <body>
     <h1>Calculate a weight of an object on a planet</h1>
-    <input type="text" id='mass'>
-    <select name="" id="">
-        <option value="">--select planet--</option>
-        <option value="">Mercury</option>
-        <option value="">Mars</option>
-    </select>
-    <button>Calculate weight</button>
-
-
+    <header>
+        <input type="text" id='mass'>
+        <select id="planet">
+            <option value="select">--select planet--</option>
+            <option value="mercury">Mercury</option>
+            <option value="mars">Mars</option>
+            <option value="venus">Venus</option>
+            <option value="saturn">Saturn</option>
+            <option value="jupiter">Jupiter</option>
+            <option value="earth">Earth</option>
+            <option value="pluto">Pluto</option>
+            <option value="moon">Moon</option>
+            <option value="uranus">Uranus</option>
+            <option value="neptune">Neptune</option>
+        </select>
+        <button>Calculate weight</button>
+    </header>
+    <main></main>
     <script src="script.js"></script>
 </body>
 
