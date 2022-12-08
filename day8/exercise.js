@@ -461,22 +461,95 @@ let all = `${date.getDay()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.
 
 
 
-const practSignIn = (id, username) => {
+const praSignUp = (id, username) => {
     for (const c of users2) {
         if (c._id.includes(id) || c.username.includes(username)) {
             return 'You already have an account, Pra'
         }
     }
 
-    let rand = Math.random().toString(36).substr(2, 7)
+
     let newPerson = {
         _id: id,
         username: username,
         email: 'uthmanabdullahi2020@gmail.com',
-        password: rand,
+        password: '123123',
         createdAt: all,
         isLoggedIn: false
     }
     return users2.concat(newPerson)
 }
-console.log(practSignIn('ekuafd', 'Intelligence'))
+console.log(praSignUp('ekuafd', 'Intelligence'))
+
+
+const praSignIn = (password, username) => {
+    for (const c of users2) {
+        if (c.username == username && c.password == password) {
+            return 'You have successfully signed in'
+        }
+    }
+    return 'Check your password and username if both are correct'
+}
+console.log(praSignIn("123333", "Thomas"))
+
+
+const productPra = [
+    {
+        _id: 'eedfcf',
+        name: 'mobile phone',
+        description: 'Huawei Honor',
+        price: 200,
+        ratings: [
+            { userId: 'fg12cy', rate: 5 },
+            { userId: 'zwf8md', rate: 4.5 }
+        ],
+        likes: []
+    },
+    {
+        _id: 'aegfal',
+        name: 'Laptop',
+        description: 'MacPro: System Darwin',
+        price: 2500,
+        ratings: [],
+        likes: ['fg12cy']
+    },
+    {
+        _id: 'hedfcg',
+        name: 'TV',
+        description: 'Smart TV:Procaster',
+        price: 400,
+        ratings: [{ userId: 'fg12cy', rate: 5 }],
+        likes: ['fg12cy']
+    }
+]
+
+const praRateproduct = (rate, userId, id) => {
+    for (const c of products) {
+        if (c._id == id) {
+            return c.ratings.concat({ userId: userId, rate: rate })
+        }
+    }
+    return `${id} is not a valid id`
+}
+console.log(praRateproduct(50, 'fholfho', 'hedfcg'))
+console.log(praRateproduct(2000, 'dwebwk', 'hedfcg'))
+
+const rateProductwithMap = (rate, userId, id) => {
+    return products.map((p) => {
+        if (p._id == id) {
+            p.ratings.push({ userId: userId, rate: rate })
+        }
+        return p
+    })
+
+}
+console.log(rateProductwithMap(909, 'fholfho', 'aegfal'))
+
+const productLike = (id) => {
+    for (const p of products) {
+        if (p._id = id) {
+            return p.likes.push(p.ratings.userId)
+        }
+    }
+}
+console.log(productLike('hedfcg'))
