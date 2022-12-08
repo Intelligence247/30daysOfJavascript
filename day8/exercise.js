@@ -545,11 +545,11 @@ const rateProductwithMap = (rate, userId, id) => {
 }
 console.log(rateProductwithMap(909, 'fholfho', 'aegfal'))
 
-const productLike = (id) => {
-    for (const p of products) {
-        if (p._id = id) {
-            return p.likes.push(p.ratings.userId)
-        }
-    }
-}
-console.log(productLike('hedfcg'))
+// const productLike = (id) => {
+//     for (const p of products) {
+//         if (p._id = id) {
+//             return p.likes.push(p.ratings.userId)
+//         }
+//     }
+// }
+// console.log(productLike('hedfcg'))

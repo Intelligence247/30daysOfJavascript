@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header h1 {
+    color: #ffa500;
+}
+
+header {
+    background-color: #efefef;
+    padding: 2rem 0rem 1rem 0rem;
+    text-align: center;
+    border: 2px solid #e2e0e0;
+}
+
+section.mid {
+    text-align: center;
+    padding: 2rem 0rem 1rem 0rem;
+    background-color: #f7f7f7;
+}
+
+button {
+    border: none;
+    background-color: #ffa500;
+    padding: 0.3rem 0.6rem;
+    margin-bottom: 0.7rem;
+
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* popu back=#f7f7f7 */
+/* con backco==#edeff1, */
+/* border==#e2e0e0 */
