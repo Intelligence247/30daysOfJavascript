@@ -438,3 +438,45 @@ const signIn2 = (email, password) => {
 }
 console.log(signIn2('martha@martha.com', '123222'))
 
+let date = new Date
+
+const modifMinu = () => {
+    let minutes = date.getMinutes()
+    if (minutes <= 9) {
+        return '0' + minutes
+    }
+    return minutes
+}
+const ampm = (am, pm) => {
+    let hour = date.getHours()
+    if (hour <= 12) {
+        return am
+    } else {
+        return pm
+    }
+}
+
+let all = `${date.getDay()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${modifMinu()} ${ampm('AM', 'PM')}`
+
+
+
+
+const practSignIn = (id, username) => {
+    for (const c of users2) {
+        if (c._id.includes(id) || c.username.includes(username)) {
+            return 'You already have an account, Pra'
+        }
+    }
+
+    let rand = Math.random().toString(36).substr(2, 7)
+    let newPerson = {
+        _id: id,
+        username: username,
+        email: 'uthmanabdullahi2020@gmail.com',
+        password: rand,
+        createdAt: all,
+        isLoggedIn: false
+    }
+    return users2.concat(newPerson)
+}
+console.log(practSignIn('ekuafd', 'Intelligence'))

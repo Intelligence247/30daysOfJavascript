@@ -41,6 +41,8 @@ button.addEventListener('click', () => {
         h2 = document.querySelector('h2')
         h2.style.margin = '0'
         h2.textContent = 'The weight of the object on' + ' ' + result.planet.toUpperCase()
+
+
         let p
         p = document.querySelector('#ans')
         p.style.padding = '1rem'
@@ -48,20 +50,32 @@ button.addEventListener('click', () => {
         p.style.width = 'max-content'
         p.style.margin = 'auto'
         p.textContent = (mass.value * result.gravity).toFixed(2)
+
+
         let aside
         aside = document.querySelector('aside')
         aside.style.display = 'block'
         aside.style.display = 'flex'
         aside.style.justifyContent = 'center'
         aside.style.alignItems = 'center'
-        let img = document.querySelector('img')
+        aside.style.padding = '1rem'
+
+        let img
+        img = document.querySelector('img')
         img.src = result.img
         img.style.width = '20rem'
         img.style.height = '20rem'
         img.style.margin = 'auto'
+
         warn.style.display = 'none'
+
         if (mass.value == 0 || mass.value == null) {
             warn.style.display = 'block'
+            aside.style.display = 'none'
+            img.style.display = 'none'
+        } else if (result.planet == 'select') {
+            warn.style.display = 'block'
+            warn.textContent = 'You have not choose a planet yet'
             aside.style.display = 'none'
             img.style.display = 'none'
         } else {

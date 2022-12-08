@@ -905,7 +905,7 @@ tsq.appendChild(q)
     qp.style.height='1.5rem'
   q.appendChild(qp)
   if(i===0){
-    qp.textContent='Titles'
+    qp.textContent='Qualifications'
     qp.style.fontWeight='900'
   }else if(i===1){
     let img
@@ -1008,5 +1008,3 @@ kk.style.borderRadius='50px'
 footer.appendChild(kk)
 
  }
-
- console.log(asabenehChallenges2020.keywords.length)
