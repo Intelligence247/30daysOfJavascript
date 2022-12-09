@@ -2145,4 +2145,10 @@ countriesAllAndData.map((n) => {
 console.log(sumx)
 console.log(counting)
 
-console.table(countriesAllAndData)
+// console.table(countriesAllAndData)
+let rr = []
+for (const c of countriesAllAndData) {
+    rr.push({ languages: c.languages })
+}
+console.log(rr)
+
