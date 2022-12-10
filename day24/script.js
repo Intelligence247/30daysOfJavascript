@@ -31,8 +31,9 @@ warn.textContent = 'Mass is required'
 warn.style.margin = 'auto'
 warn.style.padding = '1rem 10rem'
 let gravToCal = 0
-button.addEventListener('click', () => {
-    sb.addEventListener('change', (e) => {
+
+sb.addEventListener('change', (e) => {
+    button.addEventListener('click', () => {
         const result = arr.find((a) => a.planet == e.target.value)
 
         let main
@@ -84,4 +85,9 @@ button.addEventListener('click', () => {
             img.style.display = 'block'
         }
     })
+})
+
+sb.addEventListener('change', (e) => {
+    const fib = arr.find((p) => p.planet == e.target.value)
+    console.log(fib)
 })

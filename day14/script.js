@@ -203,12 +203,93 @@ try {
 
 // try...catch...finally
 
+/* syntax
+try {
+   ... try to execute the code ...
+} catch (err) {
+   ... handle errors ...
+} finally {
+   ... execute always ...
+}
+*/
+
 try {
     console.log('try')
-    sdj
+    if (confirm('Make an error ?')) BAD_CODE()
 
 } catch (error) {
     console.log('catch')
 } finally {
     console.log('finally')
 }
+
+// In this code if we confirm to make an erro then the try, catch and finally block of code is going to run, But if canceled the catch block of Code is not going to run
+
+// One thing is finally will always run no matter what, If the code has an error or it doesn't... Except for syntax
+
+// The finally clause is often used when we start doing something and want to finalize it in any case of outcome.
+let num = +prompt("Enter a positive integer number?", 35)
+let diff, result;
+// diff = 'Abdullahi'
+// result = 'Intelligence'
+// console.log(diff, result)
+
+function fib(n) {
+    if (n < 0 || Math.trunc(n) != n) {
+        throw new Error("Must not be negative, and also an integer.");
+    }
+    return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+}
+
+let start = Date.now();
+
+try {
+    result = fib(num);
+} catch (err) {
+    result = 0;
+} finally {
+    diff = Date.now() - start;
+}
+
+console.log(result || "error occurred");
+console.log(`execution took ${diff}ms`);
+
+
+/* Variables are local inside try...catch...finally
+Please note that result and diff variables in the code above are declared before try...catch.
+
+Otherwise, if we declared let in try block, it would only be visible inside of it.*/
+
+
+// finally and return
+// The finally clause works for any exit from try...catch. That includes an explicit return.
+// In the example below, there’s a return in try. In this case, finally is executed just before the control returns to the outer code.
+
+function func() {
+
+    try {
+        return 1;
+
+    } catch (err) {
+        /* ... */
+    } finally {
+        console.log('finally');
+    }
+}
+
+console.log(func());
+
+
+// try...finally
+// The try...finally construct, without catch clause, is also useful. We apply it when we don’t want to handle errors here (let them fall through), but want to be sure that processes that we started are finalized.
+
+function func() {
+    // start doing something that needs completion (like measurements)
+    try {
+        // ...
+    } finally {
+        // complete that thing even if all dies
+    }
+}
+
+// In the code above, an error inside try always falls out, because there’s no catch. But finally works before the execution flow leaves the function.
