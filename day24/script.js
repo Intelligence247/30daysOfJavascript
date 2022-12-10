@@ -5,9 +5,6 @@ let button = document.querySelector('button')
 
 let opt = document.querySelector('#first')
 
-
-
-
 const arr = [
     { planet: 'select' },
     { planet: "mars", img: "./media/mars.png", gravity: 3.7 },
