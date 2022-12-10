@@ -2149,6 +2149,12 @@ console.log(counting)
 let rr = []
 for (const c of countriesAllAndData) {
     rr.push({ languages: c.languages })
+
+
 }
 console.log(rr)
+let arr = []
+let r3 = rr.map((s) => { arr.push(s.languages) })
 
+let flat = arr.flat()
+console.log(flat)
