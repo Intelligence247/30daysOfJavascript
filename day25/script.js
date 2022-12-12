@@ -2982,6 +2982,4 @@ language.addEventListener('click', (e) => {
 
     }
     both.textContent = '10 Most Spoken languages in the world'
-
-
 })
