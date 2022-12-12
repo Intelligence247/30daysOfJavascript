@@ -2862,6 +2862,11 @@ const countries_data = [
         "area": 390757
     }
 ]
+let sum = 0
+for (const c of countries_data) {
+    sum += c.population
+
+}
 
 const sorts = countries_data.sort((a, b) => {
     if (a.population > b.population) return -1
@@ -2900,6 +2905,7 @@ let tenlang = lang.slice(0, 10)
 console.log(tenlang)
 
 const population = document.querySelector('#population')
+const language = document.querySelector('#langs')
 const country = document.querySelector('#country')
 const both = document.querySelector('#both')
 const counText = document.querySelector('#counText')
@@ -2907,27 +2913,75 @@ const popText = document.querySelector('#popText')
 const left = document.querySelector('#left')
 const right = document.querySelector('#right')
 const mid = document.querySelector('#mid')
+const counText2 = document.querySelector('#counText2')
+// const left2 = document.querySelector('#left2')
+// const right2 = document.querySelector('#right2')
+// const mid2 = document.querySelector('#mid2')
 
+
+
+let world = {
+    country: 'World', population: sum
+}
+let unshiftW = counPop.unshift(world)
 
 
 
 population.addEventListener('click', (e) => {
+
     for (const c of counPop) {
         let p = document.createElement('p')
+        p.style.height = '2rem'
+        p.style.display = 'flex'
+        p.style.justifyContent = 'center'
+        p.style.alignItems = 'center'
         left.appendChild(p)
         p.style.textAlign = 'right'
         p.style.width = 'max-content'
         p.textContent = c.country
         let p2 = document.createElement('p')
         p2.textContent = c.population
+        p2.style.height = '2rem'
+        p2.style.display = 'flex'
+        p2.style.justifyContent = 'center'
+        p2.style.alignItems = 'center'
         right.appendChild(p2)
-        console.log(c.country)
         let div = document.createElement('div')
         mid.appendChild(div)
         div.style.height = '2rem'
-        div.style.width = c.population / 3000000 + 'px'
-        div.style.marginBottom = '1rem'
-        div.style.backgroundColor = 'yellow'
+        div.style.width = c.population / 10932053 + 'px'
+        div.style.backgroundColor = '#ffa500'
 
     }
+    both.textContent = '10 Most populated countries in the world'
+
+})
+
+language.addEventListener('click', (e) => {
+
+    for (const c of tenlang) {
+        let p = document.createElement('p')
+        left.appendChild(p)
+        p.style.height = '2rem'
+        p.style.display = 'flex'
+        p.style.justifyContent = 'center'
+        p.style.alignItems = 'center'
+        p.textContent = c.country
+        let p2 = document.createElement('p')
+        p2.textContent = c.count
+        p2.style.height = '2rem'
+        p2.style.display = 'flex'
+        p2.style.justifyContent = 'center'
+        p2.style.alignItems = 'center'
+        right.appendChild(p2)
+        let div = document.createElement('div')
+        mid.appendChild(div)
+        div.style.height = '2rem'
+        div.style.width = c.count / 2 + 'rem'
+        div.style.backgroundColor = '#ffa500'
+
+    }
+    both.textContent = '10 Most Spoken languages in the world'
+
+
 })

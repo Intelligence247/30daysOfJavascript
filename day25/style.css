@@ -37,30 +37,30 @@ button {
 
 #counText,
 #left,
-#right {
+#right,
+#mid {
     display: flex;
-    justify-content: center;
-    justify-content: space-between;
-    justify-content: baseline;
-
+    gap: 2rem;
 }
 
-#left {}
+
+
 
 #left,
-#right {
+#right,
+#mid {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: flex-start;
 
 
 }
 
 .width {
-    padding: 10rem;
-    padding-top: 5rem;
-
-
+    padding: 5rem 10rem;
+    margin-top: 1rem;
+    border: 2px solid #e2e0e0;
+    background-color: #edeff1;
 }
 
 /* popu back=#f7f7f7 */
