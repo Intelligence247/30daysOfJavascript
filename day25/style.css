@@ -35,6 +35,34 @@ button {
     gap: 1rem;
 }
 
+#counText,
+#left,
+#right {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    justify-content: baseline;
+
+}
+
+#left {}
+
+#left,
+#right {
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: flex-start;
+
+
+}
+
+.width {
+    padding: 10rem;
+    padding-top: 5rem;
+
+
+}
+
 /* popu back=#f7f7f7 */
 /* con backco==#edeff1, */
 /* border==#e2e0e0 */

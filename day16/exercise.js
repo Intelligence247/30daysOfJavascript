@@ -174,6 +174,8 @@ const skillsLength = JSON.parse(text, (key, value) => {
         for (const c of arr) {
             ax.push(c.length)
         }
+
+
         let maxUser = Math.max(...ax)
         for (const i of arr) {
             let anss = (maxUser === i.length) ? i : i

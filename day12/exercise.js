@@ -32,13 +32,7 @@ console.log('Distance =', max - min)
 
 
 //1. Write a pattern which identify if a string is a valid JavaScript variable
-const isValid = (param) => {
-    if (param.match(/[a-zA-Z]/) && !param.match(/^[0-9A-Z]/) && !param.match(/[@~!#%&*-.><+=?;:]/g)) {
-        return true
-    }
-    return false
-}
-console.log(isValid('firsname'))
+
 
 
 
@@ -143,3 +137,10 @@ console.log(grouped)
 // Exercises: Level 3
 // Writ a function which cleans text. Clean the following text. After cleaning, count three most frequent words in the string.
 
+const isValid = (param) => {
+    if (!param.match(/^[0-9A-Z]/) && !param.match(/[@~!#%&*-.><+=?;:]/g)) {
+        return true
+    }
+    return false
+}
+console.log(isValid('firstname'))
