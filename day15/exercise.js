@@ -141,6 +141,7 @@ class measureOfTendency {
     for (let i = 0; i < varianceSq.length; i++) {
       sumV += varianceSq[i]
     }
+    console.log('sumsss' + ' ' + sumV)
     sumV = sumV / length
     // variance Ends Here
     let sq = Math.sqrt(sumV)

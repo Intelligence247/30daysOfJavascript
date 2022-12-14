@@ -1,3 +1,28 @@
+// function myFunction() {
+// Declare variables
+// let input, filter, ul, li, a, i, txtValue;
+// input = document.getElementById('myInput');
+// filter = input.value.toLowerCase();
+// ul = document.getElementById("myUL");
+// li = ul.getElementsByTagName('li');
+
+// Loop through all list items, and hide those who don't match the search query
+//     for (i = 0; i < li.length; i++) {
+//         a = li[i].getElementsByTagName("a")[0];
+//         txtValue = a.textContent || a.innerText;
+//         if (txtValue.toLowerCase().indexOf(filter) > -1) {
+//             li[i].style.display = "";
+//         } else {
+//             li[i].style.display = "none";
+//         }
+//     }
+// }
+
+
+
+
+
+
 const countries = [
     'Afghanistan',
     'Albania',
@@ -193,22 +218,28 @@ const countries = [
     'Zambia',
     'Zimbabwe'
 ]
-function myFunction() {
-    // Declare variables
-    let input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById('myInput');
-    filter = input.value.toLowerCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName('li');
 
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toLowerCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
+
+const section = document.querySelector('#countries')
+const input = document.querySelector('input')
+const startWord = document.querySelector('startWord')
+const anyWord = document.querySelector('#anyWord')
+// input.textContent = 'Abdullahi'
+
+for (let i = 0; i < countries.length; i++) {
+
+    let p
+    p = document.createElement('p')
+    p.style.background = 'linear-gradient(0deg, rgba(37, 40, 43, 0.8), rgba(34, 0, 255, 0.3)), url(./media/map.jpg)'
+    p.style.width = '10rem'
+    p.style.height = '10rem'
+    p.style.display = 'flex'
+    p.style.justifyContent = 'center'
+    p.style.alignItems = 'center'
+    p.style.backgroundPosition = 'center'
+    p.style.color = 'white'
+    p.style.backgroundSize = 'cover'
+    section.appendChild(p)
+    p.textContent = countries[i]
+
 }

@@ -2928,7 +2928,6 @@ let unshiftW = counPop.unshift(world)
 
 
 population.addEventListener('click', (e) => {
-
     for (const c of counPop) {
         let p = document.createElement('p')
         p.style.height = '2rem'
@@ -2953,6 +2952,7 @@ population.addEventListener('click', (e) => {
         div.style.backgroundColor = '#ffa500'
 
     }
+
     both.textContent = '10 Most populated countries in the world'
 
 })

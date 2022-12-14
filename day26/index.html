@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+    <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 
     <ul id="myUL">
         <li><a href="#">Adele</a></li>
@@ -22,9 +22,37 @@
         <li><a href="#">Calvin</a></li>
         <li><a href="#">Christina</a></li>
         <li><a href="#">Cindy</a></li>
-    </ul>
+    </ul> -->
+
+
+
+    <main>
+        <header>
+            <h1>WORLD COUNTRIES LIST</h1>
+            <p>Total Number of countries: 193</p>
+            <p id="describeKey"></p>
+        </header>
+        <div class="clickables">
+            <button id="startWord">STARTING WORD</button>
+            <button id="anyWord">SEARCH WITH ANY WORD</button>
+            <div class="arrow">
+                <img src="./media/arrow-down-fill.png" alt="">
+                <div class="az">
+                    <p>A</p>
+                    <p>Z</p>
+                </div>
+            </div>
+        </div>
+        <div class="inputs">
+            <input type="text" placeholder="Search country ..."><img src="./media/search-line.png" alt="">
+        </div>
+    </main>
+
+    <section id="countries"></section>
+
 
     <script src="script.js"></script>
 </body>
+<!-- focus #895be6 -->
 
 </html>
