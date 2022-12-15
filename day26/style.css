@@ -94,7 +94,7 @@ main {
 #countries {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    width: 80%;
+    width: max-content;
     margin: auto;
     background-color: #ffffe3;
     padding: 3rem 2rem;

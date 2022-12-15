@@ -222,24 +222,31 @@ const countries = [
 
 const section = document.querySelector('#countries')
 const input = document.querySelector('input')
-const startWord = document.querySelector('startWord')
+const startWord = document.querySelector('#startWord')
 const anyWord = document.querySelector('#anyWord')
 // input.textContent = 'Abdullahi'
+startWord.addEventListener('click', e => {
+    // console.log(input.value)
+    let length = []
+    for (let i = 0; i < countries.length; i++) {
+        if (countries[i].startsWith(input.value)) {
+            let p
+            p = document.createElement('p')
+            p.style.background = 'linear-gradient(0deg, rgba(37, 40, 43, 0.8), rgba(34, 0, 255, 0.3)), url(./media/map.jpg)'
+            p.style.width = '10rem'
+            p.style.height = '10rem'
+            p.style.display = 'flex'
+            p.style.justifyContent = 'center'
+            p.style.alignItems = 'center'
+            p.style.backgroundPosition = 'center'
+            p.style.color = 'white'
+            p.style.backgroundSize = 'cover'
+            section.appendChild(p)
+            p.textContent = countries[i]
+            length.push(countries[i])
+        }
+    }
+    console.log(length.length)
 
-for (let i = 0; i < countries.length; i++) {
 
-    let p
-    p = document.createElement('p')
-    p.style.background = 'linear-gradient(0deg, rgba(37, 40, 43, 0.8), rgba(34, 0, 255, 0.3)), url(./media/map.jpg)'
-    p.style.width = '10rem'
-    p.style.height = '10rem'
-    p.style.display = 'flex'
-    p.style.justifyContent = 'center'
-    p.style.alignItems = 'center'
-    p.style.backgroundPosition = 'center'
-    p.style.color = 'white'
-    p.style.backgroundSize = 'cover'
-    section.appendChild(p)
-    p.textContent = countries[i]
-
-}
+})
