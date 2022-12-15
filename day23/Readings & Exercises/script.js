@@ -232,7 +232,7 @@ blur.addEventListener('blur', e => {
 
 let h2
 h2 = document.querySelector('h2')
-h2.style.width = '4rem'
+// h2.style.width = '4rem'
 document.body.addEventListener('keypress', e => {
     h2.textContent = 'The keycode is=' + ' ' + e.keyCode
 })

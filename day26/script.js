@@ -225,13 +225,25 @@ const input = document.querySelector('input')
 const startWord = document.querySelector('#startWord')
 const anyWord = document.querySelector('#anyWord')
 // input.textContent = 'Abdullahi'
+const describeKey = document.querySelector('#describeKey')
+let span1 = document.createElement('span')
+describeKey.appendChild(span1)
+span1.style.fontStyle = 'italic'
+span1.style.color = 'red'
+let span2 = document.createElement('span')
+describeKey.appendChild(span2)
+span2.style.color = 'green'
+
+
 startWord.addEventListener('click', e => {
     // console.log(input.value)
+
     let length = []
     for (let i = 0; i < countries.length; i++) {
-        if (countries[i].startsWith(input.value)) {
-            let p
-            p = document.createElement('p')
+        let p
+        p = document.createElement('p')
+        section.appendChild(p)
+        if (countries[i].startsWith(input.value) && (input.value.length >= 1)) {
             p.style.background = 'linear-gradient(0deg, rgba(37, 40, 43, 0.8), rgba(34, 0, 255, 0.3)), url(./media/map.jpg)'
             p.style.width = '10rem'
             p.style.height = '10rem'
@@ -241,12 +253,101 @@ startWord.addEventListener('click', e => {
             p.style.backgroundPosition = 'center'
             p.style.color = 'white'
             p.style.backgroundSize = 'cover'
-            section.appendChild(p)
             p.textContent = countries[i]
             length.push(countries[i])
+            // describeKey.textContent = countries[i].length
+            // input.addEventListener('input', e => {
+            // })
+            let ss = span1.textContent = input.value
+            let ss2 = span2.textContent = length.length
+            describeKey.textContent = 'Countries starting with' + ' ' + ss + ' ' + 'are' + ' ' + ss2
+
+
+        } else if (input.value.length == 0 || input.value == null || input.value == '') {
+            p.textContent = ''
+            p.style.display = 'none'
+        } else {
+            p.textContent = ''
+            p.style.display = 'none'
         }
+
+
     }
     console.log(length.length)
 
 
+
+})
+
+
+
+
+anyWord.addEventListener('click', e => {
+    // console.log(input.value)
+    let length = []
+    for (let i = 0; i < countries.length; i++) {
+        let p
+        p = document.createElement('p')
+        section.appendChild(p)
+        if (countries[i].includes(input.value)) {
+            p.style.background = 'linear-gradient(0deg, rgba(37, 40, 43, 0.8), rgba(34, 0, 255, 0.3)), url(./media/map.jpg)'
+            p.style.width = '10rem'
+            p.style.height = '10rem'
+            p.style.display = 'flex'
+            p.style.justifyContent = 'center'
+            p.style.alignItems = 'center'
+            p.style.backgroundPosition = 'center'
+            p.style.color = 'white'
+            p.style.backgroundSize = 'cover'
+            p.textContent = countries[i]
+            length.push(countries[i])
+            describeKey.textContent = 'Countries containing' + ' ' + input.value + ' ' + 'are' + ' ' + length.length
+        } else {
+            p.textContent = ''
+            p.style.display = 'none'
+        }
+
+        if (input.value.length == 0) {
+            p.textContent = ''
+            p.style.display = 'none'
+        }
+
+    }
+
+    // input.addEventListener('input', e => { })
+
+    let ss = span1.textContent = input.value
+    let ss2 = span2.textContent = length.length
+    describeKey.textContent = 'Countries containing' + ' ' + ss + ' ' + 'are' + ' ' + ss2
+
+
+})
+
+
+const arrow = document.querySelector('.arrow')
+arrow.style.cursor = 'pointer'
+const imgarr = document.querySelector('#downup')
+let reversedarr = countries.reverse()
+// imgarr.src = ''
+
+arrow.addEventListener('click', (e) => {
+
+
+    for (const c of reversedarr) {
+        imgarr.src = './media/arrow-up-fill.png'
+        p = document.createElement('p')
+        section.appendChild(p)
+        p.style.background = 'linear-gradient(0deg, rgba(37, 40, 43, 0.8), rgba(34, 0, 255, 0.3)), url(./media/map.jpg)'
+        p.style.width = '10rem'
+        p.style.height = '10rem'
+        p.style.display = 'flex'
+        p.style.justifyContent = 'center'
+        p.style.alignItems = 'center'
+        p.style.backgroundPosition = 'center'
+        p.style.color = 'white'
+        p.style.backgroundSize = 'cover'
+        p.textContent = c
+        describeKey.textContent = 'Countries containing' + ' ' + input.value + ' ' + 'are' + ' ' + length.length
+
+    }
 })
