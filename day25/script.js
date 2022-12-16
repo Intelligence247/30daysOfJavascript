@@ -2913,7 +2913,7 @@ const popText = document.querySelector('#popText')
 const left = document.querySelector('#left')
 const right = document.querySelector('#right')
 const mid = document.querySelector('#mid')
-const counText2 = document.querySelector('#counText2')
+// const counText2 = document.querySelector('#counText2')
 // const left2 = document.querySelector('#left2')
 // const right2 = document.querySelector('#right2')
 // const mid2 = document.querySelector('#mid2')
@@ -2928,6 +2928,9 @@ let unshiftW = counPop.unshift(world)
 
 
 population.addEventListener('click', (e) => {
+    left.innerHTML = ''
+    right.innerHTML = ''
+    mid.innerHTML = ''
     for (const c of counPop) {
         let p = document.createElement('p')
         p.style.height = '2rem'
@@ -2958,7 +2961,9 @@ population.addEventListener('click', (e) => {
 })
 
 language.addEventListener('click', (e) => {
-
+    left.innerHTML = ''
+    right.innerHTML = ''
+    mid.innerHTML = ''
     for (const c of tenlang) {
         let p = document.createElement('p')
         left.appendChild(p)

@@ -218,7 +218,8 @@ const countries = [
     'Zambia',
     'Zimbabwe'
 ]
-
+const countries2 = countries.map((n) => n.toUpperCase())
+console.log(countries2)
 
 const section = document.querySelector('#countries')
 const input = document.querySelector('input')
@@ -234,16 +235,16 @@ let span2 = document.createElement('span')
 describeKey.appendChild(span2)
 span2.style.color = 'green'
 
-
 startWord.addEventListener('click', e => {
-    // console.log(input.value)
 
+    // console.log(input.value)
+    section.innerHTML = ''
     let length = []
-    for (let i = 0; i < countries.length; i++) {
+    for (let i = 0; i < countries2.length; i++) {
         let p
         p = document.createElement('p')
         section.appendChild(p)
-        if (countries[i].startsWith(input.value) && (input.value.length >= 1)) {
+        if (countries2[i].startsWith(input.value.toUpperCase()) && (input.value.length >= 1)) {
             p.style.background = 'linear-gradient(0deg, rgba(37, 40, 43, 0.8), rgba(34, 0, 255, 0.3)), url(./media/map.jpg)'
             p.style.width = '10rem'
             p.style.height = '10rem'
@@ -253,13 +254,14 @@ startWord.addEventListener('click', e => {
             p.style.backgroundPosition = 'center'
             p.style.color = 'white'
             p.style.backgroundSize = 'cover'
-            p.textContent = countries[i]
-            length.push(countries[i])
+            p.textContent = countries2[i]
+            length.push(countries2[i])
             // describeKey.textContent = countries[i].length
             // input.addEventListener('input', e => {
             // })
             let ss = span1.textContent = input.value
             let ss2 = span2.textContent = length.length
+
             describeKey.textContent = 'Countries starting with' + ' ' + ss + ' ' + 'are' + ' ' + ss2
 
 
@@ -284,12 +286,13 @@ startWord.addEventListener('click', e => {
 
 anyWord.addEventListener('click', e => {
     // console.log(input.value)
+    section.innerHTML = ''
     let length = []
-    for (let i = 0; i < countries.length; i++) {
+    for (let i = 0; i < countries2.length; i++) {
         let p
         p = document.createElement('p')
         section.appendChild(p)
-        if (countries[i].includes(input.value)) {
+        if (countries2[i].includes(input.value.toUpperCase())) {
             p.style.background = 'linear-gradient(0deg, rgba(37, 40, 43, 0.8), rgba(34, 0, 255, 0.3)), url(./media/map.jpg)'
             p.style.width = '10rem'
             p.style.height = '10rem'
@@ -299,9 +302,9 @@ anyWord.addEventListener('click', e => {
             p.style.backgroundPosition = 'center'
             p.style.color = 'white'
             p.style.backgroundSize = 'cover'
-            p.textContent = countries[i]
-            length.push(countries[i])
-            describeKey.textContent = 'Countries containing' + ' ' + input.value + ' ' + 'are' + ' ' + length.length
+            p.textContent = countries2[i]
+            length.push(countries2[i])
+            describeKey.textContent = 'Countries containing' + ' ' + input.value.toUpperCase() + ' ' + 'are' + ' ' + length.length
         } else {
             p.textContent = ''
             p.style.display = 'none'
@@ -327,12 +330,12 @@ anyWord.addEventListener('click', e => {
 const arrow = document.querySelector('.arrow')
 arrow.style.cursor = 'pointer'
 const imgarr = document.querySelector('#downup')
-let reversedarr = countries.reverse()
+let reversedarr = countries2.reverse()
+
 // imgarr.src = ''
 
 arrow.addEventListener('click', (e) => {
-
-
+    section.innerHTML = ''
     for (const c of reversedarr) {
         imgarr.src = './media/arrow-up-fill.png'
         p = document.createElement('p')
@@ -347,7 +350,5 @@ arrow.addEventListener('click', (e) => {
         p.style.color = 'white'
         p.style.backgroundSize = 'cover'
         p.textContent = c
-        describeKey.textContent = 'Countries containing' + ' ' + input.value + ' ' + 'are' + ' ' + length.length
-
     }
 })
