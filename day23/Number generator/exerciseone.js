@@ -32,7 +32,7 @@ input.style.border = '1.5px solid green'
 input.style.display = 'inline-block'
 input.style.position = 'relative'
 input.style.marginTop = '1rem'
-
+input.style.display = 'block'
 
 let button
 button = document.querySelector('button')
@@ -47,34 +47,41 @@ let pi = document.querySelector('#pi')
 // pi.style.display = 'flex'
 // pi.style.flexDirection = 'column'
 pi.style.position = 'relative'
-pi.style.top = '-2rem'
+pi.style.display = 'flex'
 let div
+let main = document.querySelector('main')
+main.style.display = "flex"
+main.style.flexDirection = 'row'
+main.style.flexWrap = 'wrap'
+main.style.width = '40rem'
+main.style.margin = 'auto'
+main.style.fontSize = '1.5rem'
+main.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji'
+main.style.marginTop = '2rem'
+main.style.marginBottom = '2rem'
+let p
+p = document.querySelector('p')
 button.addEventListener('click', () => {
+    main.innerHTML = ''
 
-    let main = document.querySelector('main')
-    main.style.display = "flex"
-    main.style.flexDirection = 'row'
-    main.style.flexWrap = 'wrap'
-    main.style.width = '40rem'
-    main.style.margin = 'auto'
-    main.style.fontSize = '1.5rem'
-    main.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji'
-    main.style.marginTop = '2rem'
-    main.style.marginBottom = '2rem'
-    if (typeof input.value != Number) {
-        let p
-        p = document.querySelector('p')
-        button.addEventListener('click', () => {
-            p.textContent = 'Input Value must be a number'
-            p.style.color = 'red'
-            p.style.margin = '0rem'
-            p.style.position = 'absolute'
-            p.style.top = '-1rem'
-            p.style.width = 'max-content'
-            p.style.height = 'max-content'
+    let x = input.value
+    if (x.match(/[a-zA-Z]/) || x.length === ' ') {
+        console.log('Input Value must be a number')
+        p.textContent = 'Input Value must be a number'
+        p.style.color = 'red'
+        p.style.margin = '0rem'
+        p.style.position = 'absolute'
+        p.style.top = '-1rem'
+        p.style.width = 'max-content'
+        p.style.height = 'max-content'
+        main.innerHTML = ''
 
-        })
+    } else {
+        console.log('Input Value must be a number33')
+        p.textContent = ''
     }
+
+
     for (let i = 0; i <= input.value; i++) {
         div = document.createElement('div')
         main.appendChild(div)
@@ -93,10 +100,8 @@ button.addEventListener('click', () => {
             div.style.backgroundColor = 'red'
         } else if (i % 2 == 1) {
             div.style.backgroundColor = 'yellow'
+        } else if (i == 0) {
+            div.textContent = ''
         }
-
     }
 })
-
-
-

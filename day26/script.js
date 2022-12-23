@@ -225,15 +225,11 @@ const section = document.querySelector('#countries')
 const input = document.querySelector('input')
 const startWord = document.querySelector('#startWord')
 const anyWord = document.querySelector('#anyWord')
-// input.textContent = 'Abdullahi'
 const describeKey = document.querySelector('#describeKey')
-let span1 = document.createElement('span')
-describeKey.appendChild(span1)
-span1.style.fontStyle = 'italic'
-span1.style.color = 'red'
-let span2 = document.createElement('span')
-describeKey.appendChild(span2)
-span2.style.color = 'green'
+
+let span1 = document.querySelector('#letter')
+let span2 = document.querySelector('#are')
+let span3 = document.querySelector('#length')
 
 startWord.addEventListener('click', e => {
 
@@ -259,10 +255,13 @@ startWord.addEventListener('click', e => {
             // describeKey.textContent = countries[i].length
             // input.addEventListener('input', e => {
             // })
-            let ss = span1.textContent = input.value
-            let ss2 = span2.textContent = length.length
+            // let ss = span1.textContent = input.value
+            // let ss2 = span2.textContent = length.length
 
-            describeKey.textContent = 'Countries starting with' + ' ' + ss + ' ' + 'are' + ' ' + ss2
+            describeKey.textContent = 'Countries starting with'
+            span1.textContent = input.value
+            span2.textContent = 'are'
+            span3.textContent = length.length
 
 
         } else if (input.value.length == 0 || input.value == null || input.value == '') {
@@ -319,9 +318,10 @@ anyWord.addEventListener('click', e => {
 
     // input.addEventListener('input', e => { })
 
-    let ss = span1.textContent = input.value
-    let ss2 = span2.textContent = length.length
-    describeKey.textContent = 'Countries containing' + ' ' + ss + ' ' + 'are' + ' ' + ss2
+    describeKey.textContent = 'Countries starting with'
+    span1.textContent = input.value
+    span2.textContent = 'are'
+    span3.textContent = length.length
 
 
 })
