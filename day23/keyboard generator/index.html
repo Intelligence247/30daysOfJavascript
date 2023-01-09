@@ -10,7 +10,9 @@
 
 <body>
     <main>
-        <h1>You pressed<span></span></h1>
+        <section>
+            <h1></h1><span></span>
+        </section>
         <p></p>
     </main>
 
@@ -30,19 +32,20 @@
 
         let h1
         h1 = document.querySelector('h1')
-        h1.style.minWidth = '35rem'
-        h1.style.height = '4rem'
-        h1.style.display = 'flex'
-        h1.style.fontSize = '3rem'
-        h1.style.justifyContent = 'center'
-        h1.style.alignItems = 'center'
-        h1.style.boxShadow = '#c1c1c1 2px 0px 8px'
-        h1.style.margin = '0'
-        h1.style.textShadow = '#c1c1c1 2px 2px 1px'
-
-
+        let section = document.querySelector('section')
+        section.style.minWidth = 'auto'
+        section.style.height = '5rem'
+        section.style.padding = '0rem 2rem'
+        section.style.display = 'flex'
+        section.style.fontSize = '3rem'
+        section.style.justifyContent = 'center'
+        section.style.alignItems = 'center'
+        section.style.boxShadow = '#c1c1c1 2px 0px 8px'
+        section.style.margin = '0'
+        section.style.textShadow = '#c1c1c1 2px 2px 1px'
 
         let p = document.querySelector('p')
+        h1.textContent = 'Press any Keyboard key'
         p.style.width = '7.2rem'
         p.style.fontSize = '5rem'
         p.style.height = '8rem'
@@ -57,13 +60,14 @@
         let span = document.querySelector('span')
         span.style.color = 'green'
         span.style.marginLeft = '0.5rem'
-        document.body.addEventListener('keydown', (e) => {
+        body.addEventListener('keyup', (e) => {
+            h1.textContent = 'You Pressed'
             span.textContent = e.key
             p.textContent = e.keyCode
 
         })
 
-        // 
+
     </script>
 
 </body>
